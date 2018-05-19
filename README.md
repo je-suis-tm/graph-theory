@@ -4,6 +4,8 @@
 
 2. Depth First Search
 
-3. Dijkstra
+3. Topological Sort
 
-4. Prim's
+4. Dijkstra
+
+5. Prim's
