@@ -8,4 +8,4 @@
 
 4. Dijkstra
 
-5. Prim's
+5. Prim
