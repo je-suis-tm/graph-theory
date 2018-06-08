@@ -4,7 +4,7 @@ Created on Tue Jun  5 15:44:57 2018
 
 @author: Administrator
 """
-
+import numpy as np
 class graph:
         def __init__(self):
             self.graph={}
@@ -80,6 +80,47 @@ def dijkstra(start,end,df):
                 queue.append(j)
             
         df.visit(temp)
+        
+        if temp==end:
+            break
+    return distance[end]
+
+
+def astar(start,end,df):
+    queue=[]
+    distance={}
+    heuristic={}
+    route={}
+    queue.append(start)
+
+    for i in df.vertex():
+        distance[i]=float('inf')
+        heuristic[i]=np.abs(i[0]-end[0])+np.abs(i[1]-end[1])
+
+    distance[start]=0 
+    k=0    
+
+    while queue:
+        temp=queue.pop(0)
+        minimum=float('inf')
+
+        for j in df.edge(temp):
+            distance[j]=distance[temp]+df.weight(temp,j)
+            route[j]=distance[j]+heuristic[j]
+            if route[j]<minimum:
+                minimum=route[j]
+
+        for j in df.edge(temp):
+            if (route[j]==minimum) and (df.go(j)==0) and (j not in queue):
+                queue.append(j)
+                k+=1
+
+        df.visit(temp)
+        
+        if temp==end:
+                 break
+    
+    print('vertice travelled:',k)
     return distance[end]
 
 
