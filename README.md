@@ -28,4 +28,6 @@
 
 7. Triangular Arbitrage
 
+8. Word Ladder
+
 *Note that I use Jupyter for this repo for the purpose of graph ADT visualization. However, ipynb takes longer to load than py. That is why I also upload a py version with graph ADT and all related algorithms for your reference.*
