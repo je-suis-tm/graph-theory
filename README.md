@@ -16,8 +16,16 @@
 
 1. Maze
 
-2. Broadcast Problem (Minimum Spanning Tree)
+2. Broadcasting (Minimum Spanning Tree)
 
 3. Shortest Path
+
+4. Water Jug
+
+5. Knight's Tour
+
+6. Missionaries and Cannibals
+
+7. Triangular Arbitrage
 
 *Note that I use Jupyter for this repo for the purpose of graph ADT visualization. However, ipynb takes longer to load than py. That is why I also upload a py version with graph ADT and all related algorithms for your reference.*
