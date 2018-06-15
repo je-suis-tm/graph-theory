@@ -12,6 +12,8 @@
 
 6. A* Search
 
+7. Bellman Ford
+
 # Graph Problems
 
 1. Maze
@@ -26,7 +28,7 @@
 
 6. Missionaries and Cannibals
 
-7. Triangular Arbitrage
+7. Forex Arbitrage
 
 8. Word Ladder
 
