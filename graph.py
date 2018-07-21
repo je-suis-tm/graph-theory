@@ -163,6 +163,47 @@ def dijkstra(df,start,end):
 
 
 #
+def bellman_ford(df,start,end):
+    
+    distance={}
+    pred={}
+
+    for i in df.vertex():
+        distance[i]=float('inf')
+            
+    distance[start]=0    
+    
+    for counter in range(1,len(df.vertex())-1):
+        for i in df.vertex():
+            for j in df.edge(i):
+                try:
+                    if distance[i]+df.weight(i,j)<distance[j]:
+                        distance[j]=distance[i]+df.weight(i,j)
+                        pred[j]=i
+                
+                except KeyError:
+                    pass
+    
+    #
+    for k in df.vertex():
+        for l in df.edge(k):
+            try:
+                assert distance[k]+df.weight(k,l)>=distance[l],'negative cycle exists!'
+            except KeyError:
+                pass
+    
+    k=end
+    path=[]
+    while pred:
+        path.insert(0,k)
+        if k==start:
+            break
+        k=pred[k]
+     
+    return distance[end],path
+
+
+#
 def astar(df,start,end):
     queue={}
     distance={}
