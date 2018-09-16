@@ -14,6 +14,12 @@
 
 7. Bellman Ford
 
+8. Ford Fulkerson
+
+9. Kruskal
+
+10. Nearest Neighbor
+
 # Graph Problems
 
 1. Maze
