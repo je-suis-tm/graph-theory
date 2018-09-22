@@ -2,6 +2,9 @@
 
 # In[1]:
 
+#this is a cross repo project for web scraping
+#plz refer to the following link for more details
+# https://github.com/tattooday/web-scraping/blob/master/MENA%20News%20Feeds.py
 
 import networkx as nx
 import matplotlib.pyplot as plt
