@@ -86,14 +86,15 @@ def build_graph(df,stopword):
 
 # In[7]:
 
-
-def plot_graph(graph):
+def plot_graph(graph,nodecolor,edgecolor,title=None):
     
     ax=plt.figure(figsize=(40,20)).add_subplot(111)
     labels = nx.get_edge_attributes(graph,'weight')
-    pos=nx.spring_layout(graph)
+    pos=nx.spring_layout(graph,k=0.3)
     nx.draw_networkx(graph,pos,with_labels=True,edge_labels=labels,                     
-                     node_size=1600,font_size=30)
+                     node_size=1500,font_size=25,node_color=nodecolor, 
+                    cmap=plt.get_cmap('autumn'),edge_color=edgecolor,
+                     edge_cmap=plt.get_cmap('coolwarm'),width=2)
     
     ax.spines['top'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
@@ -102,6 +103,7 @@ def plot_graph(graph):
     
     plt.xticks([])
     plt.yticks([])
+    plt.title(title,fontsize=30)
     plt.show()
 
 
@@ -188,18 +190,32 @@ def add_wordlist(df):
 # In[12]:
 
 
-def remove_similar(df,stopword,plot=False):
+def remove_similar(df,stopword,plot_original=False,plot_result=False):
     
     df=add_wordlist(df)
     
     graph=build_graph(df,stopword)
     
-    if plot==True:
-        plot_graph(graph)
-    
     output=alter_bfs(graph)    
     output=remove_child(output,graph)    
     output=add_non_connected(df,output,graph)
+    
+    edgecolor=[]
+    for i in graph.edges:
+        edgecolor.append(graph[i[0]][i[1]]['weight'])
+    
+    if plot_original==True:
+        nodecolor=['#FFFF00' for i in graph.nodes]
+        plot_graph(graph,nodecolor,edgecolor,title='original')
+
+    if plot_result==True:
+        nodecolor=[]
+        for i in graph.nodes:
+            if i in output:
+                nodecolor.append(1)
+            else:
+                nodecolor.append(2)
+        plot_graph(graph,nodecolor,edgecolor,title='result')
     
     data=df.loc[[i for i in output]]    
     data.reset_index(inplace=True,drop=True)
@@ -216,7 +232,7 @@ def main():
     
     df=pd.read_csv('mid east.csv',encoding='utf_8_sig')
 
-    print(remove_similar(df,stopword,plot=True))
+    print(remove_similar(df,stopword,plot_original=True,plot_result=True))
 
 
 if __name__ == "__main__":
