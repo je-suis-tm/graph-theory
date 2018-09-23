@@ -89,14 +89,21 @@ def build_graph(df,stopword):
 
 def plot_graph(graph):
     
-    plt.figure(figsize=(40,20)).add_subplot(111)
+    ax=plt.figure(figsize=(40,20)).add_subplot(111)
     labels = nx.get_edge_attributes(graph,'weight')
     pos=nx.spring_layout(graph)
     nx.draw_networkx(graph,pos,with_labels=True,edge_labels=labels,                     
                      node_size=1600,font_size=30)
+    
+    ax.spines['top'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    
+    plt.xticks([])
+    plt.yticks([])
     plt.show()
 
-    return graph
 
 
 # In[8]:
