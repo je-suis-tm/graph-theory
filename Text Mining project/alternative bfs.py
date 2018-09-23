@@ -125,10 +125,20 @@ def plot_graph(graph,nodecolor,edgecolor,title=None):
                     cmap=plt.get_cmap('autumn'),edge_color=edgecolor,
                      edge_cmap=plt.get_cmap('coolwarm'),width=2)
     
+    #remove axes
     ax.spines['top'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
     ax.spines['left'].set_visible(False)
     ax.spines['right'].set_visible(False)
+          
+    #plot colorbar for edge color which is just weight
+    sm = plt.cm.ScalarMappable(cmap=plt.get_cmap('coolwarm'), 
+                               norm=plt.Normalize(vmin=min(edgecolor), 
+                                                  vmax=max(edgecolor)))
+    sm._A = []
+    cb=plt.colorbar(sm,ticks=[min(edgecolor),max(edgecolor)])
+    cb.ax.set_yticklabels(cb.ax.get_yticklabels(), fontsize=22)
+    cb.ax.set_ylabel('Edge Weight Colorbar',fontsize=22,rotation=270)
     
     plt.xticks([])
     plt.yticks([])
