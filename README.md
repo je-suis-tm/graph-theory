@@ -42,6 +42,8 @@
 
 This is a self made BFS-like algorithm to travel through a graph structure built upon texts. The whole project is designed for MENA News Feeds (https://github.com/tattooday/web-scraping/blob/master/MENA%20News%20Feeds.py). The idea is to use graph structure to remove similar contents and extract key information from the texts. I highly recommend folks to take a peep at the project. Machine learning is absolutely not the best solution to text mining. Graph theory sometimes could be much more useful than expected. As usual, my own creation goes under a separate folder. The parent directory is for the self implementation of well-recognized algorithms. 
 
+![alt text](https://github.com/tattooday/graph-theory/blob/master/Text%20Mining%20project/preview/result.png)
+
 More details can be found at the following link.
 
 https://github.com/tattooday/graph-theory/blob/master/Text%20Mining%20project/README.md
