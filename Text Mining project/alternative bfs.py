@@ -286,15 +286,11 @@ def add_wordlist(df):
 #this would be the function we need when this script is called
 #there are two possible plotting options
 #plot the original and plot the highlighted results
-def remove_similar(df,stopword,plot_original=False,plot_result=False):
+def remove_similar(df,stopword,plot_original=False,plot_bfs=False,plot_result=False):
     
     df=add_wordlist(df)
     
     graph=build_graph(df,stopword)
-    
-    output=alter_bfs(graph)    
-    output=remove_child(output,graph)    
-    output=add_non_connected(df,output,graph)
     
     #edge color is depended on the weight of each edge
     edgecolor=[]
@@ -306,9 +302,24 @@ def remove_similar(df,stopword,plot_original=False,plot_result=False):
     if plot_original==True:
         nodecolor=['#FFFF00' for i in graph.nodes]
         plot_graph(graph,nodecolor,edgecolor,title='original')
+        
+    output=alter_bfs(graph)
     
     #after our traversal, we would be able to get two types of nodes
     #so we highlight the selected nodes which is key information
+    if plot_bfs==True:
+        nodecolor=[]
+        for i in graph.nodes:
+            if i in output:
+                nodecolor.append(1)
+            else:
+                nodecolor.append(2)
+        plot_graph(graph,nodecolor,edgecolor,title='alternative bfs')
+    
+    output=remove_child(output,graph)    
+    output=add_non_connected(df,output,graph)
+
+    #clean up the output list and plot final results with highlights
     if plot_result==True:
         nodecolor=[]
         for i in graph.nodes:
@@ -335,7 +346,7 @@ def main():
     df=pd.read_csv('mid east.csv',encoding='utf_8_sig')
 
     #this is how to use this script when called
-    print(remove_similar(df,stopword,plot_original=True,plot_result=True))
+    print(remove_similar(df,stopword,plot_original=True,plot_bfs=True,plot_result=True))
 
 
 if __name__ == "__main__":
