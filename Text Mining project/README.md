@@ -1,3 +1,5 @@
+# Text Mining
+
 <b><font color="#6F6F6F" size="+5"> Is machine learning the best solution to text mining? </font></b><br>
 <b><font color="#6F6F6F" size="+5"> What if graph theory beats it in both time and space complexity?</font></b>
 
@@ -11,7 +13,7 @@ What about graph theory? We could connect news titles from different sources tog
 
 ![alt text](https://github.com/tattooday/graph-theory/blob/master/Text%20Mining%20project/preview/original.png)
 
-
+Let's look at the assumption of why this graph structure should works. Assuming a piece of story is a breaking news, it is so important that every mainstream media would cover the story of it. Maybe different media websites cover the story from a different view but at least these websites should have the story in a relatively different titles. The script called MENA news feeds scrapes a lot of websites. Hence, there must be some similar contents with different titles. These titles should be connected to each other as the similar content always should have at least one key information in common. This assumption may sound very confusing. Looking at this example, we have the following titles, 'Airstrike on Yemen school bus is apparent war crime' from CNN, 'UN accuses Saudi coalition of war crimes in Yemen' from financial times, 'Mistakes admitted in Yemen bus attack' from bcc. These titles are connected by the common words 'school bus' and 'war crime' ('yemen' is a stop word so not included). The content 'yemen bus attack is a war crime' exists in every media website with a different title. We only need to see this content once in our email instead of three times from different sources. This content is denoted as our targets. In the following graph structure visualization, our targets could be presented as key nodes of strongly connected components.
 
 ![alt text](https://github.com/tattooday/graph-theory/blob/master/Text%20Mining%20project/preview/target.png)
 
