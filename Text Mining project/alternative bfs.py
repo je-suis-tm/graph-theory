@@ -302,7 +302,7 @@ def remove_similar(df,stopword,plot_original=False,plot_bfs=False,plot_result=Fa
     
     graph=build_graph(df,stopword)
     
-    #edge color is depended on the weight of each edge
+    #edge color is dependent on the weight of each edge
     edgecolor=[]
     for i in graph.edges:
         edgecolor.append(graph[i[0]][i[1]]['weight'])
