@@ -61,18 +61,23 @@ stopword=['i','we','our','my','me','you',
          'morocco','moroccan','tunisia','tunisian',
          'algerian','back','syrian','russia','palestinian',
          'palestinians','iranians','russian','jerusalem',
-         'israeli','pakistan']
+         'israeli','pakistan','qatari']
 
 
 # In[4]:
 
 #using regex to convert a text into a list of words
-def text2list(text,lower=False):
-    
+#we use stemming instead of original words
+#even though stemming is pretty bad for some words
+#it is better than using original words
+#at least for walked and walking, we could connect them
+def text2list(text,lower=True):
+          
     temp=text if lower==False else text.lower()
     regex=re.findall('\w*',temp)
-    output=list(filter(lambda x: x!='',regex))
-    
+    temp=list(filter(lambda x: x!='',regex))
+    output=[PorterStemmer().stem(i) for i in temp]
+
     return output
 
 
