@@ -29,15 +29,24 @@ Walking out of a maze seems extremely complex in recursion algorithm. In graph t
 <body>
 ++++++++++++++++++++++
 <br>
-+   +   ++ ++     +
++   +   ++ ++     +   
+<br>
 + +   +       +++ + ++
+<br>
 + + +  ++  ++++   + ++
+<br>
 +++ ++++++    +++ +  +
+<br>
 +          ++  ++    +
+<br>
 +++++ ++++++   +++++ +
+<br>
 +     +   +++++++  + +
+<br>
 + +++++++      S +   +
+<br>
 +                + +++
+<br>
 ++++++++++++++++++ +++
 </body>
 
