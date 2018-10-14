@@ -26,30 +26,6 @@
 
 Walking out of a maze seems extremely complex in recursion algorithm. In graph theory, it is like a walk in the park. The only bit that takes some effort is building a data structure. Once we have graph ADT, we can use BFS/DFS/Dijkstra/A* to find the way out, although DFS may not be able to point out the shortest route out.
 
-<body>
-++++++++++++++++++++++
-<br>
-+   +   ++ ++     +   
-<br>
-+ +   +       +++ + ++
-<br>
-+ + +  ++  ++++   + ++
-<br>
-+++ ++++++    +++ +  +
-<br>
-+          ++  ++    +
-<br>
-+++++ ++++++   +++++ +
-<br>
-+     +   +++++++  + +
-<br>
-+ +++++++      S +   +
-<br>
-+                + +++
-<br>
-++++++++++++++++++ +++
-</body>
-
 2. Broadcasting (Minimum Spanning Tree)
 
 3. Shortest Path
