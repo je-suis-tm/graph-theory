@@ -28,9 +28,11 @@ Walking out of a maze seems extremely complex in recursion algorithm. In graph t
 
 2. Broadcasting (Minimum Spanning Tree)
 
-Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different. The postman needs to deliver mails to each house with the least travel. Prim's algorithm is designed to solve this type of issue. The output of Prim's algorithm can be interpreted as a minimum spanning tree.
+Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different, some are shorter, some are longer. Ideally the postman will deliver mails to each house with the least travel. Prim's algorithm is designed to solve this type of issue. The output of Prim's algorithm can be interpreted as a minimum spanning tree.
 
 3. Shortest Path
+
+Whenever we look at the phrase, 'shortest path', we should naturally come up with Dijkstra's algorithm in our mind. This Dutchman came up with the revolutionary idea while searching for the shortest path to Rotterdam without pencil and paper. The algorithm named after the founder is a special form of A* algorithm without heuristic function. Besides Dijkstra's algorithm, the shortest path problem, which can be think of as an optimization problem, can also be solved in dynamic programming.
 
 4. Water Jug
 
