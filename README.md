@@ -28,6 +28,8 @@ Walking out of a maze seems extremely complex in recursion algorithm. In graph t
 
 2. Broadcasting (Minimum Spanning Tree)
 
+Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different. The postman needs to deliver mails to each house with the least travel. Prim's algorithm is designed to solve this type of issue. The output of Prim's algorithm can be interpreted as a minimum spanning tree.
+
 3. Shortest Path
 
 4. Water Jug
