@@ -24,15 +24,15 @@
 
 1. Maze
 
-Walking out of a maze seems extremely complex in recursion algorithm. In graph theory, it is like a walk in the park. The only bit that takes some effort is building a data structure. Once we have graph ADT, we can use BFS/DFS/Dijkstra/A* to find the way out, although DFS may not be able to point out the shortest route out.
+Walking out of a maze seems extremely complex in recursion algorithm. In graph theory, it is just a walk in the park. The only bit that takes some effort is building the data structure. Once we got graph ADT, we can use BFS/DFS/Dijkstra/A* to find the way out of the maze, although DFS may not be able to point out the shortest route out.
 
 2. Broadcasting (Minimum Spanning Tree)
 
-Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different, some are shorter, some are longer. Ideally the postman will deliver mails to each house with the least travel. Prim's algorithm is designed to solve this type of issue. The output of Prim's algorithm can be interpreted as a minimum spanning tree.
+Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different, some are shorter, some are longer. Ideally the postman should deliver mails to each house with the least travel. Prim's algorithm is designed to solve this type of broadcasting issue. And the topological output of Prim's algorithm can be interpreted as a minimum spanning tree.
 
 3. Shortest Path
 
-Whenever we look at the phrase, 'shortest path', we should naturally come up with Dijkstra's algorithm in our mind. This Dutchman came up with the revolutionary idea while searching for the shortest path to Rotterdam without pencil and paper. The algorithm named after the founder is a special form of A* algorithm without heuristic function. Besides Dijkstra's algorithm, the shortest path problem, which can be think of as an optimization problem, can also be solved in dynamic programming.
+Whenever we look at the phrase, 'shortest path', we should naturally come up with Dijkstra's algorithm in our mind. This Dutchman came up with the revolutionary algorithm named after himself while searching for the shortest path to Rotterdam without pencil and paper. The algorithm is a special case of A* algorithm without heuristic function. It is also widely used as a subroutine for other traversal algorithms. Besides Dijkstra's algorithm, the shortest path problem, which could be thought as an optimization problem, can also be solved in dynamic programming.
 
 4. Water Jug
 
