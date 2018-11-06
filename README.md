@@ -39,6 +39,8 @@ Whenever we look at the phrase, 'shortest path', we should naturally come up wit
 Water jug is a simple but interesting problem. Assuming there are two jugs, a m-gallon and a n-gallon. And the target is to get x gallon water in either jug. There are many ways to solve this problem. Recursion can also solve water jug problem but it is very costly. Building a graph data structure would be a much easier way. The key is to set up edges based upon the rule of the game to connect all possible scenarios together. With BFS starts from the initial status, it can efficiently find the target status and return the route for us which would be the answer.
 
 5. Knight's Tour
+
+Knight's tour is a game where a knight travels all the squares on a k by k chessboard. And each square can only be travelled once. The solution can be obtained by DFS with a list that records whether each square on the chessboard has been visited. The rules of a knight's movement are very strange. The edges of the graph would indicate the valid move from one square to another.
  
 6. Missionaries and Cannibals
 
