@@ -44,9 +44,15 @@ Knight's tour is a game where a knight travels all the squares on a k by k chess
  
 6. Missionaries and Cannibals
 
+Missionaries and cannibals is a classic river problem. I actually prefer its alternative version called jealous husband. There are k missionaries and k cannibals. They need to cross a river. There is a boat with only two people capacity. There should be at least one person to sail the boat. These rules are subjected to one constraint. Cannibals cannot outnumber missionaries on both sides of the river. Again, the solution is similar to water jug problem. We have to set up edges based upon the rule of the game to connect all possible and valid scenarios together. As usual, BFS always return the optimized result rather than DFS.
+
 7. Forex Arbitrage
 
+Finding the shortest path on a map is not the only problem Dijkstra can apply to. Financial market is another application. As we all know, currency pairs have both bid and ask price. The market is weak-efficient. There is always opportunity for triangle arbitrage or rectangle arbitrage. We can exchange from currency A to currency B then to currency C if we can gain profit rather than directly exchanging currency A to currency C. We set each currency as the node, the rate from one currency to another as the edge. And the return from arbitrage would be the criteria for Dijkstra. However, Dijkstra cannot detect the negative return among currency pairs. There is an improved version called Bellman-Ford that can detect the negative cycle during the traversal.
+
 8. Word Ladder
+
+Word ladder problem is a game developed by the author of Alice in Wonderland. Given one word, we try to change it into another word. Each time we can only change one letter and it should also be a valid word. This is a great test for vocabulary.  The difficult part of building a graph structure is to build edges. Connect one word to another with only one letter changed takes a bit of work. BFS is the perfect solution for this.
 
 9. Text Mining
 
