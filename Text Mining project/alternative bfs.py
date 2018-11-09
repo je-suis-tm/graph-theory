@@ -124,16 +124,23 @@ def build_graph(df,stopword):
 # In[7]:
 
 #plotting the graph structure
-def plot_graph(graph,nodecolor,edgecolor,title=None):
+def plot_graph(graph,nodecolor,edgecolor,title=None,**kwargs):
     
     ax=plt.figure(figsize=(40,20)).add_subplot(111)
     labels = nx.get_edge_attributes(graph,'weight')
     pos=nx.spring_layout(graph,k=0.3)
-    nx.draw_networkx(graph,pos,with_labels=True,edge_labels=labels,                     
+    try:
+        nx.draw_networkx(graph,pos,with_labels=True,edge_labels=labels,                     
                      node_size=1500,font_size=25,node_color=nodecolor, 
                     cmap=plt.get_cmap('autumn'),edge_color=edgecolor,
-                     edge_cmap=plt.get_cmap('coolwarm'),width=2)
-    
+                     edge_cmap=plt.get_cmap('coolwarm'),width=2, 
+                     pos=nx.circular_layout(graph),**kwargs)
+        print('desired')
+    except:
+        nx.draw_networkx(graph,pos,with_labels=True,edge_labels=labels,                     
+                     node_size=1500,font_size=25,node_color=nodecolor, 
+                    cmap=plt.get_cmap('autumn'),edge_color=edgecolor,
+                     edge_cmap=plt.get_cmap('coolwarm'),width=2,**kwargs)
     #remove axes
     ax.spines['top'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
@@ -153,7 +160,6 @@ def plot_graph(graph,nodecolor,edgecolor,title=None):
     plt.yticks([])
     plt.title(title,fontsize=30)
     plt.show()
-
 
 # In[8]:
 
