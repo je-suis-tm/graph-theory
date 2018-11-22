@@ -45,23 +45,26 @@ os.chdir('h:/')
 #for instance, i could get a title 'minister in iran get arrested'
 #and another title 'the economy in iran is slowing down'
 #they would still be connected via common word iran
-stopword=['i','we','our','my','me','you',           
+stopword=['we','our','my','me','you',           
           'your','to','ours','yours','him','his',           
           'he','her','hers','she','they','their',           
-          'theirs','them','in','s','of','for',           
-          'u', 'the', 'with', 'a', 'us', 'and',           
+          'theirs','them','in','of','for',           
+          'the', 'with', 'us', 'and',           
           'on', 'from','as', 'over', 'after',            
           'is', 'are', 'by','at','above','beyond',          
           'after','before','within','around','about',           
           'up','will','would','be','saudi','arabia',
-          'yemen','yemeni','u','a','e','iran','iranian',
+          'yemen','yemeni','iran','iranian',
          'bahrain','qatar','syria','iraq','israel',
           'arabian','kuwait','lebanon','lebanonese',
          'jordan','turkey','oman','emirates','algeria',
          'morocco','moroccan','tunisia','tunisian',
          'algerian','back','syrian','russia','palestinian',
          'palestinians','iranians','russian','jerusalem',
-         'israeli','pakistan','qatari']
+         'israeli','pakistan','qatari','a','b','c','d','e',
+          'f','g','h','i','j','k','l','m','n','o',
+          'p','q','r','s','t','u','v','w','x','y',
+          'z','not','first']
 
 
 # In[4]:
