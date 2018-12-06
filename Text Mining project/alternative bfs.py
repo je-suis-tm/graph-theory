@@ -45,16 +45,16 @@ os.chdir('h:/')
 #for instance, i could get a title 'minister in iran get arrested'
 #and another title 'the economy in iran is slowing down'
 #they would still be connected via common word iran
-stopword=['we','our','my','me','you',           
+stopword=['i','we','our','my','me','you',           
           'your','to','ours','yours','him','his',           
           'he','her','hers','she','they','their',           
-          'theirs','them','in','of','for',           
-          'the', 'with', 'us', 'and',           
+          'theirs','them','in','s','of','for',           
+          'u', 'the', 'with', 'a', 'us', 'and',           
           'on', 'from','as', 'over', 'after',            
           'is', 'are', 'by','at','above','beyond',          
           'after','before','within','around','about',           
           'up','will','would','be','saudi','arabia',
-          'yemen','yemeni','iran','iranian',
+          'yemen','yemeni','u','a','e','iran','iranian',
          'bahrain','qatar','syria','iraq','israel',
           'arabian','kuwait','lebanon','lebanonese',
          'jordan','turkey','oman','emirates','algeria',
@@ -64,7 +64,7 @@ stopword=['we','our','my','me','you',
          'israeli','pakistan','qatari','a','b','c','d','e',
           'f','g','h','i','j','k','l','m','n','o',
           'p','q','r','s','t','u','v','w','x','y',
-          'z','not','first']
+          'z','not','first','egyptian','turkish','now']
 
 
 # In[4]:
@@ -74,16 +74,17 @@ stopword=['we','our','my','me','you',
 #even though stemming is pretty bad for some words
 #it is better than using original words
 #at least for walked and walking, we could connect them
-def text2list(text,lower=True,stemmer=True):
+def text2list(text,stopword,lower=True,stemmer=True):
     
     temp=text if lower==False else text.lower()
     regex=re.findall('\w*',temp)
     temp=list(filter(lambda x: x!='',regex))
     
     if stemmer==True:
-        output=[PorterStemmer().stem(i) for i in temp]
+        temp2=[PorterStemmer().stem(i) for i in temp if i not in stopword]
+        output=[i for i in temp2 if i not in stopword]
     else:
-        output=[i for i in temp]
+        output=[i for i in temp if i not in stopword]
     
     return output
 
@@ -297,11 +298,11 @@ def add_non_connected(df,output,graph):
 
 #this is just a function to add one more column in dataframe
 #so the dataframe has a column which breaks texts into lists of words
-def add_wordlist(df,**kwargs):
+def add_wordlist(df,stopword,**kwargs):
     
     temp=[]
     for i in df['title']:
-        temp.append(text2list(i,lower=True,**kwargs))
+        temp.append(text2list(i,stopword,lower=True,**kwargs))
     df['word']=temp
     
     return df
@@ -317,7 +318,7 @@ def remove_similar(df,stopword,remove_children=True, \
                    plot_original=False,plot_bfs=False, \
                    plot_result=False,**kwargs):
     
-    df=add_wordlist(df,**kwargs)
+    df=add_wordlist(df,stopword,**kwargs)
     
     graph=build_graph(df,stopword)
     
