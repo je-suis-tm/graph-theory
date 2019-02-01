@@ -314,6 +314,13 @@ def add_wordlist(df,stopword,**kwargs):
 #this would be the function we need when this script is called
 #there are two possible plotting options
 #plot the original and plot the highlighted results
+#one thing i d love to highlight is remove_children
+#when the connected nodes are getting more and more
+#it is better to set remove_children=False
+#otherwise the algorithm would seek for extreme summarization
+#you could end up with 5 nodes from a 30 node connected network
+#i would recommend to set remove_children=False for
+#a graph structure with over 30 connected nodes 
 def remove_similar(df,stopword,remove_children=True, \
                    plot_original=False,plot_bfs=False, \
                    plot_result=False,**kwargs):
