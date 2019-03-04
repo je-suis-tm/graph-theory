@@ -56,10 +56,10 @@ Word ladder problem is a game developed by the author of Alice in Wonderland. Gi
 
 ### 9. Text Mining
 
-This is a self made BFS-like algorithm to travel through a graph structure built upon texts. The whole project is designed for <a href=https://github.com/tattooday/web-scraping/blob/master/MENA%20Newsfeed.py>MENA Newsfeed</a>. The idea is to use graph structure to remove similar contents and extract key information from the texts. I highly recommend folks to take a peep at the project. Machine learning is absolutely not the best solution to text mining. Graph theory sometimes could be much more useful than expected. As usual, my own creation goes under a separate folder. The parent directory is for the self implementation of well-recognized algorithms. 
+This is a self made BFS-like algorithm to travel through a graph structure built upon texts. The whole project is designed for <a href=https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsfeed.py>MENA Newsfeed</a>. The idea is to use graph structure to remove similar contents and extract key information from the texts. I highly recommend folks to take a peep at the project. Machine learning is absolutely not the best solution to text mining. Graph theory sometimes could be much more useful than expected. As usual, my own creation goes under a separate folder. The parent directory is for the self implementation of well-recognized algorithms. 
 
-![alt text](https://github.com/tattooday/graph-theory/blob/master/Text%20Mining%20project/preview/result.png)
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/result.png)
 
-More details can be found at the following <a href=https://github.com/tattooday/graph-theory/blob/master/Text%20Mining%20project/README.md>link</a>.
+More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/README.md>link</a>.
 
 *Note that I mainly use Jupyter in this repo for the purpose of graph ADT visualization. However, ipynb takes longer to load compared to py files. That is why I also include a py version with graph ADT and all related algorithms for your reference.*
