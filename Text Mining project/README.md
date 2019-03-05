@@ -36,7 +36,7 @@ Despite the fact that this is an elegant traversal algorithm, we could tell that
 
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/temp%20result.png)
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/remove%20children%demo.png)
+![alt text](https://raw.githubusercontent.com/je-suis-tm/graph-theory/master/Text%20Mining%20project/preview/remove%20children%20demo.png)
 
 The methodology is pretty much the same as Alter BFS. First, we check if two nodes are connected. If so, we compare the number of edges for each node and remove those which have smaller number of edges. If both nodes have the same number of edges, the total sum of weights of each node would be the selection criteria. Again, if the total sum of weights cannot tell a winner, it is always on a first come first served basis.
 
