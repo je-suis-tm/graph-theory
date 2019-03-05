@@ -298,7 +298,7 @@ def remove_child(output,graph,add_single_child=True):
                         output.remove(j[1])
                     
             #this is the single child/leaf node scenario
-            #i admit single child or the function name remove children sounds miserable
+            #i admit single child or the function name remove child sounds miserable
             #for each node we decide to kick out of the list
             #there should be no leaf node as the child node of the node we try to get rid of
             #if the ditched node has a child node with only one edge which connected back to the ditched node
