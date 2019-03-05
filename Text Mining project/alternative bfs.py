@@ -365,7 +365,6 @@ def remove_similar(df,stopword,remove_children=True, \
         
     output=alter_bfs(graph)
     
-    
     if plot_bfs==True:
         nodecolor=[]
         for i in graph.nodes:
@@ -402,45 +401,26 @@ def remove_similar(df,stopword,remove_children=True, \
                 small_graph[i[0]][i[1]]['weight'])
         plot_graph(small_graph,small_nodecolor,
                    small_edgecolor,title='bfs result')
-    
-    
+       
     
     excludelist=[j for i in output2 for j in graph.neighbors(i) if j in output]
     includelist=[i for i in output if i not in output2 and i not in excludelist]
     output2+=remove_child(copy.deepcopy(includelist),
                           graph,**kwargs)
     
-
     output=add_non_connected(df,output2,graph)
     
-
-    #after our traversal, we would be able to get two types of nodes
-    #so we highlight the selected nodes which is key information
-    if plot_bfs==True:
+    if plot_final_result==True:
         nodecolor=[]
         for i in graph.nodes:
             if i in output:
                 nodecolor.append(1)
             else:
                 nodecolor.append(2)
-        plot_graph(graph,nodecolor,edgecolor,title='alternative bfs')
+        plot_graph(graph,nodecolor,
+                   edgecolor,title='final result')
     
-    if remove_children==True:
-        output=remove_child(output,graph)    
-    else:
-        pass
-    output=add_non_connected(df,output,graph)
-
-    #clean up the output list and plot final results with highlights
-    if plot_result==True:
-        nodecolor=[]
-        for i in graph.nodes:
-            if i in output:
-                nodecolor.append(1)
-            else:
-                nodecolor.append(2)
-        plot_graph(graph,nodecolor,edgecolor,title='result')
-    
+          
     #return the selected nodes in a dataframe format
     data=df.loc[[i for i in output]]    
     data.reset_index(inplace=True,drop=True)
