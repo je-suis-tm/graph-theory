@@ -243,39 +243,48 @@ def alter_bfs(graph):
 #so in the output list we need another round of iteration to remove one of the connected nodes
 #the idea is pretty much the same as alter_bfs
 #there are 3 cases
-def remove_child(output,graph):
+def remove_child(output,graph,add_single_child=True):
     
-    for i in output:
+    for i in copy.deepcopy(output):
+        
+        append_single_child=False
+        
         for j in graph.edges(i):
             if j[1] in output:
                 if len(graph.edges(j[1]))>len(graph.edges(i)):
-                    try:
+                    if i in output:
                         output.remove(i)
-                    except ValueError:
-                        pass
                     
                 elif len(graph.edges(j[1]))==len(graph.edges(i)):
-                    weight1=sum([graph[k[0]][k[1]]['weight'] for k in graph.edges(i)])
-                    weight2=sum([graph[l[0]][l[1]]['weight'] for l in graph.edges(j[1])])
+                    weight1=sum(
+                        [graph[k[0]][k[1]]['weight'] for k in graph.edges(i)])
+                    weight2=sum(
+                        [graph[l[0]][l[1]]['weight'] for l in graph.edges(j[1])])
             
                     if weight1>weight2: 
-                        try:
+                        if j[1] in output:
                             output.remove(j[1])
-                        except ValueError:
-                            pass
                     else:
-                        try:
+                        if i in output:
                             output.remove(i)
-                        except ValueError:
-                            pass
                         
                 else:
-                    try:
+                    if j[1] in output:
                         output.remove(j[1])
-                    except ValueError:
-                        pass
+                    
+                    
+            if len(graph.edges(j[1]))==1:
+                append_single_child=True
+                temp=j[1]
+                
+        if i not in output and \
+        append_single_child==True and \
+         add_single_child==True:
+            output.append(temp)
     
     return output
+
+
 
 
 # In[10]:
@@ -292,6 +301,20 @@ def add_non_connected(df,output,graph):
             output.append(i)
     
     return output
+
+
+def build_small_graph(input_list,original_graph):
+    
+    small_graph=nx.Graph()
+    
+    for i in input_list:
+        for j in original_graph.edges(i):
+            if j[1] in input_list:
+                small_graph.add_edge(i,j[1],
+                 weight=original_graph[i][j[1]]['weight'])
+    
+    
+    return small_graph
 
 
 # In[11]:
@@ -342,6 +365,55 @@ def remove_similar(df,stopword,remove_children=True, \
         
     output=alter_bfs(graph)
     
+    
+    if plot_bfs==True:
+        nodecolor=[]
+        for i in graph.nodes:
+            if i in output:
+                nodecolor.append(1)
+            else:
+                nodecolor.append(2)
+        plot_graph(graph,nodecolor,
+                   edgecolor,title='alternative bfs')
+    
+    
+    output2=remove_child(copy.deepcopy(output),
+                         graph,**kwargs)
+    
+    
+    if plot_temp_result==True:
+        nodecolor=[]
+        for i in graph.nodes:
+            if i in output2:
+                nodecolor.append(1)
+            else:
+                nodecolor.append(2)
+        plot_graph(graph,nodecolor,
+                   edgecolor,title='temporary result')
+    
+    
+    if plot_bfs_result==True:
+        small_graph=build_small_graph(output,graph)
+        small_nodecolor=['r' for i in small_graph.nodes]
+        
+        small_edgecolor=[]
+        for i in small_graph.edges:
+            small_edgecolor.append(
+                small_graph[i[0]][i[1]]['weight'])
+        plot_graph(small_graph,small_nodecolor,
+                   small_edgecolor,title='bfs result')
+    
+    
+    
+    excludelist=[j for i in output2 for j in graph.neighbors(i) if j in output]
+    includelist=[i for i in output if i not in output2 and i not in excludelist]
+    output2+=remove_child(copy.deepcopy(includelist),
+                          graph,**kwargs)
+    
+
+    output=add_non_connected(df,output2,graph)
+    
+
     #after our traversal, we would be able to get two types of nodes
     #so we highlight the selected nodes which is key information
     if plot_bfs==True:
@@ -383,11 +455,15 @@ def remove_similar(df,stopword,remove_children=True, \
 
 def main():
     
-    df=pd.read_csv('test.csv',encoding='latin-1')
+    df=pd.read_csv('u.csv',encoding='latin-1')
 
     #this is how to use this script when called
-    print(remove_similar(df,stopword,remove_children=False, \
-                         plot_bfs=True,plot_result=True))
+    print(remove_similar(df,stopword,
+                         plot_original=True,
+                         plot_bfs=True,
+                         plot_temp_result=True,
+                         plot_bfs_result=True,
+                         plot_final_result=True))
 
 
 if __name__ == "__main__":
