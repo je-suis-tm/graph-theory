@@ -485,7 +485,7 @@ def remove_similar(df,stopword,
     
           
     #return the selected nodes in a dataframe format
-    data=df.loc[[i for i in output3]]    
+    data=df.loc[[i for i in set(output3)]]    
     data.reset_index(inplace=True,drop=True)
     
     del data['word']
@@ -498,7 +498,7 @@ def remove_similar(df,stopword,
 
 def main():
     
-    df=pd.read_csv('u.csv',encoding='latin-1')
+    df=pd.read_csv('mid east.csv',encoding='latin-1')
 
     #the following line demonstrates how to use this script
     print(remove_similar(df,stopword,
