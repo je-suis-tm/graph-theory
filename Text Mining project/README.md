@@ -1,6 +1,6 @@
 # Text Mining
 
-> Is machine learning the best solution to text mining?  What if graph theory beats it in both time and space complexity?
+> Is machine learning the best solution to text mining?<br>What if graph theory beats it in both time and space complexity?
 
 The answer is obvious, definitely not. The graph theory is definitely an underestimated data structure, compared to all that hype of machine learning. First, let's talk about what this project is and later you would realize why graph structure works better. Graph theory turns out to beat supervised learning in both time and space complexity. 
 
