@@ -56,7 +56,7 @@ Word ladder problem is a game developed by the author of Alice in Wonderland. Gi
 
 ### 9. Text Mining
 
-This is a self made BFS-like algorithm to travel through a graph structure built upon texts. The whole project is designed for <a href=https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsfeed.py>MENA Newsfeed</a>. The idea is to use graph structure to remove similar contents and extract key information from the texts. I highly recommend folks to take a peep at the project. Machine learning is absolutely not the best solution to text mining. Graph theory sometimes could be much more useful than expected. As usual, my own creation goes under a separate folder. The parent directory is for the self implementation of well-recognized algorithms. 
+This is a self made BFS-like algorithm to travel through a graph structure built upon texts. The whole project is designed for <a href=https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsletter.py>MENA Newsletter</a>. The idea is to use graph structure to remove similar contents and extract key information from the texts. I highly recommend folks to take a peep at the project. Machine learning is absolutely not the best solution to text mining. Graph theory sometimes could be much more useful than expected. As usual, my own creation goes under a separate folder. The parent directory is for the self implementation of well-recognized algorithms. 
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/final%20result.png)
 
