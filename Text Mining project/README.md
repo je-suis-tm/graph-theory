@@ -26,9 +26,20 @@ In a graph structure, our targets could be presented as key nodes of strongly co
 
 Is there any known traversal algorithm that can return a list of our target nodes? Not to my knowledge (If you do, please feel free to comment). Nevertheless, our selection criteria is not complex and we could always implement our own version of traversal algorithm. The first thing that came to my mind was <a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>Breadth First Search</a>. Think of target nodes as parent nodes, all we need to examine is that parent nodes are the nodes with the most edges in any given strong connected component. This BFS, I call it Alternative BFS, would start at each node in the graph structure. Each starting node is defined as a parent node. It would go one layer deeper to the child nodes. Each traversal from the parent node to all child nodes returns a tree structure. The tree structure would be denoted as a strongly connected component. The Alter BFS is designed to select a node with most edges in a given strongly connected component and append the node to an output list. When two nodes have the same number of edges, the algorithm would look at the total sum of weights of each node's edges. The node with highest sum of weights would go to the output list. If the sum of weights cannot select a winner, it is then on a first come first served basis. Whichever node the algorithm travels first would be selected. In the following graph, red nodes are the nodes selected by Alter BFS. Unfortunately, the visualization layout of networkx is random unless we specify the fixed position for each node (which implies a lot of work). I tried my very best to keep all nodes in consistent positions throughout these figures.
 
+Explain alternative BFS by tree structures.
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/bfs%20demo.png)
+
+Visualize the first round of alternative BFS.
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/bfs.png)
+
+Visualize the temporary selection by alternative BFS.
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/bfs%20result.png)
+
+Eliminate the extra nodes based upon another round of alternative BFS on the BFS result combined with first come first served basis.
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/small%20target.png)
 
 Despite the fact that this is an elegant traversal algorithm, we could tell that some nodes are still redundant. Even if we use set() function to remove duplicates from our output list, we could still end up with a lot of false positive. For instance, we have node alpha, beta and gamma. Node alpha connects to node beta and others. Node alpha has 4 edges and node beta only has 2 edges. Node beta has two edges, which connects to node alpha and node gamma.And node gamma only has one edge connected to node beta. So when Alter BFS runs on node alpha and node beta, we only keep node alpha in check. When Alter BFS runs on node gamma, as node gamma is not connected to node alpha and node beta has more edges than node gamma, we would also append node beta in the output list. But node beta and node alpha are connected and apparently node alpha is the target node we defined. Thus, we need another round of iteration to remove one node from any two connected nodes in the output list. 
