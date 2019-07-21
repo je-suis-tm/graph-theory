@@ -162,7 +162,7 @@ def plot_graph(graph,nodecolor,edgecolor,title=None,**kwargs):
     ax.spines['left'].set_visible(False)
     ax.spines['right'].set_visible(False)
           
-    #plot colorbar for edge color which is just weight
+    #plot colorbar for edge color which is merely determined by weight
     sm = plt.cm.ScalarMappable(cmap=plt.get_cmap('coolwarm'), 
                                norm=plt.Normalize(vmin=min(edgecolor), 
                                                   vmax=max(edgecolor)))
@@ -185,17 +185,17 @@ def plot_graph(graph,nodecolor,edgecolor,title=None,**kwargs):
 #this algorithm will name after me, hehe
 
 #for each node in the graph, we define that node as root node
-#and only use its child nodes to construct a tree structure
-#this tree structure would not include the node's grandchildren, siblings or parents
+#and only use its first layer child nodes to construct a tree structure
+#this tree structure would not include the root node's grandchildren, siblings or parents
 #so the tree structure is two-leveled
 #level 0 is root node or call it parent node
 #level 1 consists of different leaf nodes or call it child nodes
-#all we need to is to find the node with most edges in a given tree structure
+#all we need to do is to find the node with most edges in a given tree structure
 #and delete the rest of the nodes
 def alter_bfs(graph):
     
     #temp is a list to keep track of all the nodes
-    #think of it as a waiting list
+    #think of it as a waiting list in bfs implementation
     #output keeps the node with most edges in a given tree structure
     temp=list(graph.nodes)
     output=[]
@@ -221,7 +221,7 @@ def alter_bfs(graph):
             #we have to compare the sum of weights of their edges
             #as usual, we keep the largest
             #if we cannot get a winner from that
-            #we simply use the rule first come first serve
+            #we simply use the rule, first come first serve
             #we keep the current node
             elif len(graph.edges(j[1]))==edge_num:
                 weight1=sum([graph[k[0]][k[1]]['weight'] for k in graph.edges(i)])
@@ -232,7 +232,7 @@ def alter_bfs(graph):
                     node=j[1]
                     
             #case 3 is when the current node has more edges than a new node
-            #nothing we need to do
+            #we do nothing, niksen in dutch
             else:
                 pass
             
@@ -257,10 +257,10 @@ def alter_bfs(graph):
 #as node gamma is not connected to node alpha
 #and node beta has more edges than node gamma
 #we would append node beta in the output list
-#but node beta and node alpha have already been through the travesal algo
+#but node beta and node alpha have already been through the traversal algo
 #and previously we chose node alpha over node beta
 #therefore, we need an algorithm to ensure each node in the given list is independent
-#here, independent stands for not connceted to any other node in the given list
+#here, independent stands for not connected to any other node in the given list
 #the idea is pretty much the same as alter_bfs
 #we use the given list to build a graph structure
 #the selection criteria is still based on how many edges a node has
@@ -296,15 +296,15 @@ def remove_child(output,graph,add_single_child=True):
                         output.remove(j[1])
                     
             #this is the single child/leaf node scenario
-            #i admit single child or the function name remove child sounds miserable
+            #i admit single child or the function name remove child sounds inhuman
             #for each node we decide to kick out of the list
             #there should be no leaf node as the child node of the node we try to get rid of
-            #if the ditched node has a child node with only one edge which connected back to the ditched node
-            #we would include this child node as a compensation to kicking its parent node out of the list
-            #the reason behind that is to make sure the single child is being taken care of
-            #joking, actually it is to ensure some exclusive or niche news content will be in the output
+            #if the ditched node has a child node with only one edge which connected back to the ditched node itself
+            #we would include this child node as a compensation for kicking its parent node out of the list
+            #i learn it from the separation of illegal immigrants and their children during border crisis
+            #joking, actually it is to ensure some exclusive or niche news content will be presented
             #and we can have a case where a ditched node has more than one leaf node as child nodes
-            #we gotta apply first come first serve to multiple single child case
+            #we gotta apply last come first serve to multiple single child case
                     
             #in the following 3 lines
             #we simply keep track of the single child
@@ -328,7 +328,7 @@ def remove_child(output,graph,add_single_child=True):
 
 #for some titles, they may not share any common words with others
 #in another word, they are not included in the graph structure
-#so we gotta add them back to the output list
+#we gotta add them back to the output list, cant leave the minority behind
 #even though they are not key information published by every website
 #they could still be some exclusive or niche information that has value to us
 def add_non_connected(df,output,graph):
@@ -381,7 +381,7 @@ def add_wordlist(df,stopword,**kwargs):
 #and plot the final result
 def remove_similar(df,stopword,
                     plot_original=False,plot_bfs=False,
-                    plot_temp_result=False,
+                    plot_vip_result=False,
                     plot_bfs_result=False,
                     plot_final_result=False,**kwargs):
     
@@ -391,7 +391,7 @@ def remove_similar(df,stopword,
     #graph building
     graph=build_graph(df,stopword)
     
-    #edge color is dependent on the weight of each edge
+    #edge color is determined by the weight of each edge
     edgecolor=[]
     for i in graph.edges:
         edgecolor.append(graph[i[0]][i[1]]['weight'])
@@ -422,7 +422,7 @@ def remove_similar(df,stopword,
                          graph,**kwargs)
     
     #plot the first remove_child result
-    if plot_temp_result==True:
+    if plot_vip_result==True:
         nodecolor=[]
         for i in graph.nodes:
             if i in output2:
@@ -430,7 +430,7 @@ def remove_similar(df,stopword,
             else:
                 nodecolor.append(2)
         plot_graph(graph,nodecolor,
-                   edgecolor,title='temporary result')
+                   edgecolor,title='VIP nodes')
     
     #plot the alter_bfs result in a sub graph
     #only connect nodes inside the alter_bfs result
@@ -501,7 +501,7 @@ def main():
     print(remove_similar(df,stopword,
                          plot_original=True,
                          plot_bfs=True,
-                         plot_temp_result=True,
+                         plot_vip_result=True,
                          plot_bfs_result=True,
                          plot_final_result=True))
 
