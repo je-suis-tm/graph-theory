@@ -10,10 +10,10 @@
 #it was basically a waste of time and energy to read the similar content more than once
 #that was when i began to think about using different approaches to extract key information
 #and graph structure turned out to be the best approach for this scenario
-#in order to make this script fully funtional, some assumptions need to be made
+#in order to make this script fully functional, some assumptions need to be made
 #the major news should be headlined on every big news website
 #if it is important enough, every media should cover the topic
-#and the title on this topic from different sources should somehow share some common words
+#and the title for this topic from different sources should share some common words
 #for instance, 'he goes to school on foot' from website alpha
 #on website beta, the title is probably 'he walks to school'
 #on website gamma, it could be 'he goes to school using his feet'
@@ -23,14 +23,17 @@
 
 #in terms of scraping news content from different online sources
 #plz refer to the following link for more details
-# https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsfeed.py
+# https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsletter.py
 
 import networkx as nx
 import matplotlib.pyplot as plt
 import pandas as pd
 import re
 import copy
+from nltk.tokenize import RegexpTokenizer
+from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
 
 # In[2]:
 
@@ -47,9 +50,10 @@ os.chdir('h:/')
 #and another title, 'the economy in iran is slowing down'
 #they can be connected via common word iran
 #yet, they share no similar content at all
-stopword=['i','we','our','my','me','you',           
-          'your','to','ours','yours','him','his',           
-          'he','her','hers','she','they','their',           
+stopword=stopwords.words('english')+['i','we',
+          'our','my','me','you', 'your','to',        
+          'ours','yours','him','his', 'he',       
+          'her','hers','she','they','their',           
           'theirs','them','in','s','of','for',           
           'u', 'the', 'with', 'a', 'us', 'and',           
           'on', 'from','as', 'over', 'after',            
@@ -71,28 +75,21 @@ stopword=['i','we','our','my','me','you',
 
 # In[4]:
 
-#using regex to convert a text into a list of words
-#in nlp, the jargon is tokenization
-#and we use stemming instead of a list of original words
-#e.g. walking and walk refer to the same thing
-#if we use original words
-#we cannot connect two nodes based on these two words
-#even though nltk stemming is algorithm based
-#sometimes the result of stemming may be terrible
-#stemming is better than using original words in general
-#at least for walk and walking
-#we would be able to connect two nodes based on them
-def text2list(text,stopword,lower=True,stemmer=True):
-    
+#tokenization, stemming and lemmatization
+def text2list(text,stopword,lower=True):
+
     temp=text if lower==False else text.lower()
-    regex=re.findall('\w*',temp)
-    temp=list(filter(lambda x: x!='',regex))
+    tokenizer=RegexpTokenizer(r'\w+')
+    temp2=[WordNetLemmatizer().lemmatize(i) for i in tokenizer.tokenize(temp)]
+    output=[PorterStemmer().stem(i) for i in temp2 if i not in stopword]
     
-    if stemmer==True:
-        temp2=[PorterStemmer().stem(i) for i in temp if i not in stopword]
-        output=[i for i in temp2 if i not in stopword]
-    else:
-        output=[i for i in temp if i not in stopword]
+    #remove numbers as they are stopword as well
+    for i in output:
+        try:
+            float(i)
+            output.remove(i)
+        except:
+            pass
     
     return output
 
