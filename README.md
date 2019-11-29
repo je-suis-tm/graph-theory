@@ -8,7 +8,7 @@
 
 4. Dijkstra
 
-5. Prim
+5. Minimum Spanning Tree (Prim/Kruskal)
 
 6. A* Search
 
@@ -16,9 +16,7 @@
 
 8. Ford Fulkerson
 
-9. Kruskal
-
-10. Nearest Neighbor
+9. Nearest Neighbor
 
 # Graph Problems
 
