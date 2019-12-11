@@ -8,7 +8,7 @@
 
 4. Dijkstra
 
-5. Minimum Spanning Tree (Prim/Kruskal)
+5. Minimum Spanning Tree (Prim/Kruskal/Boruvka)
 
 6. A* Search
 
