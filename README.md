@@ -62,6 +62,7 @@ This is a self made BFS-like algorithm to travel through a graph structure built
 
 More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/README.md>link</a>.
 
+### 10. Maximal Clique
+
 *Note that I mainly use Jupyter in this repo for the purpose of graph ADT visualization. However, ipynb takes longer to load compared to py files. That is why I also include a py version with graph ADT and all related algorithms for your reference.*
 
-### 10. Maximal Clique
