@@ -8,7 +8,7 @@
 
 4. Dijkstra
 
-5. Minimum Spanning Tree (Prim/Kruskal/Boruvka)
+5. Prim/Kruskal/Boruvka
 
 6. A* Search
 
@@ -26,9 +26,9 @@
 
 Walking out of a maze seems extremely complex in recursion algorithm. In graph theory, it is just a walk in the park. The only bit that takes some effort is building the data structure. Once we got graph ADT, we can use BFS/DFS/Dijkstra/A* to find the way out of the maze, although DFS may not be able to point out the shortest route.
 
-### 2. Broadcasting (Minimum Spanning Tree)
+### 2. Minimum Spanning Tree
 
-Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different, some are shorter, some are longer. Ideally the postman wants to deliver mails to each house with the least travel distance. Prim's algorithm is designed to solve this type of broadcasting issue. And the topological output of Prim's algorithm can be interpreted as a minimum spanning tree.
+Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different, some are shorter, some are longer. Ideally the postman wants to deliver mails to each house with the least travel distance and visit each house only once. There are a few algorithms to solve this type of issue. In this case, we choose Borůvka, Prim and Kruskal. And the topological output of these algorithms can be interpreted as a <a href=https://en.wikipedia.org/wiki/Minimum_spanning_tree>minimum spanning tree</a>. It is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.
 
 ### 3. Shortest Path
 
