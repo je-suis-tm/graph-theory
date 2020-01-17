@@ -8,7 +8,7 @@
 
 4. Dijkstra
 
-5. Prim/Kruskal/Boruvka
+5. Prim/Kruskal/Borůvka
 
 6. A* Search
 
