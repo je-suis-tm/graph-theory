@@ -333,3 +333,54 @@ def kruskal(df):
                 output.append([parent,child])                   
                 
     return output
+
+
+def boruvka(df):
+    
+    output=graph()
+    
+    for i in df.vertex():
+        temp=999
+        target=None
+        for j in df.edge(i):
+            if df.weight(i,j)<temp:
+                temp=df.weight(i,j)
+                target=[i,j]
+        
+        output.append(target[0],target[1],df.weight(target[0],target[1]))
+        output.append(target[1],target[0],df.weight(target[0],target[1]))
+
+    connected_components=[]
+    for i in output.vertex():
+        #use jump to break out of multiple loops
+        jump=False
+        for j in connected_components:
+            if i in j:
+                jump=True
+                break
+        if jump:
+            continue
+        connected_components.append(dfs_itr(output,i))
+        
+    print(connected_components)
+
+    for i in range(len(connected_components)):
+        for j in range(i+1,len(connected_components)):
+            temp=999
+            target=None
+            for k in connected_components[i]:
+                for l in df.edge(k):
+                    if l in connected_components[j]:
+                        if df.weight(k,l)<temp:
+                            temp=df.weight(k,l)
+                            target=[k,l]
+            output.append(target[0],target[1],df.weight(k,l))
+            output.append(target[1],target[0],df.weight(k,l))
+
+    mst=[]
+    for i in output.vertex():
+        for j in output.edge(i):
+            if [j,i] not in mst:
+                mst.append([i,j])
+                  
+    return mst
