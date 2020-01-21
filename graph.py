@@ -42,6 +42,22 @@ class graph:
         def route(self):
             return self.visited
         
+        def degree(self,vertexid):
+            return len(self.graph[vertexid])
+    
+        def mat(self):            
+            self.matrix=[]            
+            for i in self.graph:    
+                self.matrix.append([0 for k in range(len(self.graph))])                
+                for j in self.graph[i].keys():        
+                    self.matrix[i-1][j-1]=1            
+            return self.matrix
+        
+        def remove(self,node):            
+            for i in self.graph[node].keys():
+                self.graph[i].pop(node)
+            self.graph.pop(node)
+        
 #        
 def bfs(df,start,end):
     queue=[]
@@ -276,3 +292,44 @@ def prim(df,start,end):
                 queue[i]=df.weight(key,i)
         
     return result
+
+
+#
+def trace_root(disjointset,target):
+
+    if disjointset[target]!=target:
+        trace_root(disjointset,disjointset[target])
+    else:
+        return target
+
+
+def kruskal(df):
+    
+    d={}
+    output=[]
+    
+    for i in df.vertex():
+        for j in df.edge(i):
+            if f'{j}-{i}' not in d.keys():
+                d[f'{i}-{j}']=df.weight(i,j)
+
+    sort=sorted(d.items(), key=lambda x: x[1])
+    
+    disjointset={}
+    
+    for i in df.vertex():
+        disjointset[i]=i
+    
+    for i in sort:
+        
+        parent=int(i[0].split('-')[0])
+        child=int(i[0].split('-')[1])
+        
+        print(f'from {parent} to {child} at {df.weight(parent,child)}')
+        
+        if disjointset[parent]!=disjointset[child]:
+            if trace_root(disjointset,parent)!=trace_root(disjointset,child):
+                disjointset[child]=parent
+                output.append([parent,child])                   
+                
+    return output
