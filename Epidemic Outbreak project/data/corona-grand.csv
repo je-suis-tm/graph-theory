@@ -1,163 +1,247 @@
-Country/Territory/Area,Confirmed Cases,report date,Number of deaths
-China,278,1/21/2020,6
-Japan,1,1/21/2020,
-Republic of Korea,1,1/21/2020,
-Thailand,2,1/21/2020,
-Total,282,1/21/2020,
-China,309,1/22/2020,6
-Taiwan,1,1/22/2020,
-Japan,1,1/22/2020,
-Republic of Korea,1,1/22/2020,
-Thailand,2,1/22/2020,
-Total,314,1/22/2020,
-China,571,1/23/2020,17
-Taiwan,1,1/23/2020,
-Hong Kong,1,1/23/2020,
-Macau,1,1/23/2020,
-Japan,1,1/23/2020,
-Republic of Korea,1,1/23/2020,
-Thailand,4,1/23/2020,
-United States of America,1,1/23/2020,
-Total,581,1/23/2020,
-Japan,1,1/24/2020,
-Republic of Korea,2,1/24/2020,
-Viet Nam,2,1/24/2020,
-Singapore,1,1/24/2020,
-Thailand,4,1/24/2020,
-United States of America,1,1/24/2020,
-Total,846,1/24/2020,
-Taiwan,1,1/24/2020,
-Hong Kong,2,1/24/2020,
-Macau,2,1/24/2020,
-China,830,1/24/2020,25
-China,1287,1/25/2020,41
-Japan,3,1/25/2020,
-Republic of Korea,2,1/25/2020,
-Viet Nam,2,1/25/2020,
-Singapore,3,1/25/2020,
-Australia,3,1/25/2020,
-Thailand,4,1/25/2020,
-Nepal,1,1/25/2020,
-United States of America,2,1/25/2020,
-France,3,1/25/2020,
-Total,1320,1/25/2020,
-Hong Kong,5,1/25/2020,
-Macau,2,1/25/2020,
-Taiwan,3,1/25/2020,
-China,1975,1/26/2020,56
-Japan,3,1/26/2020,
-Republic of Korea,2,1/26/2020,
-Viet Nam,2,1/26/2020,
-Singapore,4,1/26/2020,
-Australia,4,1/26/2020,
-Malaysia,3,1/26/2020,
-Thailand,5,1/26/2020,
-Nepal,1,1/26/2020,
-United States of America,2,1/26/2020,
-France,3,1/26/2020,
-Total,2014,1/26/2020,
-Hong Kong,5,1/26/2020,
-Macau,2,1/26/2020,
-Taiwan,3,1/26/2020,
-China,2741,1/27/2020,80
-Japan,4,1/27/2020,
-Republic of Korea,4,1/27/2020,
-Viet Nam,2,1/27/2020,
-Singapore,4,1/27/2020,
-Australia,4,1/27/2020,
-Malaysia,4,1/27/2020,
-Thailand,5,1/27/2020,
-Nepal,1,1/27/2020,
-United States of America,5,1/27/2020,
-Canada,1,1/27/2020,
-France,3,1/27/2020,
-Total,2798,1/27/2020,
-Hong Kong,8,1/27/2020,
-Macau,5,1/27/2020,
-Taiwan,4,1/27/2020,
-China,4515,1/28/2020,106
-Japan,6,1/28/2020,
-Republic of Korea,4,1/28/2020,
-Viet Nam,2,1/28/2020,
-Singapore,7,1/28/2020,
-Australia,5,1/28/2020,
-Malaysia,4,1/28/2020,
-Cambodia,1,1/28/2020,
-Thailand,14,1/28/2020,
-Nepal,1,1/28/2020,
-Sri Lanka,1,1/28/2020,
-United States of America,5,1/28/2020,
-Canada,2,1/28/2020,
-France,3,1/28/2020,
-Germany,1,1/28/2020,
-Total,4593,1/28/2020,
-Hong Kong,8,1/28/2020,
-Macau,7,1/28/2020,
-Taiwan,7,1/28/2020,
-China,5974,1/29/2020,132
-Japan,7,1/29/2020,
-Republic of Korea,4,1/29/2020,
-Viet Nam,2,1/29/2020,
-Singapore,7,1/29/2020,
-Australia,7,1/29/2020,
-Malaysia,4,1/29/2020,
-Cambodia,1,1/29/2020,
-Thailand,14,1/29/2020,
-Nepal,1,1/29/2020,
-Sri Lanka,1,1/29/2020,
-United States of America,5,1/29/2020,
-Canada,3,1/29/2020,
-France,4,1/29/2020,
-Germany,4,1/29/2020,
-United Arab Emirates,4,1/29/2020,
-Total,6065,1/29/2020,
-Hong Kong,8,1/29/2020,
-Macau,7,1/29/2020,
-Taiwan,8,1/29/2020,
-China,7711,1/30/2020,170
-Japan,11,1/30/2020,
-Republic of Korea,4,1/30/2020,
-Viet Nam,2,1/30/2020,
-Singapore,10,1/30/2020,
-Australia,7,1/30/2020,
-Malaysia,7,1/30/2020,
-Cambodia,1,1/30/2020,
-Philippines,1,1/30/2020,
-Thailand,14,1/30/2020,
-Nepal,1,1/30/2020,
-Sri Lanka,1,1/30/2020,
-India,1,1/30/2020,
-United States of America,5,1/30/2020,
-Canada,3,1/30/2020,
-France,5,1/30/2020,
-Finland,1,1/30/2020,
-Germany,4,1/30/2020,
-United Arab Emirates,4,1/30/2020,
-Total,7818,1/30/2020,
-Hong Kong,10,1/30/2020,
-Macau,7,1/30/2020,
-Taiwan,8,1/30/2020,
-China,9692,1/31/2020,213
-Hong Kong,12,1/31/2020,
-Macau,7,1/31/2020,
-Taiwan,9,1/31/2020,
-Japan,14,1/31/2020,
-Republic of Korea,11,1/31/2020,
-Viet Nam,5,1/31/2020,
-Singapore,13,1/31/2020,
-Australia,9,1/31/2020,
-Malaysia,8,1/31/2020,
-Cambodia,1,1/31/2020,
-Philippines,1,1/31/2020,
-Thailand,14,1/31/2020,
-Nepal,1,1/31/2020,
-Sri Lanka,1,1/31/2020,
-India,1,1/31/2020,
-United States of America,6,1/31/2020,
-Canada,3,1/31/2020,
-France,6,1/31/2020,
-Finland,1,1/31/2020,
-Germany,5,1/31/2020,
-Italy,2,1/31/2020,
-United Arab Emirates,4,1/31/2020,
-Total,9826,1/31/2020,
+Country/Territory/Area,Confirmed  cases,Total  cases with travel history to China,Total  cases with possible or confirmed transmission outside of China,Total  cases with site of transmission under investigation,Total  deaths,report date
+China,278,,,,6,1/21/2020
+Japan,1,,,,,1/21/2020
+Republic of Korea,1,,,,,1/21/2020
+Thailand,2,,,,,1/21/2020
+Total,282,,,,,1/21/2020
+China,309,,,,6,1/22/2020
+Taiwan,1,,,,,1/22/2020
+Japan,1,,,,,1/22/2020
+Republic of Korea,1,,,,,1/22/2020
+Thailand,2,,,,,1/22/2020
+Total,314,,,,,1/22/2020
+China,571,,,,17,1/23/2020
+Taiwan,1,,,,,1/23/2020
+Hong Kong,1,,,,,1/23/2020
+Macau,1,,,,,1/23/2020
+Japan,1,,,,,1/23/2020
+Republic of Korea,1,,,,,1/23/2020
+Thailand,4,,,,,1/23/2020
+United States of America,1,,,,,1/23/2020
+Total,581,,,,,1/23/2020
+Japan,1,,,,,1/24/2020
+Republic of Korea,2,,,,,1/24/2020
+Viet Nam,2,,,,,1/24/2020
+Singapore,1,,,,,1/24/2020
+Thailand,4,,,,,1/24/2020
+United States of America,1,,,,,1/24/2020
+Total,846,,,,,1/24/2020
+Taiwan,1,,,,,1/24/2020
+Hong Kong,2,,,,,1/24/2020
+Macau,2,,,,,1/24/2020
+China,830,,,,25,1/24/2020
+China,1287,,,,41,1/25/2020
+Japan,3,,,,,1/25/2020
+Republic of Korea,2,,,,,1/25/2020
+Viet Nam,2,,,,,1/25/2020
+Singapore,3,,,,,1/25/2020
+Australia,3,,,,,1/25/2020
+Thailand,4,,,,,1/25/2020
+Nepal,1,,,,,1/25/2020
+United States of America,2,,,,,1/25/2020
+France,3,,,,,1/25/2020
+Total,1320,,,,,1/25/2020
+Hong Kong,5,,,,,1/25/2020
+Macau,2,,,,,1/25/2020
+Taiwan,3,,,,,1/25/2020
+China,1975,,,,56,1/26/2020
+Japan,3,,,,,1/26/2020
+Republic of Korea,2,,,,,1/26/2020
+Viet Nam,2,,,,,1/26/2020
+Singapore,4,,,,,1/26/2020
+Australia,4,,,,,1/26/2020
+Malaysia,3,,,,,1/26/2020
+Thailand,5,,,,,1/26/2020
+Nepal,1,,,,,1/26/2020
+United States of America,2,,,,,1/26/2020
+France,3,,,,,1/26/2020
+Total,2014,,,,,1/26/2020
+Hong Kong,5,,,,,1/26/2020
+Macau,2,,,,,1/26/2020
+Taiwan,3,,,,,1/26/2020
+China,2741,,,,80,1/27/2020
+Japan,4,,,,,1/27/2020
+Republic of Korea,4,,,,,1/27/2020
+Viet Nam,2,,,,,1/27/2020
+Singapore,4,,,,,1/27/2020
+Australia,4,,,,,1/27/2020
+Malaysia,4,,,,,1/27/2020
+Thailand,5,,,,,1/27/2020
+Nepal,1,,,,,1/27/2020
+United States of America,5,,,,,1/27/2020
+Canada,1,,,,,1/27/2020
+France,3,,,,,1/27/2020
+Total,2798,,,,,1/27/2020
+Hong Kong,8,,,,,1/27/2020
+Macau,5,,,,,1/27/2020
+Taiwan,4,,,,,1/27/2020
+China,4515,,,,106,1/28/2020
+Japan,6,,,,,1/28/2020
+Republic of Korea,4,,,,,1/28/2020
+Viet Nam,2,,,,,1/28/2020
+Singapore,7,,,,,1/28/2020
+Australia,5,,,,,1/28/2020
+Malaysia,4,,,,,1/28/2020
+Cambodia,1,,,,,1/28/2020
+Thailand,14,,,,,1/28/2020
+Nepal,1,,,,,1/28/2020
+Sri Lanka,1,,,,,1/28/2020
+United States of America,5,,,,,1/28/2020
+Canada,2,,,,,1/28/2020
+France,3,,,,,1/28/2020
+Germany,1,,,,,1/28/2020
+Total,4593,,,,,1/28/2020
+Hong Kong,8,,,,,1/28/2020
+Macau,7,,,,,1/28/2020
+Taiwan,7,,,,,1/28/2020
+China,5974,,,,132,1/29/2020
+Japan,7,,,,,1/29/2020
+Republic of Korea,4,,,,,1/29/2020
+Viet Nam,2,,,,,1/29/2020
+Singapore,7,,,,,1/29/2020
+Australia,7,,,,,1/29/2020
+Malaysia,4,,,,,1/29/2020
+Cambodia,1,,,,,1/29/2020
+Thailand,14,,,,,1/29/2020
+Nepal,1,,,,,1/29/2020
+Sri Lanka,1,,,,,1/29/2020
+United States of America,5,,,,,1/29/2020
+Canada,3,,,,,1/29/2020
+France,4,,,,,1/29/2020
+Germany,4,,,,,1/29/2020
+United Arab Emirates,4,,,,,1/29/2020
+Total,6065,,,,,1/29/2020
+Hong Kong,8,,,,,1/29/2020
+Macau,7,,,,,1/29/2020
+Taiwan,8,,,,,1/29/2020
+China,7711,,,,170,1/30/2020
+Japan,11,,,,,1/30/2020
+Republic of Korea,4,,,,,1/30/2020
+Viet Nam,2,,,,,1/30/2020
+Singapore,10,,,,,1/30/2020
+Australia,7,,,,,1/30/2020
+Malaysia,7,,,,,1/30/2020
+Cambodia,1,,,,,1/30/2020
+Philippines,1,,,,,1/30/2020
+Thailand,14,,,,,1/30/2020
+Nepal,1,,,,,1/30/2020
+Sri Lanka,1,,,,,1/30/2020
+India,1,,,,,1/30/2020
+United States of America,5,,,,,1/30/2020
+Canada,3,,,,,1/30/2020
+France,5,,,,,1/30/2020
+Finland,1,,,,,1/30/2020
+Germany,4,,,,,1/30/2020
+United Arab Emirates,4,,,,,1/30/2020
+Total,7818,,,,,1/30/2020
+Hong Kong,10,,,,,1/30/2020
+Macau,7,,,,,1/30/2020
+Taiwan,8,,,,,1/30/2020
+China,9692,,,,213,1/31/2020
+Hong Kong,12,,,,,1/31/2020
+Macau,7,,,,,1/31/2020
+Taiwan,9,,,,,1/31/2020
+Japan,14,,,,,1/31/2020
+Republic of Korea,11,,,,,1/31/2020
+Viet Nam,5,,,,,1/31/2020
+Singapore,13,,,,,1/31/2020
+Australia,9,,,,,1/31/2020
+Malaysia,8,,,,,1/31/2020
+Cambodia,1,,,,,1/31/2020
+Philippines,1,,,,,1/31/2020
+Thailand,14,,,,,1/31/2020
+Nepal,1,,,,,1/31/2020
+Sri Lanka,1,,,,,1/31/2020
+India,1,,,,,1/31/2020
+United States of America,6,,,,,1/31/2020
+Canada,3,,,,,1/31/2020
+France,6,,,,,1/31/2020
+Finland,1,,,,,1/31/2020
+Germany,5,,,,,1/31/2020
+Italy,2,,,,,1/31/2020
+United Arab Emirates,4,,,,,1/31/2020
+Total,9826,,,,,1/31/2020
+China,11791,,,,259,2/1/2020
+Hong Kong,13,,,,,2/1/2020
+Macau,7,,,,,2/1/2020
+Taiwan,10,,,,,2/1/2020
+Japan,17,,,,,2/1/2020
+Republic of Korea,12,,,,,2/1/2020
+Viet Nam,6,,,,,2/1/2020
+Singapore,16,,,,,2/1/2020
+Australia,12,,,,,2/1/2020
+Malaysia,8,,,,,2/1/2020
+Cambodia,1,,,,,2/1/2020
+Philippines,1,,,,,2/1/2020
+Thailand,19,,,,,2/1/2020
+Nepal,1,,,,,2/1/2020
+Sri Lanka,1,,,,,2/1/2020
+India,1,,,,,2/1/2020
+United States of America,7,,,,,2/1/2020
+Canada,4,,,,,2/1/2020
+France,6,,,,,2/1/2020
+Finland,1,,,,,2/1/2020
+Germany,7,,,,,2/1/2020
+Italy,2,,,,,2/1/2020
+Russian Federation,2,,,,,2/1/2020
+Spain,1,,,,,2/1/2020
+Sweden,1,,,,,2/1/2020
+United Kingdom,2,,,,,2/1/2020
+United Arab Emirates,4,,,,,2/1/2020
+Total,11953,,,,,2/1/2020
+China,14380,,,,304,2/2/2020
+Hong Kong,14,,,,,2/2/2020
+Macau,7,,,,,2/2/2020
+Taiwan,10,,,,,2/2/2020
+Japan,20,,,,,2/2/2020
+Republic of Korea,15,,,,,2/2/2020
+Viet Nam,7,,,,,2/2/2020
+Singapore,18,,,,,2/2/2020
+Australia,12,,,,,2/2/2020
+Malaysia,8,,,,,2/2/2020
+Cambodia,1,,,,,2/2/2020
+Philippines,2,,,,,2/2/2020
+Thailand,19,,,,,2/2/2020
+Nepal,1,,,,,2/2/2020
+Sri Lanka,1,,,,,2/2/2020
+India,2,,,,,2/2/2020
+United States of America,8,,,,,2/2/2020
+Canada,4,,,,,2/2/2020
+France,6,,,,,2/2/2020
+Finland,1,,,,,2/2/2020
+Germany,8,,,,,2/2/2020
+Italy,2,,,,,2/2/2020
+Russian Federation,2,,,,,2/2/2020
+Spain,1,,,,,2/2/2020
+Sweden,1,,,,,2/2/2020
+United Kingdom,2,,,,,2/2/2020
+United Arab Emirates,5,,,,,2/2/2020
+Total,14557,,,,,2/2/2020
+China,17205,,,,361,2/3/2020
+Hong Kong,15,,,,,2/3/2020
+Macau,8,,,,,2/3/2020
+Taiwan,10,,,,,2/3/2020
+Japan,20,17,3,0,0,2/3/2020
+Republic of Korea,15,8,4,3,0,2/3/2020
+Viet Nam,8,6,2,0,0,2/3/2020
+Singapore,18,18,0,0,0,2/3/2020
+Australia,12,12,0,0,0,2/3/2020
+Malaysia,8,7,1,0,0,2/3/2020
+Cambodia,1,1,0,0,0,2/3/2020
+Philippines,2,1,0,1,1,2/3/2020
+Thailand,19,18,1,0,0,2/3/2020
+Nepal,1,1,0,0,0,2/3/2020
+Sri Lanka,1,1,0,0,0,2/3/2020
+India,3,3,0,0,0,2/3/2020
+United States of America,11,8,2,1,0,2/3/2020
+Canada,4,3,0,1,0,2/3/2020
+France,6,5,1,0,0,2/3/2020
+Finland,1,1,0,0,0,2/3/2020
+Germany,10,2,8,0,0,2/3/2020
+Italy,2,2,0,0,0,2/3/2020
+Russian Federation,2,2,0,0,0,2/3/2020
+Spain,1,0,1,0,0,2/3/2020
+Sweden,1,1,0,0,0,2/3/2020
+United Kingdom,2,1,1,0,0,2/3/2020
+United Arab Emirates,5,5,0,0,0,2/3/2020
+Total,17391,123,24,6,362,2/3/2020
