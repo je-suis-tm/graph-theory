@@ -58,4 +58,6 @@ Currently death only occurs in China. The ultimate death toll in China might be 
 
 In general, this is an early stage pessimistic estimation. Please take it with a grain of salt. So far, I have only managed to obtain 11 available data points from WHO. The model on some of the countries (e.g. Australia, France, Japan) do not even converge. In reality, 90% of the models fail miserably. There is no need to panic from the model projection or take comfort in the low mortality. One thing we should learn from the model? Carpe diem.
 
+### Differential Equations
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-sir%20model%20vital%20dynamic.PNG)
