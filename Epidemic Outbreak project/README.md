@@ -4,7 +4,7 @@ Recently there has been an epidemic outbreak in Asia. As a data scientist, I kee
 
 While I was searching for <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>k core</a> graph in my university material, I discovered a module I have never taken called epidemic spreading on complex network. It suddenly struck me that we could apply graph theory to construct an agent-based model. The model would be able to simulate the epidemic outbreak and forecast the potential infected number. That was the least I could contribute. This project started there.
 
-### Gompertz Curve
+### Non-linear Regression
 
 Before moving onto a random graph, I took a naïve approach to predict the final death toll of novel corona virus by <a href=https://en.wikipedia.org/wiki/Gompertz_function>Gompertz curve</a>. The idea was inspired by an <a href=https://wwwnc.cdc.gov/eid/content/10/6/pdfs/v10-n6.pdf>article</a> on U.S. Centre of Disease Control journal (Emerging Infectious Diseases Vol. 10, No. 6, June 2004, Page 1165). The researchers intended to study the effectiveness of intervention measures during SARS pandemic in 2003. They chose <a href=https://en.wikipedia.org/wiki/Generalised_logistic_function>Richard’s curve</a> (which is a generalized logistic model) of different training data horizon to predict the potential result. Thus, the first step of this project was to replicate the similar result for SARS in 2003. Instead of Richard’s curve, the model took Gompertz curve, a special form of generalized logistic model. Gompertz was designed to study the population in a confined space, which makes it also applicable to examine the spread of a disease. Inevitably, there are other special forms of Richard's curve which are still fit for the purpose. <a href= https://en.wikipedia.org/wiki/Weibull_distribution>Weibull</a>,  <a href=http://www.pisces-conservation.com/growthhelp/index.html?janoschek.htm>Janoschek</a>, <a href=http://www.pisces-conservation.com/growthhelp/index.html?morgan_mercer_floden.htm>Morgan-Mercer-Flodin</a>, <a href=https://en.wikipedia.org/wiki/Von_Bertalanffy_function>von Bertalanffy</a>, <a href=https://mro.massey.ac.nz/handle/10179/14618>Levakovic</a>, <a href=https://www.researchgate.net/figure/Characteristics-of-main-models-fitted-with-the-Hossfeld-growth-equation_tbl2_202038062>Hossfeld</a>, <a href=https://www.researchgate.net/publication/225560632_A_derivation_of_the_generalized_Korf_growth_equation_and_its_application>Korf</a>, etc.
 
@@ -58,6 +58,115 @@ Currently death only occurs in China. The ultimate death toll in China might be 
 
 In general, this is an early stage pessimistic estimation. Please take it with a grain of salt. So far, I have only managed to obtain 11 available data points from WHO. The model on some of the countries (e.g. Australia, France, Japan) do not even converge. In reality, 90% of the models fail miserably. There is no need to panic from the model projection or take comfort in the low mortality. One thing we should learn from the model? Carpe diem.
 
-### Differential Equations
+*This chapter is finished on February 1st, 2020. No further updates.*
+
+### Dynamic System
+
+Gompertz curve is a naïve but effective approach. It is comprehensive and it can work with simple data. But the shortcoming of Gompertz curve is that we need to forecast cumulated infected cases and virus-caused death independently. In reality, they should be intertwined to a certain degree. That is when the classic approach of epidemic modelling kicks in, <a href= https://services.math.duke.edu/education/ccp/materials/diffcalc/sir/sir2.html>SIR model</a>. It is the foundation of the modern epidemiology, a dynamic system consisted of three <a href=https://mathinsight.org/ordinary_differential_equation_introduction>ordinary differential equations</a> which represents Susceptible, Infected and Recovered population. It has the capability of mapping out the prevalence and the duration of an epidemic. The flipside of the coin is too many assumptions and conditions attached. 
+
+The model for SARS is quite straight forward. It takes the classic form of SIR model with vital dynamics. As the data is on a daily basis, all rates inside the model are daily rate.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-sir%20model%20vital%20dynamic.PNG)
+
+The susceptible exposure S of any given time t is determined by three factors. The first is the crude birth rate α of all the living population (including the infected ones). It is based upon <a href= https://wwwnc.cdc.gov/eid/content/10/2/pdfs/v10-n2.pdf>a case</a> recorded on U.S. Centre of Disease Control journal (Emerging Infectious Diseases Vol. 10, No. 2, February 2004, Page 345), which the pregnant mother infected with SARS delivered a healthy enfant. Whether it was due to the dedication of the health care workers or the contagion limit of the virus, we assume the virus cannot pass from the infected parents to the next generation. As long as you are not six feet deep under, you can deliver a healthy child, sadly another susceptible person. The second factor is the crude death rate γ of the susceptible exposure S. The cycle of life and death is inevitable even if you don’t get infected with virus. The third factor is the infection rate β. It quantifies the possibility of converting a susceptible individual to an infected patient. The conversion should be proportional to the respective numbers of S and I in the population.
+
+The infected population I of any given time t is what we care the most. Aside from the conversion from S, there are two other factors. One is the grim reaper. The deadly virus could take many lives by fatality rate δ, of course. Even without the virus, the infected population I can still die from a natural cause by crude death rate γ. Let’s assume the hospital noted the distinction between virus-caused death and natural death. The other factor is the recovery rate ε. Patients with good immune system and scientific treatment will recover at the given rate.
+
+The recovered patients R of any given time t involves two parts. Apart from the conversion from I, the recovered patients may die at crude death rate γ. Everybody in our epidemic system regardless of gender and ethnicity is equal to Anubis. In SIR model, the recovered patients R will obtain lifetime immunity from the virus after recovery.  
+
+The last one virus-caused death D is not explicitly stated in the dynamic system. It is impacted by the number of the infected population I and the virus fatality rate δ.
+
+The model we use for SARS is a deterministic model without stochastic features. It has many variations such as SIS (where recovered patients can still get infected due to virus mutation), SEIR (the virus targets at people with certain genes or features). You will find more at <a href=https://institutefordiseasemodeling.github.io/Documentation/general/model-overview.html>Institute for Disease Modelling</a>. There are plenty of literatures on SARS epidemic modelling with more advanced models. They introduce other variables like quarantined patients and super spreaders. You will find them in the further reading section. The choice of SIR comes from the constraint of the data. Data is the new oil, no? There is only so much offered by WHO.
+
+Now that we set up the differential equations in the dynamic system, we should get hands on the modelling. Crude birth rate α  and crude death rate γ are acquired from <a href=http://data.un.org>United Nations Statistics Division. This is one of the best databases and datamarts I have ever seen across all the free data sources. In contrast to WHO, UN deserves some credit for the clean-cut CSV format. Though we need to convert α and γ from annual rate to daily rate before leveraging them. Thus, the unknown parameters are infection rate β, fatality rate δ and recovery rate ε. They will be estimated by non-linear least square method. The cost function is computed via the sum of squared standardized error by <a href=https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method>Nelder-Mead algorithm</a>.
+  
+The perfect fit of in-sample data for Hong Kong and Singapore is splendid. Both recovered patients and virus-caused death have indicated an exponential growth. However, the dynamic system seems to miss the spike of currently infected population before its downfall. Unfortunately, WHO didn’t keep track of recovery data until April 4th, 2003. As usual, we can never get the data dating from the real T0. This is the result of modelling on data from T+N. And the fatality rate δ of both is approximately 2%. The underlying δ implies the probability of the daily death from infected population compared to the final rate of 10% to 20%.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-hong%20kong-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-singapore-in%20sample.png)
+
+The <a href=https://en.wikipedia.org/wiki/Basic_reproduction_number>basic reproduction ratio</a> R0 for Hong Kong and Singapore are 0.5 and 0.7. R0 refers to the expected cases of the next moment when only one infected person occurs in the entire population. R0 larger than 1 is the pre-condition of epidemic. As our simulation begins in the middle stage of the epidemic, no wonder we observe a relatively small R0. The table in wikipedia suggests R0 for SARS should oscillate between 2 to 5. 
+
+The basic reproduction ratio R0 of our model can be derived from the following steps.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-sir%20model%20r0.PNG)
+
+The case of North America is slightly off the track. As mentioned earlier, any change of definition or retraction will lead to a spike or a dip which has an overwhelming impact on the model. The daily fatality rate δ for U.S. is 3%, a bit higher than 2% for Canada. The basic reproduction ratio R0 for both is roughly the same, 0.62.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-canada-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-united%20states-in%20sample.png)
+
+The in-sample data for ASEAN countries are also fantastic. The dynamic system precisely captures S,I and R. Even though D is not in the differential equations, it is still within marginal errors. The daily fatality rates δ for Viet Nam and Malaysia are 4% and 3%. You can argue it is caused by the poor local health infrastructure. R0 is a strange case here. For Viet Nam, it is only 0.25, but it is 0.67 for Malaysia.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-viet%20nam-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-malaysia-in%20sample.png)
+
+The only country we will test for EMEA region is France. As shown in the figure below, the dynamic system works quite well in general. The underlying δ stays at the range from 2% to 3%. It is rather consistent across different countries. The basic reproductive ratio R0 is about 0.56 which is aligned with 0.6 around the globe.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-france-in%20sample.png)
+
+Okay, now comes the real deal, out-of-sample data. The result is quite the same as Gompertz curve. Using only a small percentage of the data is often an overestimation except one country. Anglo-Saxion exceptionalism is something we hear all the time. Nevertheless, Francophonie exceptionalism in epidemic modelling is really astonishing (c'est toujours comme ça:joy: )!
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-hong%20kong-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-singapore-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-canada-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-united%20states-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-viet%20nam-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-malaysia-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-france-out%20of%20sample.png)
+
+Before we move onto the novel corona virus, you may ask me why we don’t see global impact this time. Regrettably, the biggest trouble is to get a pair of initial values for the function to converge. I tried a 10k random number simulation. My machine kept working all night long while I was dozing off. Yet, the result still brought no morning glory to me. If you have found a great choice, be sure to let me know!
+
+The case of novel corona virus has much more issues with data. Considered we are still in the early stage, there are few cases where the patients are fully recovered. I cannot accuse WHO of limited data variety and length. Hence, our SIR model must be simplified into SI model. In SI model, we cannot simulate the recovered patients. This is Hell or High Water. Once you get infected, the only way out is that “one-minute-life-flashback” before you kick the bucket. As unscientific and unethical it sounds, it is the only feasible model at the moment.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-si%20model%20vital%20dynamic.PNG)
+
+The consequence of SI model is also severe. The daily fatality rate δ of novel corona virus is likely to be exaggerated because it is equal to the true value of δ plus the hidden recovery rate ε. Additionally, the susceptible population S is likely to be underestimated because the removal of crude birth rate α on recovered patients R. R0 is theoretically unbiased in spite of all those effects. The increase in δ shall offset the vanish of ε in the denominator.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-si%20model%20r0.PNG)
+
+The overnight jump of clinical diagnosed patients really distorted the whole model (great data quality from China as always). The daily fatality rate δ is only 0.3% even amplified by the hidden recovery rate ε. With that being said, novel corona virus is indeed a gentle killer. Nonetheless, R0 for China is shockingly 63.3!! With that basic reproduction ratio, the mad spread of the disease can easily wipe out more lives than SARS. If you look at the bottom right, the balance state indicates only very few people will stay uninfected in the end. Luckily the death number D also includes the recovered patients R. Otherwise, this is not an epidemic outbreak, it is a bioweapon in racoon city. 
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-china-in%20sample.png)
+
+The data of Hong Kong and Singapore is like quantum entanglement. The underlying δ for both are 0.5% and 0.4% where there is a confirmed death in HK. In that sense, we can assume the daily recovery rate ε for both city states should converge to 0.4%. This is based upon the assumption that no death has occurred in Singapore yet and both city states are homogenous. On the contrary, the underlying ε for SARS ranges from 3% to 10%. As in the early stage, no effective treatment has been found. 0.4% sounds like a reasonable number. The R0 for both are 41 and 57 which seems a bit dramatic. According to Wikipedia, the current estimate of R0 is about 1.4 to 6.6. The prophecy of the crystal ball is that the susceptible population could plunge like freefall in mid-March and infected population could peak in mid-April.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-hong%20kong-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-singapore-in%20sample.png)
+
+In North America, the numbers look more reasonable. The underlying δ is 4% for Canada and 2% for U.S. But the death still hasn’t knocked on their doors. Does it mean the potential daily recovery rate ε is about 3%? R0 for both are 4 and 8 respectively which echoes the result from Wikipedia. The crystal ball is hard to tell. A much smaller R0 still doesn’t protect the majority from the virus. Things could get worse in June and peak in July. The good news is, unlike the previous three countries in Asia, the peak of the infected number I doesn’t converge to the susceptible exposure S. It interprets the death toll D is more likely to be the number of recoveries R. 
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-canada-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-united%20states%20of%20america-in%20sample.png)
+
+ASEAN countries show similar properties as North America. The underlying R0 for Viet Nam and Malaysia are 6 and 7. They fluctuate around the upper bound of Wikipedia forecast. Supposedly this could be the real R0 for novel corona virus. Daily fatality rate δ for both are 2% with no actual casualty. This further confirms our speculation of 3% recovery rate ε.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-vietnam-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-malaysia-in%20sample.png)
+
+The last case is France with δ at 2% and R0 at 4. France always surprises me. The first virus-caused death in Europe speaks a lot about the local health infrastructure.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-corona-france-in%20sample.png)
+
+One of the most prominent features of the projections above is the susceptible population S will fall to very low eventually. This reminds me of the <a href=https://www.bloomberg.com/news/articles/2020-02-13/coronavirus-could-infect-two-thirds-of-globe-researcher-says>article</a> on Feb 13th , 2020. A WHO adviser claimed two-thirds of the world’s population could catch the virus. At first, I laughed it off. I mean, dude, come on? When I finished the dynamic system, I ain’t laughing any more.
+
+There is another common feature among the projections above. All the fitted infection number I overestimate the situation. Is the model being too pessimistic? From our previous study on SARS, we always observe an overestimation in the early stage. Except on novel corona virus, Gompertz curve underestimated all the numbers back on February 1st, 2020. Right now, we should be very cautious with the result. Next thing you know, it may turn to a pandemic outbreak. 
+
+Recently I have been reading a lot of stories about bats, snakes and pangolins from Le Parisien. What did they do to cause the global crisis? Can we blame Uranium-235’s half-life for what happened in Chernobyl?
+
+*This chapter is finished on February 17th, 2020. No further updates.*
+
+### Agent-based Model
+
