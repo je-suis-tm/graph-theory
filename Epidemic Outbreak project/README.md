@@ -58,7 +58,7 @@ Currently death only occurs in China. The ultimate death toll in China might be 
 
 In general, this is an early stage pessimistic estimation. Please take it with a grain of salt. So far, I have only managed to obtain 11 available data points from WHO. The model on some of the countries (e.g. Australia, France, Japan) do not even converge. In reality, 90% of the models fail miserably. There is no need to panic from the model projection or take comfort in the low mortality. One thing we should learn from the model? Carpe diem.
 
-*This chapter is finished on February 1st, 2020. No further updates.*
+###### This chapter is finished on February 1st, 2020. No further updates.
 
 ### Dynamic System
 
@@ -78,7 +78,7 @@ The last one virus-caused death D is not explicitly stated in the dynamic system
 
 The model we use for SARS is a deterministic model without stochastic features. It has many variations such as SIS (where recovered patients can still get infected due to virus mutation), SEIR (the virus targets at people with certain genes or features). You will find more at <a href=https://institutefordiseasemodeling.github.io/Documentation/general/model-overview.html>Institute for Disease Modelling</a>. There are plenty of literatures on SARS epidemic modelling with more advanced models. They introduce other variables like quarantined patients and super spreaders. You will find them in the further reading section. The choice of SIR comes from the constraint of the data. Data is the new oil, no? There is only so much offered by WHO.
 
-Now that we set up the differential equations in the dynamic system, we should get hands on the modelling. Crude birth rate α  and crude death rate γ are acquired from <a href=http://data.un.org>United Nations Statistics Division. This is one of the best databases and datamarts I have ever seen across all the free data sources. In contrast to WHO, UN deserves some credit for the clean-cut CSV format. Though we need to convert α and γ from annual rate to daily rate before leveraging them. Thus, the unknown parameters are infection rate β, fatality rate δ and recovery rate ε. They will be estimated by non-linear least square method. The cost function is computed via the sum of squared standardized error by <a href=https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method>Nelder-Mead algorithm</a>.
+Now that we set up the differential equations in the dynamic system, we should get hands on the modelling. Crude birth rate α  and crude death rate γ are acquired from <a href=http://data.un.org>United Nations Statistics Division</a>. This is one of the best databases and datamarts I have ever seen across all the free data sources. In contrast to WHO, UN deserves some credit for the clean-cut CSV format. Though we need to convert α and γ from annual rate to daily rate before leveraging them. Thus, the unknown parameters are infection rate β, fatality rate δ and recovery rate ε. They will be estimated by non-linear least square method. The cost function is computed via the sum of squared standardized error by <a href=https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method>Nelder-Mead algorithm</a>.
   
 The perfect fit of in-sample data for Hong Kong and Singapore is splendid. Both recovered patients and virus-caused death have indicated an exponential growth. However, the dynamic system seems to miss the spike of currently infected population before its downfall. Unfortunately, WHO didn’t keep track of recovery data until April 4th, 2003. As usual, we can never get the data dating from the real T0. This is the result of modelling on data from T+N. And the fatality rate δ of both is approximately 2%. The underlying δ implies the probability of the daily death from infected population compared to the final rate of 10% to 20%.
 
@@ -166,7 +166,7 @@ There is another common feature among the projections above. All the fitted infe
 
 Recently I have been reading a lot of stories about bats, snakes and pangolins from Le Parisien. What did they do to cause the global crisis? Can we blame Uranium-235’s half-life for what happened in Chernobyl?
 
-*This chapter is finished on February 17th, 2020. No further updates.*
+###### This chapter is finished on February 17th, 2020. No further updates.
 
 ### Agent-based Model
 
