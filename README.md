@@ -1,26 +1,56 @@
-# Graph Algorithms
+# Graph Theory
 
-1. Breath First Search
+## Table of Contents
 
-2. Depth First Search
+<a href=https://github.com/je-suis-tm/graph-theory#1-maze>1. Maze</a>
 
-3. Topological Sort
+<a href=https://github.com/je-suis-tm/graph-theory#2-minimum-spanning-tree>2. Minimum Spanning Tree</a>
 
-4. Dijkstra
+<a href=https://github.com/je-suis-tm/graph-theory#3-shortest-path>3. Shortest Path</a>
 
-5. Prim/Kruskal/Borůvka
+<a href=https://github.com/je-suis-tm/graph-theory#4-water-jug>4. Water Jug</a>
 
-6. A* Search
+<a href=https://github.com/je-suis-tm/graph-theory#5-knights-tour>5. Knight's Tour</a>
 
-7. Bellman Ford
+<a href=https://github.com/je-suis-tm/graph-theory#6-missionaries-and-cannibals>6. Missionaries and Cannibals</a>
 
-8. Bron Kerbosch
+<a href=https://github.com/je-suis-tm/graph-theory#7-forex-arbitrage>7. Forex Arbitrage</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory#8-word-ladder>8. Word Ladder</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory#9-text-mining>9. Text Mining</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory#10-k-core>10. K Core</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory#11-maximal-clique>11. Maximal Clique</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory#12-epidemic-outbreak>12. Epidemic Outbreak</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory#13-portfolio-optimization>13. Portfolio Optimization</a>
+
+## Algorithms
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>1. Breath First Search</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>2. Depth First Search</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>3. Topological Sort</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>4. Dijkstra</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>5. Prim/Kruskal/Borůvka</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>6. A* Search</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>7. Bellman Ford</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>8. Bron Kerbosch</a>
 
 9. Ford Fulkerson
 
 10. Nearest Neighbor
 
-# Graph Problems
+## Graph Problems
 
 ### 1. Maze
 
