@@ -106,6 +106,8 @@ A <a href=https://en.wikipedia.org/wiki/Clique_(graph_theory)>clique</a> is a su
 
 In the classic epidemiology, a <a href=https://en.wikipedia.org/wiki/Dynamical_system>dynamic system</a> composed of three ordinary differential equations which represents Susceptible, Infected and Recovered is a standard approach. However, the homogeneity assumption of the population in the model does not exist in the real world. Each individual’s likelihood of infection is constrained by her/his geolocation and social circle. In an extreme case, an indigenous family living in Amazon rainforest is unlikely to interact with a Jewish family living in Caucasus mountains. Hence, agent-based model with population density and global air traffic incorporated has become Frank Sinatra of epidemiology in the recent decade. Whether it is <a href=https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model>Barabási-Albert</a> following power-law distribution or <a href=https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model>Erdős–Rényi</a> following Poisson distribution, the bonanza of random graph is inevitable.
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-hong%20kong-in%20sample.png)
+
 More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/README.md>link</a>.
 
 ### 13. Portfolio Optimization
