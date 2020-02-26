@@ -1,5 +1,7 @@
 # Graph Theory
 
+&nbsp;
+
 ## Table of Contents
 
 <a href=https://github.com/je-suis-tm/graph-theory#1-maze>1. Maze</a>
@@ -101,6 +103,10 @@ K core, also known as k degenerate, is a subset of the original graph in which a
 A <a href=https://en.wikipedia.org/wiki/Clique_(graph_theory)>clique</a> is a subset of vertices of an undirected graph such that every two distinct vertices in the clique are adjacent. A maximal clique is a clique that cannot be extended by including one more adjacent vertex, meaning it is not a subset of a larger clique. Think of maximal clique as a maximum social group where everybody knows each other. Finding a maximal clique is an <a href=https://en.wikipedia.org/wiki/NP-completeness>NP-complete</a> problem. <a href=https://en.wikipedia.org/wiki/Bron–Kerbosch_algorithm>Bron–Kerbosch algorithm</a> with degeneracy ordering is the most efficient way to find out all maximal cliques. Its time complexity can be optimized to O(3**(n/3)).
 
 ### 12. Epidemic Outbreak
+
+In the classic epidemiology, a <a href=https://en.wikipedia.org/wiki/Dynamical_system>dynamic system</a> composed of three ordinary differential equations which represents Susceptible, Infected and Recovered is a standard approach. However, the homogeneity assumption of the population in the model does not exist in the real world. Each individual’s likelihood of infection is constrained by her/his geolocation and social circle. In an extreme case, an indigenous family living in Amazon rainforest is unlikely to interact with a Jewish family living in Caucasus mountains. Hence, agent-based model with population density and global air traffic incorporated has become Frank Sinatra of epidemiology in the recent decade. Whether it is <a href=https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model>Barabási-Albert</a> following power-law distribution or <a href=https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model>Erdős–Rényi</a> following Poisson distribution, the bonanza of random graph is inevitable.
+
+More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/README.md>link</a>.
 
 ### 13. Portfolio Optimization
 
