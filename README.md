@@ -30,6 +30,8 @@
 
 <a href=https://github.com/je-suis-tm/graph-theory#13-portfolio-optimization>13. Portfolio Optimization</a>
 
+&nbsp;
+
 ## Algorithms
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>1. Breath First Search</a>
@@ -51,6 +53,8 @@
 9. Ford Fulkerson
 
 10. Nearest Neighbor
+
+&nbsp;
 
 ## Graph Problems
 
@@ -114,5 +118,5 @@ More details can be found at the following <a href=https://github.com/je-suis-tm
 
 &nbsp;
 
-*Note that I mainly use Jupyter in this repo for the purpose of graph ADT visualization. However, ipynb takes longer to load compared to py files. That is why I also include a py version with graph ADT and all related algorithms for your reference.*
+*For the purpose of the visualization of graph ADT, most scripts in this repository are Jupyter Notebook. Nevertheless, rendered ipynb files take longer time to load compared to py files. That is why I also include a py version with graph ADT and all related algorithms for your reference.*
 
