@@ -178,4 +178,8 @@ Recently Amid the current outbreak, I have been reading a lot of stories about b
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-sir%20model%20vital%20dynamics.PNG)
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-sir%20model%20r0.PNG)
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-si%20model%20vital%20dynamics.PNG)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-si%20model%20r0.PNG)
