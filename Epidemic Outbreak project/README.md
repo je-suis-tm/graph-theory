@@ -1,5 +1,17 @@
 # Epidemic Outbreak
 
+### Table of Contents
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#intro>Intro</a>
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#non-linear-regression>Non-linear Regression</a>
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#dynamic-system>Dynamic System</a>
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#agent-based-model>Agent-based Model</a>
+
+### Intro
+
 Recently there has been an epidemic outbreak in Asia. As a data scientist, I keep wondering why it is so difficult to develop a new vaccine and contain the virus. Challenges on Kaggle such as identifying rare animal species are beneficial for both participants and scientific research organizations behind them. Those big pharmaceutical companies may be able to break down big problems into small chunks and outsource to the data science crowd for free. We, data scientists not Messiah, cannot rescue Koala from Australian bushfire or identify the potential Ebola infected in West Africa. And the data, the asset we value the most, leaves a heavy carbon footprint on the planet (because of the server). Yet, crunching number to help the humanity is the least if not the only we can offer. Most of us just pour all our resources to beat S&P500 by several decimals or improve facial recognition on the zminority. Where is the overhyped AI now?
 
 While I was searching for <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>k core</a> graph in my university material, I discovered a module I have never taken called epidemic spreading on complex network. It suddenly struck me that we could apply graph theory to construct an agent-based model. The model would be able to simulate the epidemic outbreak and forecast the potential infected number. That was the least I could contribute to this shitstorm caused by mankind. This project started there.
@@ -184,11 +196,11 @@ Recently Amid the current outbreak, I have been reading a lot of stories about b
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-poisson-pgf%20derivatives.PNG)
 
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-mean%20degree.PNG)
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-pgf.PNG)
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-pgf%20derivatives.PNG)
 
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-pgf.PNG)
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-mean%20degree.PNG)
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-hong%20kong-poisson-in%20sample.png)
 
