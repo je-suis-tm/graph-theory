@@ -180,6 +180,72 @@ Recently Amid the current outbreak, I have been reading a lot of stories about b
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-sir%20model%20r0.PNG)
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-poisson-pgf.PNG)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-poisson-pgf%20derivatives.PNG)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-mean%20degree.PNG)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-pgf%20derivatives.PNG)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-powerlaw-pgf.PNG)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-hong%20kong-poisson-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-hong%20kong-powerlaw-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-singapore-poisson-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-singapore-powerlaw-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-canada-poisson-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-canada-powerlaw-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-united%20states-poisson-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-united%20states-powerlaw-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-viet%20nam-poisson-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-viet%20nam-powerlaw-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-malaysia-poisson-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-malaysia-powerlaw-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-france-poisson-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-france-powerlaw-in%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-hong%20kong-poisson-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-hong%20kong-powerlaw-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-canada-poisson-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-canada-powerlaw-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-united%20states-poisson-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-united%20states-powerlaw-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-viet%20nam-poisson-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-viet%20nam-powerlaw-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-malaysia-poisson-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-malaysia-powerlaw-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-france-poisson-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-france-powerlaw-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-singapore-poisson-out%20of%20sample.png)
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-singapore-powerlaw-out%20of%20sample.png)
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-si%20model%20vital%20dynamics.PNG)
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-si%20model%20r0.PNG)
