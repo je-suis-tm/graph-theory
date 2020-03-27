@@ -1,5 +1,7 @@
 # Epidemic Outbreak
 
+&nbsp;
+
 ### Table of Contents
 
 * <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#intro>Intro</a>
@@ -10,6 +12,8 @@
 
 * <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#agent-based-model>Agent-based Model</a>
 
+&nbsp;
+
 ### Intro
 
 Recently there has been an epidemic outbreak in Asia. As a data scientist, I keep wondering why it is so difficult to develop a new vaccine and contain the virus. Challenges on Kaggle such as identifying rare animal species are beneficial for both participants and scientific research organizations behind them. Those big pharmaceutical companies may be able to break down big problems into small chunks and outsource to the data science crowd for free. We, data scientists not Messiah, cannot rescue Koala from Australian bushfire or identify the potential Ebola infected in West Africa. And the data, the asset we value the most, leaves a heavy carbon footprint on the planet (because of the server). Yet, crunching number to help the humanity is the least if not the only we can offer. Most of us just pour all our resources to beat S&P500 by several decimals or improve facial recognition on the zminority. Where is the overhyped AI now?
@@ -19,6 +23,8 @@ While I was searching for <a href=https://github.com/je-suis-tm/graph-theory/blo
 ###### The simulation of epidemic network is created via <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/gillespie%20algorithm.ipynb>Gillespie Algorithm</a>.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/gillespie.gif)
+
+&nbsp;
 
 ### Non-linear Regression
 
@@ -75,6 +81,8 @@ Currently death only occurs in China. The ultimate death toll in China might be 
 In general, this is an early stage pessimistic estimation. Please take it with a grain of salt. So far, I have only managed to obtain 11 available data points from WHO. The model on some of the countries (e.g. Australia, France, Japan) do not even converge. In reality, 90% of the models fail miserably. There is no need to panic from the model projection or take comfort in the low mortality. One thing we should learn from the model. Carpe diem.
 
 ###### This chapter is finished on February 1st, 2020. No further updates.
+
+&nbsp;
 
 ### Dynamic System
 
@@ -186,7 +194,11 @@ Recently Amid the current outbreak, I have been reading a lot of stories about b
 
 ###### This chapter is finished on February 18th, 2020. No further updates.
 
+&nbsp;
+
 ### Agent-based Model
+
+&nbsp;
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-sir%20model%20vital%20dynamics.PNG)
 
