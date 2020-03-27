@@ -1,7 +1,7 @@
 # Epidemic Outbreak
 
 &nbsp;
-
+*********************************
 ### Table of Contents
 
 * <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#intro>Intro</a>
@@ -11,7 +11,7 @@
 * <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#dynamic-system>Dynamic System</a>
 
 * <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#agent-based-model>Agent-based Model</a>
-
+*********************************
 &nbsp;
 
 ### Intro
