@@ -198,9 +198,30 @@ Recently Amid the current outbreak, I have been reading a lot of stories about b
 
 ### Agent-based Model
 
-&nbsp;
+Dynamic system is a very powerful tool. It was developed almost a hundred years ago, and today it still remains popular among epidemiologists. Nevertheless, dynamic system requires a homogeneity assumption of the population. Each individual in the system is regarded as equal and interchangeable, implying that any two individuals can interact with each other with the same probability. In the real world, each individual’s likelihood of infection is constrained by her/his geolocation and social circle. In an extreme case, an indigenous family living in Amazon rainforest is unlikely to interact with a Jewish family living in Caucasus mountains. Hence, the papers on influenza and tuberculosis have a new contestant for the last two decades, graph theory. 
+
+Amid the sharp rise of the computing power, we are able to leverage the agent-based model to keep surveillance on each individual. As big-brother as it sounds, the governments across the world have implemented much more extreme measures to combat the novel corona virus. Our cellular GPS signals, credit card bills and other personal information are used to construct agent-based models. If they keep depriving us of our personal freedom after the virus, we will soon live in an Orwellian dystopian world.
+
+> For someone like me, for whom freedom of movement was a hard-fought right, such restrictions can only be justified by their absolute necessity. <br><br>
+> --- Angela Merkel, Chancellor of Germany
+
+Despite the long history of graph theory (Euler developed it in the 18th century), its application on epidemic dynamic is a piece of cutting-edge technology. Much work still needs to be done. The model we are going to use is called edge-based compartmental model which was introduced by Joe C. Miller in 2017, less than 3 years ago. You may call it the academic frontier. As exciting as it sounds, the flipside of it is many errors and flaws of the model haven’t been explored properly. It will possibly stay this way for another decade.
+
+There are plenty of existing available models to simulate the epidemic process. Our selection criteria of the model are simple, time complexity. Agent-based model requires fewer assumptions than dynamic system, but it comes with a price. As both data and model complexity increase, inevitably the time complexity shoots through the roof. Unless you are in a research facility with super computers, any model you run is likely to consume a lot of your Friday booze nights. Mark Newman has introduced pair approximation and degree-based approximation in the textbook of graph theory. Sadly for SIR model, pair approximation requires 3/2*K^2 + 3/2*K + 1 equations in the system, where K is the total number of distinct degrees. Degree-based approximation 2*(M+1)^2 equations in the system, where M is the maximum degree. In comparison, edge-based compartmental model only requires 2 equations for SIR model. In our system of SARS, we only need an extra one for the virus-caused death.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-sir%20model%20vital%20dynamics.PNG)
+
+The key variable in the system is θ. Let’s select a vertex randomly from the graph structure. θ is the probability that a random neighbor of our selected vertex has not transmitted disease yet. θ can break down into 4 different parts ϕS, ϕI, ϕR and ϕD. They all denote the probability that a random neighbor of our selected vertex has not transmitted disease yet even though the neighbor is in a given state. For instance, ϕS denotes the probability that a random neighbor of our selected vertex has not transmitted disease yet while the neighbor is still susceptible.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-sir%20model%20derivation.PNG)
+
+It is quite intuitive that the change of θ is determined by the infection. None of the susceptible, the dead or the recovered can transmit the disease. We can see that dθ/dt decays at the infection rate β with proportion to ϕI. Yet there is no explicit way to compute ϕI. We intent to replace ϕI with θ-ϕS-ϕR-ϕD. 
+
+ϕS composes of two elements, the probability of a vertex with degree k and the probability of a vertex is susceptible. The probability of a vertex with degree k equals to the probability of degree k at any particular vertex times the total fraction of vertices with degree k. The probability of a vertex is susceptible can be considered as all the neighbors of this vertex haven’t transmitted the disease, which is equivalent to θ^k. Remember that ϕS is actually a probability of a randomly selected neighbor. One of the neighbors of the selected neighbor is the initially selected vertex. So we use θ^(k-1) instead. With some transformation, we can convert the computation of ϕS to the expression of the first derivative of probability generating function.
+
+The derivation of ϕR is slightly trickier. We should see that dϕR/dt decays at the recovery rate ε with proportion to ϕI because infection is the only thing has impact on the recovery. As previously stated that dθ/dt decays at the infection rate β with proportion to ϕI, d(1-θ)/dt is supposed to be the same except for the change of the direction. Now we have dϕR/d(1-θ) changes at the ratio of ε/β. Next, we expand the definition of the differentials. Initially θ and ϕS are approximately 1 and the rest of them are closer to 0 since only a tiny part of the population is infected at the beginning of a disease. After some substitutions in the algebra, we obtain the expression of ϕR. We can obtain the expression of ϕD by the same methodology as well.
+
+Now that we have derived the expression of θ, let’s get back to the original system. Unlike the previous compartmental model, we do not need the differential equation for the susceptible exposure S. The underlying S consists of two components, the total population N and the probability generating function of the configuration model ψ(θ). As for the infected population I, we cannot have an explicit equation for it. It can only be calculated via other known variables, N-S-R-D. The recovered patients R, the virus-caused death D and the overall population are aligned with the previous compartmental model.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-sars-sir%20model%20r0.PNG)
 
@@ -245,3 +266,5 @@ Recently Amid the current outbreak, I have been reading a lot of stories about b
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-si%20model%20vital%20dynamics.PNG)
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-si%20model%20r0.PNG)
+
+Andrà tutto bene.
