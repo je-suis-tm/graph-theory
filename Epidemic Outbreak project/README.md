@@ -134,7 +134,7 @@ The only country we test for EMEA region is France. As shown in the figure below
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-france-in%20sample.png)
 
-Okay, now comes the real deal, out-of-sample data. The result is quite the same as Gompertz curve. Using only a small percentage of the data is often an overestimation except for one country. Anglo-Saxion exceptionalism is something we hear all the time. Nevertheless, Francophonie exceptionalism in epidemic modelling is really astonishing (c'est toujours comme ça:joy: )!
+Okay, now comes the real deal, out-of-sample data. The result is quite the same as Gompertz curve. Using only a small percentage of the data is often an overestimation except for one country. Anglo-Saxion exceptionalism is something we hear all the time. Nevertheless, Francophonie exceptionalism in epidemic modelling is really astonishing!
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/differential-sars-hong%20kong-out%20of%20sample.png)
 
@@ -190,7 +190,7 @@ One of the most prominent features of the projections above is the susceptible p
 
 There is another common feature among the projections predictions above. All the fitted infection number I overestimate the situation. Is the model being too pessimistic? From our previous study on SARS, we always observe an overestimation in the early stageof 30% or 40% training data. Except on novel corona virus, Gompertz curve done on February 1st, 2020 underestimated all the numbers back on February 1st, 2020. Right now, we should be very cautious with the result. Next thing you know, it this shitstorm may turn to a pandemic outbreak.
 
-Recently Amid the current outbreak, I have been reading a lot of stories about bats, snakes and pangolins from Le Parisien. What did they do to cause the global crisis? Can we blame Uranium-235’s half-life for what happened in Chernobyl?
+Recently I have been reading a lot of stories about bats, snakes and pangolins from Le Parisien. What did they do to cause the global crisis? Can we blame Uranium-235’s half-life for what happened in Chernobyl?
 
 ###### This chapter is finished on February 18th, 2020. No further updates.
 
@@ -376,4 +376,6 @@ Andrà tutto bene.
 
 ###### This chapter is finished on April 5th, 2020. No further updates.
 
-By the time I finished this piece of article, Kaggle has launched <a href=https://www.kaggle.com/covid19>corona virus challenge</a>. Since you have read this far, you must be really interested in data science (the math in graph theory could put off many readers), why not take up the challenge? I am no fan of Greta Thunberg and her flygskam but she is right. It’s time for a radical change, even for data scientists. The world doesn’t need more facial recognition or gait analysis experts. The world needs more physicists, geologists, meteorologists, epidemiologists, etc. And you can be one of them!
+&nbsp;
+
+*By the time I finished this piece of article, Kaggle has launched <a href=https://www.kaggle.com/covid19>corona virus challenge</a>. Since you have read this far, you must be really interested in data science (the math in graph theory could put off many readers), why not take up the challenge? I am no fan of Greta Thunberg and her flygskam but she is right. It’s time for a radical change, even for data scientists. The world doesn’t need more facial recognition or gait analysis experts. The world needs more physicists, geologists, meteorologists, epidemiologists, etc. And you can be one of them!*
