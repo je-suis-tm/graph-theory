@@ -11,6 +11,8 @@
 * <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#dynamic-system>Dynamic System</a>
 
 * <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#agent-based-model>Agent-based Model</a>
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Epidemic%20Outbreak%20project#further-reading>Further Reading</a>
 ------------------------------------------------
 &nbsp;
 
@@ -200,7 +202,7 @@ Recently I have been reading a lot of stories about bats, snakes and pangolins f
 
 Dynamic system is a very powerful tool. It was developed almost a hundred years ago, and today it still remains popular among epidemiologists. Nevertheless, dynamic system requires a homogeneity assumption of the population. Each individual in the system is regarded as equal and interchangeable, implying that any two individuals can interact with each other with the same probability. In the real world, each individual’s likelihood of infection is constrained by her/his geolocation and social circle. In an extreme case, an indigenous family living in Amazon rainforest is unlikely to interact with a Jewish family living in Caucasus mountains. Hence, the papers on influenza and tuberculosis have a new contestant for the last two decades, graph theory. 
 
-Amid the sharp rise of the computing power, we are able to leverage the agent-based model to keep surveillance on each individual. As big-brother as it sounds, the governments across the world have deployed much more extreme measures to combat the novel corona virus. Our cellular GPS signals, credit card bills and other personal information are used to construct agent-based models. If they keep depriving us of our personal freedom after the virus, we will soon live in an Orwellian dystopian world.
+Amid the sharp rise of the computing power, we are able to leverage the agent-based model to keep surveillance on each individual. As big-brother as it sounds, the governments across the world have deployed draconian measures to combat the novel corona virus. Our cellular GPS signals, credit card bills and other personal information are used to construct agent-based models. If they keep depriving us of our personal freedom after the virus, we will soon live in an Orwellian dystopian world.
 
 > For someone like me, for whom freedom of movement was a hard-fought right, such restrictions can only be justified by their absolute necessity. <br><br>
 > --- Angela Merkel, Chancellor of Germany
@@ -360,7 +362,7 @@ China, the origin of the virus, has reverted to normal. The infection curve seem
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-kr.png)
 
-Australia and New Zealand, two countries in Oceania cannot escape the virus despite their remote location. Their fatality rates are relatively low, 0.08% and 0.02%. Their underlying R null from Poisson distribution are 62.9 and 104.2. Their underlying R null from power law distribution are 1.9 and 2.9. I cannot tell if Australia is getting things under control but New Zealand is absolutely at the brink of it.
+Australia and New Zealand, two countries in Oceania cannot escape the virus despite their remote location. Their fatality rates are relatively low, 0.08% and 0.02%. Their underlying R null from Poisson distribution are 62.9 and 104.2. Their underlying R null from power law distribution are 1.9 and 2.9. I cannot tell if Australia is getting things under control but New Zealand is absolutely on the brink of it.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/graph-corona-au.png)
 
@@ -378,4 +380,48 @@ Andrà tutto bene.
 
 &nbsp;
 
-*By the time I finished this piece of article, Kaggle has launched <a href=https://www.kaggle.com/covid19>corona virus challenge</a>. Since you have read this far, you must be really interested in data science (the math in graph theory could put off many readers), why not take up the challenge? I am no fan of Greta Thunberg and her flygskam but she is right. It’s time for a radical change, even for data scientists. The world doesn’t need more facial recognition or gait analysis experts. The world needs more physicists, geologists, meteorologists, epidemiologists, etc. And you can be one of them!*
+By the time I finished this piece of article, Kaggle has launched <a href=https://www.kaggle.com/covid19>corona virus challenge</a>. Since you have read this far, you must be really interested in data science (the math in graph theory could put off many readers), why not take up the challenge? I am no fan of Greta Thunberg and her flygskam but she is right. It’s time for a radical change, even for data scientists. The world doesn’t need more facial recognition or gait analysis experts. The world needs more physicists, geologists, meteorologists, epidemiologists, etc. And you can be one of them!
+
+&nbsp;
+
+### Further Reading
+
+1. Barabási A (2014) <a href=https://barabasi.com/f/622.pdf>The Barabási-Albert Model</a>
+
+*This material is published by Albert-László Barabási. What could be better than learning from the maître himself?*
+
+2. Chinazzi M, Davis JT, Ajelli M, Gioannini C, Litvinova M, et al. (2020) <a href=https://science.sciencemag.org/content/early/2020/03/05/science.aba9757>The Effect Of Travel Restrictions On The Spread Of The 2019 Novel Coronavirus (COVID-19) Outbreak</a>
+
+*This paper evaluated the impact of city lockdown to combat COVID-19 via global epidemic and mobility model. The methodology of global epidemic and mobility model is <a href=http://www.gleamviz.org/model>here</a>.*
+
+3. Dunbar R (1993) <a href=https://www.researchgate.net/publication/245683083_Coevolution_of_neocortical_size_group_size_and_language_in_humans>Coevolution Of Neocortical Size, Group Size And Language In Humans</a>
+
+*This paper studied the causal relationship between social grooming time and social group size. It compared the neocortex ratio of baboons, chimpanzees, gorillas with homo sapiens to estimate the maximum friendships a human can maintain.*
+
+4. Ferguson NM, Laydon D, Nedjati-Gilani G, Imai N, Ainslie K, et al. (2020) <a href=https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf>Impact Of Non-pharmaceutical Interventions (NPIs) To Reduce Covid-19 Mortality And Healthcare Demand</a>
+
+*This paper convinced UK government to drop the notorious idea of herd immunity. The methodology is in <a href=https://www.ncbi.nlm.nih.gov/pubmed/15033640>Containing Pandemic Influenza with Antiviral Agents</a>.*
+
+5. Gardner L (2020) <a href=https://systems.jhu.edu/research/public-health/ncov-model-2/>Modeling The Spreading Risk Of 2019-ncov</a>
+
+*This paper used global air traffic data to construct a meta population model to predict the next epicenter. The methodology is in <a href=https://www.researchgate.net/publication/327639829_A_decision-support_framework_to_optimize_border_control_for_global_outbreak_mitigation>A decision-support framework to optimize border control for global outbreak mitigation</a>.*
+
+6. McCarty C, Kilworth PD, Bernard HR, Johnsen EC, A.Shelly G (2001) <a href=https://www.researchgate.net/publication/244456204_Comparing_Two_Methods_for_Estimating_Network_Size>Comparing Two Methods For Estimating Network Size</a>
+
+*This paper collected telephone survey data and compared the response with US census. It used a scale-up method in statistics to estimate the number of contacts of survey respondents in specific subpopulation and particular relation categories.*
+
+7. Miller JC, Kiss IZ (2014) <a href=https://scholar.harvard.edu/files/joelmiller/files/equivalent_models.pdf>Epidemic Spread In Networks: Existing Methods And Current Challenges</a>
+
+*This paper summarized strength and shortcomings of each existing methodology to simulate epidemic dynamic. The motivation of using edge-based compartmental model originated from this paper.*
+
+8. Miller JC, Slim AC, Volz EM (2017) <a href=https://www.researchgate.net/publication/51696694_Edge-Based_Compartmental_Modeling_for_Infectious_Disease_Spread_Part_I_An_Overview>Edge-based Compartmental Modeling For Epidemic Spread Part I</a>
+
+*This paper made an introduction of edge-based compartmental model. Part II and part III illustrated a more generalized model on both static and dynamic networks.*
+
+9. Mossong J, Hens N, Jit M, Beutels P, Auranen K, et al. (2007) <a href=https://www.researchgate.net/publication/282236238_Social_contact_and_mixing_patterns_relevant_to_the_spread_of_infectious_diseases_a_multi-country_population-based_survey>Social Contacts And Mixing Patterns Relevant To The Spread Of Infectious Diseases</a>
+
+*This paper conducted a survey in 8 different member states inside EU to find the daily contact number per capita. It is widely cited in epidemiology papers.*
+
+10. Newman M (2018) <a href=https://www.amazon.com/Networks-Mark-Newman/dp/0198805098>Networks</a>
+
+*This is the graph theory textbook read by math graduates around the world. You can find pairwise and degree-based epidemic modelling in chapter 16.*
