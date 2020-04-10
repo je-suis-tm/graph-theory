@@ -395,56 +395,56 @@ By the time I finished this piece of article, Kaggle has launched <a href=https:
 
 1. Barabási A (2014) <a href=https://barabasi.com/f/622.pdf>The Barabási-Albert Model</a>
 
-	*This material was published by Albert-László Barabási. What could be better than learning from the maître himself?	*
+	*This material was published by Albert-László Barabási. What could be better than learning from the maître himself?*
 
 2. Chinazzi M, Davis JT, Ajelli M, Gioannini C, Litvinova M, et al. (2020) <a href=https://science.sciencemag.org/content/early/2020/03/05/science.aba9757>The Effect Of Travel Restrictions On The Spread Of The 2019 Novel Coronavirus (COVID-19) Outbreak</a>
 
-	*This paper evaluated the impact of city lockdown to combat COVID-19 via global epidemic and mobility model. The methodology of global epidemic and mobility model is <a href=http://www.gleamviz.org/model>here</a>.	*
+	*This paper evaluated the impact of city lockdown to combat COVID-19 via global epidemic and mobility model. The methodology of global epidemic and mobility model is <a href=http://www.gleamviz.org/model>here</a>.*
 
 3. Dunbar R (1993) <a href=https://www.researchgate.net/publication/245683083_Coevolution_of_neocortical_size_group_size_and_language_in_humans>Coevolution Of Neocortical Size, Group Size And Language In Humans</a>
 
-	*This paper studied the causal relationship between social grooming time and social group size. It compared the neocortex ratio of baboons, chimpanzees, gorillas with homo sapiens to estimate the maximum friendships a human can maintain.	*
+	*This paper studied the causal relationship between social grooming time and social group size. It compared the neocortex ratio of baboons, chimpanzees, gorillas with homo sapiens to estimate the maximum friendships a human can maintain.*
 
 4. Ferguson NM, Laydon D, Nedjati-Gilani G, Imai N, Ainslie K, et al. (2020) <a href=https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf>Impact Of Non-pharmaceutical Interventions (NPIs) To Reduce Covid-19 Mortality And Healthcare Demand</a>
 
-	*This paper convinced UK government to drop the notorious idea of herd immunity. The methodology is in <a href=https://www.ncbi.nlm.nih.gov/pubmed/15033640>Containing Pandemic Influenza with Antiviral Agents</a>.	*
+	*This paper convinced UK government to drop the notorious idea of herd immunity. The methodology is in <a href=https://www.ncbi.nlm.nih.gov/pubmed/15033640>Containing Pandemic Influenza with Antiviral Agents</a>.*
 
 5. Gardner L (2020) <a href=https://systems.jhu.edu/research/public-health/ncov-model-2/>Modeling The Spreading Risk Of 2019-ncov</a>
 
-	*This paper used global air traffic data to construct a meta population model to predict the next epicenter. The methodology is in <a href=https://www.researchgate.net/publication/327639829_A_decision-support_framework_to_optimize_border_control_for_global_outbreak_mitigation>A decision-support framework to optimize border control for global outbreak mitigation</a>.	*
+	*This paper used global air traffic data to construct a meta population model to predict the next epicenter. The methodology is in <a href=https://www.researchgate.net/publication/327639829_A_decision-support_framework_to_optimize_border_control_for_global_outbreak_mitigation>A decision-support framework to optimize border control for global outbreak mitigation</a>.*
 
 6. Lipsitch M, Cohen T, Robins BCJM, Ma S, James L, et al. (2003) <a href=https://science.sciencemag.org/content/300/5627/1966.long>Transmission Dynamics And Control Of Severe Acute Respiratory Syndrome</a>
 
-	*This paper incorporated latent, quarantined and isolated into SEIR model. It used 9 differential equations to estimate the infectiousness of SARS.	*
+	*This paper incorporated latent, quarantined and isolated into SEIR model. It used 9 differential equations to estimate the infectiousness of SARS.*
 
 7. McCarty C, Kilworth PD, Bernard HR, Johnsen EC, A.Shelly G (2001) <a href=https://www.researchgate.net/publication/244456204_Comparing_Two_Methods_for_Estimating_Network_Size>Comparing Two Methods For Estimating Network Size</a>
 
-	*This paper collected telephone survey data and compared the response with US census. It used a scale-up method in statistics to estimate the number of contacts of survey respondents in specific subpopulation and particular relation categories.	*
+	*This paper collected telephone survey data and compared the response with US census. It used a scale-up method in statistics to estimate the number of contacts of survey respondents in specific subpopulation and particular relation categories.*
 
 8. Miller JC, Kiss IZ (2014) <a href=https://scholar.harvard.edu/files/joelmiller/files/equivalent_models.pdf>Epidemic Spread In Networks: Existing Methods And Current Challenges</a>
 
-	*This paper summarized strength and shortcomings of each existing methodology to simulate epidemic dynamic. The motivation of using edge-based compartmental model originated from this paper.	*
+	*This paper summarized strength and shortcomings of each existing methodology to simulate epidemic dynamic. The motivation of using edge-based compartmental model originated from this paper.*
 
 9. Miller JC, Slim AC, Volz EM (2017) <a href=https://www.researchgate.net/publication/51696694_Edge-Based_Compartmental_Modeling_for_Infectious_Disease_Spread_Part_I_An_Overview>Edge-based Compartmental Modeling For Epidemic Spread Part I</a>
 
-	*This paper made an introduction of edge-based compartmental model. Part II and part III illustrated a more generalized model on both static and dynamic networks.	*
+	*This paper made an introduction of edge-based compartmental model. Part II and part III illustrated a more generalized model on both static and dynamic networks.*
 
 10. Mossong J, Hens N, Jit M, Beutels P, Auranen K, et al. (2007) <a href=https://www.researchgate.net/publication/282236238_Social_contact_and_mixing_patterns_relevant_to_the_spread_of_infectious_diseases_a_multi-country_population-based_survey>Social Contacts And Mixing Patterns Relevant To The Spread Of Infectious Diseases</a>
 
-	*This paper conducted a survey in 8 different member states inside EU to find the daily contact number per capita. It is widely cited in epidemiology papers.	*
+	*This paper conducted a survey in 8 different member states inside EU to find the daily contact number per capita. It is widely cited in epidemiology papers.*
 
 11. Newman M (2018) <a href=https://www.amazon.com/Networks-Mark-Newman/dp/0198805098>Networks</a>
 
-	*This is the graph theory textbook read by math graduates around the world. You can find pairwise and degree-based epidemic modelling in chapter 16.	*
+	*This is the graph theory textbook read by math graduates around the world. You can find pairwise and degree-based epidemic modelling in chapter 16.*
 
 12. Riley S, Fraser C, Donnelly CA, Ghani AC, Abu-Raddad LJ, et al. (2003) <a href=https://science.sciencemag.org/content/300/5627/1961>Transmission Dynamics Of The Etiological Agent Of SARS In Hong Kong: Impact Of Public Health Interventions</a>
 
-	*This paper attempted to estimate the basic reproduction ratio of SARS via a transmission model. The model took the form of SIR with latent, hospitalized and dead as bonus.	*
+	*This paper attempted to estimate the basic reproduction ratio of SARS via a transmission model. The model took the form of SIR with latent, hospitalized and dead as bonus.*
 
 13. Tjørve KMC, Tjørve E (2017) <a href=https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178691>The Use Of Gompertz Models In Growth Analyses, And New Gompertz-model Approach: An Addition To The Unified-Richards Family</a>
 
-	*This paper made introduction to various forms of Gompertz models. It also proposed a unified version of Gompertz model to study organismal growth.	*
+	*This paper made introduction to various forms of Gompertz models. It also proposed a unified version of Gompertz model to study organismal growth.*
 
 14. Zhou G, Yan G (2003) <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3034341>Severe Acute Respiratory Syndrome Epidemic In Asia</a>
 
-	*This paper assessed the effectiveness of intervention measures during SARS pandemic via Richard's curve. The authors stated predicting epidemic dynamics on the basis of data from early could have led to untenable conclusions.	*
+	*This paper assessed the effectiveness of intervention measures during SARS pandemic via Richard's curve. The authors stated predicting epidemic dynamics on the basis of data from early could have led to untenable conclusions.*
