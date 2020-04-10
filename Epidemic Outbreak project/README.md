@@ -441,7 +441,7 @@ By the time I finished this piece of article, Kaggle has launched <a href=https:
 
 	*This paper attempted to estimate the basic reproduction ratio of SARS via a transmission model. The model took the form of SIR with latent, hospitalized and dead as bonus.*
 
-13. Tjørve KMC, Tjørve E (2017) <a href=https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178691>The Use Of Gompertz Models In Growth Analyses, And New Gompertz-model Approach: An Addition To The Unified-Richards Family</a>
+13. Tjørve KMC, Tjørve E (2017) <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5459448>The Use Of Gompertz Models In Growth Analyses, And New Gompertz-model Approach: An Addition To The Unified-Richards Family</a>
 
 	*This paper made introduction to various forms of Gompertz models. It also proposed a unified version of Gompertz model to study organismal growth.*
 
