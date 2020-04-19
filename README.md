@@ -50,10 +50,6 @@
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>8. Bron Kerbosch</a>
 
-9. Ford Fulkerson
-
-10. Nearest Neighbor
-
 &nbsp;
 
 ## Graph Problems
