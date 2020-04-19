@@ -1,5 +1,21 @@
 # Text Mining
 
+&nbsp;
+-----------------------------------------
+### Table of Contents
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Text%20Mining%20project#intro>Intro</a>
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Text%20Mining%20project#supervised-learning>Supervised Learning</a>
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Text%20Mining%20project#unsupervised-learning>Unsupervised Learning</a>
+
+* <a href=https://github.com/je-suis-tm/graph-theory/tree/master/Text%20Mining%20project#graph-theory>Graph Theory</a>
+------------------------------------------------
+&nbsp;
+
+### Intro
+
 > Is machine learning the best solution to text mining?<br>What if graph theory beats it in both time and space complexity?
 
 The answer is obvious, absolutely not. When the spotlight shines on machine learning, graph theory is rarely mentioned. First, let's talk about what this project is and later you would realize why sometimes graph theory works better. In this case, graph theory outperforms machine learning in both time and space complexity.
@@ -26,7 +42,7 @@ That is not the dead end. Alternatively, we can do an unsupervised learning. How
 
 Yet, there is another problem, how can we compare word 'walking' with word 'walked'? Well, in that sense, we need <a href=https://en.wikipedia.org/wiki/Stemming>stemming</a> and <a href=https://en.wikipedia.org/wiki/Lemmatisation>lemmatization</a>. Stemming is to revert a word back to its root. Currently `NLTK` is the most popular NLP package. The famous Porter stemmer is not very effective, as it's a rule-based stemmer. English, unlike its neighbor language Français, has messy vocabulary rules. Because many phrases are stolen from other foreign languages. Keeping a dictionary-based stemmer would require a lot of space. Hence, we would have to cope with the imperfection, which basically means chopping off the end of a word. Lemmatization is to normalize a word back to its base form. It removes all past simple and past participle forms. Wordnet lemmatizer is a relatively better tool than Porter stemmer, even though they both have their shortcomings. In general, I prefer to apply lemmatization before stemming to get a clean vocabulary matrix.
 
-If our assumption holds, we could end up with plenty of clusters inside our text dataset. Each cluster refers to one underlying story. Within each cluster, all the data points(titles) share some common words. Inevitably, there are anomaly data points far from all the cluster. These outliers could be either exclusive content or utterly nonsense. How to deal with them entirely depends on user preference. I personally lean towards false positive. I’d rather have more false positive than false negative for the fear of missing out.
+If our assumption holds, we could end up with plenty of clusters inside our text dataset. Each cluster refers to one underlying story. Within each cluster, all the data points (titles) share some common words. Inevitably, there are anomaly data points far from all the cluster. These outliers could be either exclusive content or utterly nonsense. How to deal with them entirely depends on user preference. I personally lean towards false positive. I’d rather have more false positive than false negative for the fear of missing out.
 
 Thus, we shall dig out all the unique stories. We only need a little bit of extra help from the overhyped algorithms, DBSCAN. DBSCAN is a fascinating algorithm. It has the capability of both linear and non-linear classification. It can automatically detect the number of clusters, but it requires a careful tuning of its within-distance parameter, ε. The way I see, this is purely quid pro quod. You can argue <a href=https://en.wikipedia.org/wiki/OPTICS_algorithm>OPTICS</a> do not require preset within-distance, but the tradeoff is the greater time complexity (truth is I haven’t updated my sklearn yet :sweat_smile: ). Aside from ε, there is another preset parameter, the minimum sample requirement to construct a cluster. As usual, we always consider the worst case, which is 2. For a clustering problem, the maximum number of clusters you can achieve is n//2 where n is the number of data points. 
 
