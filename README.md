@@ -88,13 +88,13 @@ Finding the shortest path on a map is not the only problem Dijkstra can apply to
 
 ### 8. Word Ladder
 
-Word ladder problem is a game developed by the author of Alice in Wonderland. Given one word, we try to change it into another word. Each time we can only change one letter and it should also be a valid word. This is a great test for vocabulary.  The difficult part of building a graph structure is to build edges. Connect one word to another with only one letter changed takes a bit of work. BFS is the perfect solution for this.
+Word ladder problem is a game developed by the author of Alice in Wonderland. Given one word, we try to change it into another word. Each time we can only change one letter and it should also be a valid word. This is a great test for vocabulary. The difficult part of building a graph structure is to build edges. Connect one word to another with only one letter changed takes a bit of work. BFS is the perfect solution for this.
 
 ### 9. Text Mining
 
 Is machine learning the best solution to text mining? What if graph theory beats it in both time and space complexity?
 
-The whole project is designed for <a href=https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsletter.py>MENA Newsletter</a>. The idea is to use graph structure traversal algorithm to remove similar contents and extract key information from the metadata of text. As usual, my own creation goes under a separate folder. The parent directory is for the self implementation of well-recognized algorithms. 
+The whole project is designed for <a href=https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsletter.py>MENA Newsletter</a>. The idea is to use graph structure traversal algorithm to remove similar contents and extract key information from the metadata of text.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/wordcloud.png)
 
@@ -110,7 +110,7 @@ A <a href=https://en.wikipedia.org/wiki/Clique_(graph_theory)>clique</a> is a su
 
 ### 12. Epidemic Outbreak
 
-In the classic epidemiology, a <a href=https://en.wikipedia.org/wiki/Dynamical_system>dynamic system</a> composed of three ordinary differential equations which represents Susceptible, Infected and Recovered is a standard approach. However, the homogeneity assumption of the population in the model does not exist in the real world. Each individual’s likelihood of infection is constrained by her/his geolocation and social circle. In an extreme case, an indigenous family living in Amazon rainforest is unlikely to interact with a Jewish family living in Caucasus mountains. Hence, agent-based model with population density and global air traffic incorporated has become Frank Sinatra of epidemiology in the recent decade. Whether it is <a href=https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model>Barabási-Albert</a> following power-law distribution or <a href=https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model>Erdős–Rényi</a> following Poisson distribution, the bonanza of random graph is inevitable.
+Amid the outbreak of the novel corona virus, we have observed a bonanza of agent-based simulation in epidemiology. By leveraging the probability generating function of a random graph, whether it is <a href=https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model>Barabási-Albert model</a> following power-law distribution or <a href=https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model>Erdős–Rényi model</a> following Poisson distribution, we are able to consume the least computing power to estimate the prevalence and the duration of COVID-19.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/gillespie.gif)
 
