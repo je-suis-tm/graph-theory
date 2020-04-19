@@ -405,11 +405,11 @@ By the time I finished this piece of article, Kaggle has launched <a href=https:
 
 	*This paper studied the causal relationship between social grooming time and social group size. It compared the neocortex ratio of baboons, chimpanzees, gorillas with homo sapiens to estimate the maximum friendships a human can maintain.*
 
-4. Ferguson NM, Laydon D, Nedjati-Gilani G, Imai N, Ainslie K, et al. (2020) <a href=https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf>Impact Of Non-pharmaceutical Interventions (NPIs) To Reduce Covid-19 Mortality And Healthcare Demand</a>
+4. Ferguson NM, Laydon D, Nedjati-Gilani G, Imai N, Ainslie K, et al. (2020) <a href=https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf>Impact Of Non-pharmaceutical Interventions (NPIs) To Reduce COVID-19 Mortality And Healthcare Demand</a>
 
 	*This paper convinced UK government to drop the notorious idea of herd immunity. The methodology is in <a href=https://www.ncbi.nlm.nih.gov/pubmed/15033640>Containing Pandemic Influenza with Antiviral Agents</a>.*
 
-5. Gardner L (2020) <a href=https://systems.jhu.edu/research/public-health/ncov-model-2/>Modeling The Spreading Risk Of 2019-ncov</a>
+5. Gardner L (2020) <a href=https://systems.jhu.edu/research/public-health/ncov-model-2/>Modeling The Spreading Risk Of 2019-nCOV</a>
 
 	*This paper used global air traffic data to construct a meta population model to predict the next epicenter. The methodology is in <a href=https://www.researchgate.net/publication/327639829_A_decision-support_framework_to_optimize_border_control_for_global_outbreak_mitigation>A decision-support framework to optimize border control for global outbreak mitigation</a>.*
 
