@@ -114,6 +114,12 @@ More details can be found at the following <a href=https://github.com/je-suis-tm
 
 ### 13. Portfolio Optimization
 
+Modern portfolio theory was introduced in 1952 by Nobel laureate Harry Markowitz. It is part of investment class 101. But I watched a video by <a href=https://www.wolfram.com/training/videos/FIN015>Wolfram</a> recently. It challenged the traditional approach and introduced graph theory to asset diversification. There are plenty of quant shops deploying fancy mathematic tools to solve the market. The real question for us is, as fancy as it sounds, does graph theory work on portfolio optimization?
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/outta%20sample%20mean%20variance.png)
+
+More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/README.md>link</a>.
+
 &nbsp;
 
 *For the purpose of the visualization of graph ADT, most scripts in this repository are Jupyter Notebook. Nevertheless, rendered ipynb files take longer time to load compared to py files. That is why I also include a py version with graph ADT and all related algorithms for your reference.*
