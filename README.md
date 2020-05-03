@@ -94,7 +94,7 @@ The whole project is designed for <a href=https://github.com/je-suis-tm/web-scra
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/preview/wordcloud.png)
 
-More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/README.md>link</a>.
+For more details, please refer to the <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Text%20Mining%20project/README.md>read me</a> page of a separate directory or <a href=https://je-suis-tm.github.io/graph-theory/text-mining>graph theory</a> section on my personal blog.
 
 ### 10. K Core
 
@@ -110,7 +110,7 @@ Amid the outbreak of the novel corona virus, we have observed a bonanza of agent
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/gillespie.gif)
 
-More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/README.md>link</a>.
+For more details, please refer to the <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/README.md>read me</a> page of a separate directory or <a href=https://je-suis-tm.github.io/graph-theory/epidemic-outbreak>graph theory</a> section on my personal blog.
 
 ### 13. Portfolio Optimization
 
@@ -118,7 +118,7 @@ Modern portfolio theory was introduced in 1952 by Nobel laureate Harry Markowitz
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/outta%20sample%20mean%20variance.png)
 
-More details can be found at the following <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/README.md>link</a>.
+For more details, please refer to the <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/README.md>read me</a> page of a separate directory or <a href=https://je-suis-tm.github.io/graph-theory/portfolio-optimization>graph theory</a> section on my personal blog.
 
 &nbsp;
 
