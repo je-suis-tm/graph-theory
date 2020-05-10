@@ -37,7 +37,7 @@ Apart from the outliers in the graph ADT, there is another important part. Even 
 
 Here, we borrow a concept from <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>K-core</a>, degeneracy ordering. Degeneracy ordering is to repeatedly find and remove the vertex of smallest degree from the graph ADT. The degeneracy is then the highest degree of any vertex at the moment it is removed. To find our optimal independent vertex set, the process is illustrated below.
 
-1.	Get degeneracy ordering in linear time (Matula and Beck, 1983).
+1.	Get degeneracy ordering in linear time (<a href=https://dl.acm.org/doi/10.1145/2402.322385>Matula and Beck</a>, 1983).
 2.	Choose the vertex with the lowest order. 
 3.	If the selected vertex is not adjacent to any other vertices in the output set, append the selected vertex.
 4.	Repeat step 2 and step 3 until all vertices have been examined.
