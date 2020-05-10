@@ -33,7 +33,7 @@ These outliers are listed below.
 * Nokia Oyj
 * Vivendi SA
 
-Apart from the outliers in the graph ADT, there is another important part. Even inside strongly connected components, we can still select assets that are not highly correlated with each other. In graph theory, we call these vertices, <a href=https://www.youtube.com/watch?v=0stavxEccvE>independent vertex set</a>. An independent vertex set is a subset that no two vertices of which are adjacent. Usually, there are more than one maximum independent vertex set, what are our selection criteria?
+Apart from the outliers in the graph ADT, there is another important part. Even inside strongly connected components, we can still select assets that are not highly correlated with each other. In graph theory, we call these vertices, <a href=https://en.wikipedia.org/wiki/Independent_set_(graph_theory)>independent vertex set</a>. An independent vertex set is a subset that no two vertices of which are adjacent. Usually, there are more than one maximum independent vertex set, what are our selection criteria?
 
 Here, we borrow a concept from <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>K-core</a>, degeneracy ordering. Degeneracy ordering is to repeatedly find and remove the vertex of smallest degree from the graph ADT. The degeneracy is then the highest degree of any vertex at the moment it is removed. To find our optimal independent vertex set, the process is illustrated below.
 
@@ -115,9 +115,9 @@ To find the optimal thresholds for both correlation and cross maximal clique cen
 
 ### Markowitz Optimization
 
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20computation.png)
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20computation.PNG)
 
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20optimization.png)
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20optimization.PNG)
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/in%20sample%20comparison.png)
 
