@@ -63,7 +63,7 @@ The independent vertex set contains the companies below.
 * Vinci SA
 * Volkswagen AG
 
-You may argue why we ignore correlation smaller than 0.6. If we iterate different possible numbers from 0.5 to 0.7, the empirical result will tell 0.6 is indeed the optimal threshold for correlation. When the threshold is set at 0.6, we assign equal weight to our independent vertex set plus outliers to construct a new portfolio. The new portfolio at 0.6 yields the largest <a href=https://www.investopedia.com/terms/s/sharperatio.asp>Sharpe Ratio</a> among other scenarios.
+You may argue why we ignore correlation smaller than 0.6. If we iterate different possible numbers from 0.5 to 0.7, the empirical result will tell 0.6 is indeed the optimal threshold for correlation. When the threshold is set at 0.6, we assign equal weight to our independent vertex set plus outliers to construct a new portfolio called Degeneracy Index. The new portfolio at 0.6 yields the largest <a href=https://www.investopedia.com/terms/s/sharperatio.asp>Sharpe Ratio</a> among other scenarios.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/degeneracy%20optimal.png)
 
@@ -81,7 +81,7 @@ The distribution of cross maximal clique centrality indicates 10 is not a bad ch
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/clique%20distribution.png)
 
-By setting the threshold at 10, we are able to obtain our highly concentrated combination as below.
+By setting the threshold at 10, we are able to obtain our highly concentrated combination as below. We assign equal weight to each composite to construct a new portfolio called Clique Index.
 
 * AXA SA
 * Air Liquide SA
@@ -115,14 +115,31 @@ To find the optimal thresholds for both correlation and cross maximal clique cen
 
 ### Markowitz Optimization
 
+Modern portfolio theory was introduced in 1952 by Nobel laureate Harry Markowitz. The idea was to find the asset allocations that provide the lowest possible risk for any level of expected return. There are three possible types of strategy when it comes to portfolio optimization.
+
+* Maximize Sharpe Ratio
+* Minimize variance
+* Maximize return
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20computation.PNG)
 
+To maximize Sharpe Ratio, we should recall Lagrangian multiplier from calculus. Here, the Lagrangian multiplier is called risk aversion parameter, it denotes the risk aversion level of the investor. To make our lives easier, we set the parameter at 1. For those of you who are familiar with convex optimization, this equation is called linear programming with random cost. We will use the package `cvxopt` to solve such a problem. You can see the example of <a href=http://cvxopt.org/userguide/coneprog.html#quadratic-programming>quadratic programming</a>.
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20optimization.PNG)
+
+With the result of `cvxopt.solvers.qp`, we assign weights accordingly to construct Sharpe Index, Variance Index and Return Index. Strangely enough, the weights to maximize Sharpe Ratio are very similar to the weights to maximize the return.
+
+For in-sample data comparison, we also introduce another benchmark, Euro Stoxx 50 Equal Weight Index. Believe me :man_facepalming: this product really exists! We bring all indices to the mean variance analysis to evaluate its performance. It seems that Sharpe/Return Index (since they are very similar so we put them together) always outperforms the rest. It is quite normal because these two indices seek the local maximum of our given function. Surprisingly, Stoxx50 EW Index always outperforms the actual Stoxx50 Index. The actual Stoxx50 Index is computed via <a href=https://www.stat.go.jp/english/data/cpi/1587.html>Laspeyres formula</a>. Given the consideration of market cap and share liquidity of each composite, Stoxx50 Index leans heavily towards companies with larger market cap and more share liquidity. Commonly speaking, these blue-chip companies are more likely to be correlated to the overall macroeconomic situation. In another word, Stoxx50 Index is designed to leans towards highly correlated stocks. Stoxx50 EW Index seems to be a much better choice when constructing a portfolio. Less correlated stocks have more presentation in the portfolio. In terms of time complexity, Stoxx50 EW Index outweighs any other indices undoubtedly. Degeneracy Index and Variance Index demonstrate the lowest volatility among all. Regarding the linear time complexity of degeneracy ordering, it can be a good approximation to seek for minimum variance portfolio. As for Clique Index, it is the lame duck out of all. It has one of the highest time complexities due to NP-hard clique searching algorithm. It proves the point that asset diversification is necessary.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/in%20sample%20comparison.png)
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/in%20sample%20mean%20variance.png)
 
+For out-of-sample data comparison, things take a dramatic turn. Degeneracy Index seems to outperform any other indices. The in-sample star, Sharpe/Return Index has the worst performance. Perhaps you think I am cherry-picking. If you change the time horizon of training and testing dataset, you will find that Degeneracy Index always outperforms Stoxx50 Index and Stoxx50 EW Index despite the market sentiment. In a bear market, Sharpe/Return Index is practically useless. It is aligned with the criticism of modern portfolio theory. The historical measurements of asset return and volatility do not translate to the guaranteed performance in the future. They frequently fail at new circumstances, especially something has never occurred in the history. In spite of different ways of train test split, Variance Index and Degeneracy Index are the most consistent performer. The diversification maintains an edge of small volatility even though it suffers from a smaller Sharpe Ratio and return in a bull market. 
+
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/outta%20sample%20comparison.png)
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/outta%20sample%20mean%20variance.png)
+
+But If you think I am pitching the application of graph theory to portfolio optimization, you are wrong. I'd love to point out, it's always a good idea to try equal weight first. It is one of the few simple yet effective strategies.
+
