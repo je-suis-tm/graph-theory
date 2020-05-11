@@ -123,7 +123,7 @@ Modern portfolio theory was introduced in 1952 by Nobel laureate Harry Markowitz
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20computation.PNG)
 
-To maximize Sharpe Ratio, we should recall Lagrangian multiplier from calculus. Here, the Lagrangian multiplier is called risk aversion parameter, it denotes the risk aversion level of the investor. To make our lives easier, we set the parameter at 1. For those of you who are familiar with convex optimization, this equation is called linear programming with random cost. We will use the package `cvxopt` to solve such a problem. You can see the example of <a href=http://cvxopt.org/userguide/coneprog.html#quadratic-programming>quadratic programming</a>.
+To maximize Sharpe Ratio, we should recall Lagrangian multiplier from calculus. Here, the Lagrangian multiplier is called risk aversion parameter, it denotes the risk aversion level of the investor. To make our lives easier, we set the parameter at 1. For those of you who are familiar with convex optimization, this equation is called linear programming with random cost. We will use the package `cvxopt` to solve such a problem. You can see the example of <a href=http://cvxopt.org/userguide/coneprog.html#quadratic-programming>quadratic programming</a>. The following equations are presented in matrix form.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/markowitz%20optimization.PNG)
 
