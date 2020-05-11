@@ -141,5 +141,5 @@ For out-of-sample data comparison, things take a dramatic turn. Degeneracy Index
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/outta%20sample%20mean%20variance.png)
 
-But If you think I am pitching the application of graph theory to portfolio optimization, you are wrong. I'd love to point out, it's always a good idea to try equal weight first. It is one of the few simple yet effective strategies.
+But if you think I am pitching the application of graph theory to portfolio optimization, you are wrong. I'd love to point out, it's always a good idea to try equal weight first. It is one of the few simple yet effective strategies.
 
