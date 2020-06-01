@@ -417,7 +417,7 @@ By the time I finished this piece of article, Kaggle has launched <a href=https:
 
 	*This paper incorporated latent, quarantined and isolated into SEIR model. It used 9 differential equations to estimate the infectiousness of SARS.*
 
-7. McCarty C, Kilworth PD, Bernard HR, Johnsen EC, A.Shelly G (2001) <a href=https://www.researchgate.net/publication/244456204_Comparing_Two_Methods_for_Estimating_Network_Size>Comparing Two Methods For Estimating Network Size</a>
+7. McCarty C, Kilworth PD, Bernard HR, Johnsen EC, Shelly GA (2001) <a href=https://www.researchgate.net/publication/244456204_Comparing_Two_Methods_for_Estimating_Network_Size>Comparing Two Methods For Estimating Network Size</a>
 
 	*This paper collected telephone survey data and compared the response with US census. It used a scale-up method in statistics to estimate the number of contacts of survey respondents in specific subpopulation and particular relation categories.*
 
