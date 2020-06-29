@@ -30,6 +30,8 @@
 
 <a href=https://github.com/je-suis-tm/graph-theory#13-portfolio-optimization>13. Portfolio Optimization</a>
 
+<a href=https://github.com/je-suis-tm/graph-theory#14-habitat-occupancy>14. Habitat Occupancy</a>
+
 &nbsp;
 
 ## Algorithms
@@ -50,9 +52,11 @@
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>8. Bron Kerbosch</a>
 
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20occupancy.ipynb>9. Gillespie</a>
+
 &nbsp;
 
-## Graph Problems
+## Applications
 
 ### 1. Maze
 
@@ -119,6 +123,12 @@ Modern portfolio theory was introduced in 1952 by Nobel laureate Harry Markowitz
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/preview/outta%20sample%20mean%20variance.png)
 
 For more details, please refer to the <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Portfolio%20Optimization%20project/README.md>read me</a> page of a separate directory or <a href=https://je-suis-tm.github.io/graph-theory/portfolio-optimization>graph theory</a> section on my personal blog.
+
+### 14. Habitat Occupancy
+
+In the traditional study of community ecology, metapopulation model is used to map out the patchy habitat occupancy and extinction. It only requires one ordinary differential equation to monitor a single species. However, one of the big drawbacks is its landscape connectivity. With avant-garde complex network, we can incorporate spatial structure into the deterministic system to create an agent-based simulation.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/levins%20model.gif)
 
 &nbsp;
 
