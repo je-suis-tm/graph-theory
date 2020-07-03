@@ -2,6 +2,14 @@
 
 &nbsp;
 
+## Intro
+
+Graph theory, sometimes we call it complex network or network science or network analysis, is one of the most avant-garde research areas in discrete mathematics, also one of my favorite subjects. Here, “graph” is the preferred name, because too many people associate the word “network” with internet. Given the bonanza of data science, graph theory is constantly overshadowed by the hype of machine learning. Yet some of the top-notch technology companies such as Google and Facebook heavily rely on the research of graph theory. 
+
+This repository intends to increase the exposure of graph theory to all my readers. It contains common graph algorithms, popular network models, interesting agent-based simulations and amazing complex systems. The codes range from the level of elementary to sophisticated with wide applications in ecology, epidemiology, sociology, economics, finance, etc. Both Julia and Python are used to construct different scripts. As I am slowly climbing up the learning curve, more and more fascinating content will emerge en masse. Stay tuned!
+
+&nbsp;
+
 ## Table of Contents
 
 <a href=https://github.com/je-suis-tm/graph-theory#1-maze>1. Maze</a>
@@ -128,7 +136,7 @@ For more details, please refer to the <a href=https://github.com/je-suis-tm/grap
 
 ### 14. Habitat Occupancy
 
-In the traditional study of community ecology, metapopulation model is used to map out the patchy habitat occupancy and extinction. It only requires one ordinary differential equation to monitor a single species. However, one of the big drawbacks is its landscape connectivity. With avant-garde complex network, we can incorporate spatial structure into the deterministic system to create an agent-based simulation.
+In the traditional study of community ecology, metapopulation model is used to map out the patchy habitat occupancy and extinction. It only requires one ordinary differential equation to monitor a single species. However, one of the biggest malaise is its landscape connectivity. With complex network, we can incorporate spatial structure into the deterministic system to create an agent-based simulation.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/levins%20model.gif)
 
