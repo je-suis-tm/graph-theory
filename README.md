@@ -32,6 +32,8 @@
 
 <a href=https://github.com/je-suis-tm/graph-theory#14-habitat-occupancy>14. Habitat Occupancy</a>
 
+<a href=https://github.com/je-suis-tm/graph-theory#15-habitat-competition>15. Habitat Competition</a>
+
 &nbsp;
 
 ## Algorithms
@@ -52,7 +54,7 @@
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>8. Bron Kerbosch</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20occupancy.ipynb>9. Gillespie</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>9. Gillespie</a>
 
 &nbsp;
 
@@ -129,6 +131,16 @@ For more details, please refer to the <a href=https://github.com/je-suis-tm/grap
 In the traditional study of community ecology, metapopulation model is used to map out the patchy habitat occupancy and extinction. It only requires one ordinary differential equation to monitor a single species. However, one of the big drawbacks is its landscape connectivity. With avant-garde complex network, we can incorporate spatial structure into the deterministic system to create an agent-based simulation.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/levins%20model.gif)
+
+### 15. Habitat Competition
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20occupancy.ipynb>Levins model</a> has exceptional explanatory power for habitat fragmentation. Tilman model expands it to a more generalized form for multiple species. The stronger species can out-compete and displace weaker species. In this example, our agent-based simulation will illustrate the vis-à-vis among native species and invasive species. With the blessing of the spatial structure, some of the native species in remote area may be able to survive the invasion. 
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/tilman%20model.gif)
+
+In the later chapter of this script, we will introduce Schelling’s model from sociology to investigate how the segregation is formed when multiple groups are presented in the system. Schelling’s model shows some unique traits such as <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>maximal clique</a> when implemented on a random geometric graph.
+
+![alt text]( https://github.com/je-suis-tm/graph-theory/blob/master/preview/schelling's%20model.gif)
 
 &nbsp;
 
