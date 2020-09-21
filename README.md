@@ -2,6 +2,8 @@
 
 &nbsp;
 
+###### Currently the directory is a lil bit messy due to the massive expansion of its content. The repository was originally set up for graph traversal algorithms (the interview stuff). Unfortunately, I fell in love with the graph theory :see_no_evil: I promise I will redesign the directory to make it easier for users to navigate. You will have to be patient with me though :snail:
+
 ## Intro
 
 Graph theory, sometimes we call it complex network or network science or network analysis, is one of the most avant-garde research areas in discrete mathematics, also one of my favorite subjects. Here, “graph” is the preferred name, because too many people associate the word “network” with internet. Given the bonanza of data science, graph theory is constantly overshadowed by the hype of machine learning. Yet some of the top-notch technology companies such as Google and Facebook heavily rely on the research of graph theory. 
@@ -11,6 +13,30 @@ This repository intends to increase the exposure of graph theory to all my reade
 &nbsp;
 
 ## Table of Contents
+
+### Algorithms
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>1. Breath First Search</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>2. Depth First Search</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>3. Topological Sort</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>4. Dijkstra</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>5. Prim/Kruskal/Borůvka</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>6. A* Search</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>7. Bellman Ford</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>8. Bron Kerbosch</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>9. Gillespie</a>
+
+&nbsp;
+
+### Applications
 
 <a href=https://github.com/je-suis-tm/graph-theory#1-maze>1. Maze</a>
 
@@ -41,28 +67,6 @@ This repository intends to increase the exposure of graph theory to all my reade
 <a href=https://github.com/je-suis-tm/graph-theory#14-habitat-occupancy>14. Habitat Occupancy</a>
 
 <a href=https://github.com/je-suis-tm/graph-theory#15-habitat-competition>15. Habitat Competition</a>
-
-&nbsp;
-
-## Algorithms
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>1. Breath First Search</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>2. Depth First Search</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>3. Topological Sort</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>4. Dijkstra</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>5. Prim/Kruskal/Borůvka</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>6. A* Search</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>7. Bellman Ford</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>8. Bron Kerbosch</a>
-
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>9. Gillespie</a>
 
 &nbsp;
 
@@ -160,7 +164,7 @@ In the traditional study of community ecology, metapopulation model is used to m
 
 In the later chapter of this script, we will introduce Schelling’s model from sociology to investigate how the segregation is formed when multiple groups are presented in the system. Schelling’s model shows some unique traits such as <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>maximal clique</a> when implemented on a random geometric graph.
 
-![alt text]( https://github.com/je-suis-tm/graph-theory/blob/master/preview/schelling's%20model.gif)
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/schelling's%20model.gif)
 
 &nbsp;
 
