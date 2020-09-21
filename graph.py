@@ -462,3 +462,48 @@ def create_bb_model(min_degree,num_of_v,etas):
             counter+=1
             
     return bbmodel
+
+
+def create_ba_model(min_degree,num_of_v):
+    """create Barabási-Albert Model"""
+    
+    assert min_degree<=num_of_v,"minimum degree cannot be smaller than the order of a graph"
+    
+    #create model
+    bamodel=graph()
+
+    #create a fully connected graph for first comers
+    for i in range(min_degree+1):
+        for j in range(min_degree+1):
+            if i!=j:
+                bamodel.append(i,j,1)
+
+    #add new vertices
+    for i in range(min_degree,num_of_v):
+
+        #initialize counter and available vertices
+        counter=0
+        available=bamodel.vertex()
+
+        #each newcomer has to suffice the minimum degree
+        while counter<min_degree: 
+
+            #get degree of each vertex
+            degree_dst=[bamodel.degree(node) for node in available]   
+
+            #compute the probability of attaching to one of the vertices
+            prob=np.divide(degree_dst,sum(degree_dst))
+
+            #select vertex based upon degree
+            selected=np.random.choice(available,p=prob)
+
+            #remove selected
+            available.remove(selected)
+
+            #create an edge
+            bamodel.append(i,selected,1)
+            bamodel.append(selected,i,1)
+
+            counter+=1
+            
+    return bamodel
