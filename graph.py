@@ -4,61 +4,86 @@ Created on Tue Jun  5 15:44:57 2018
 
 @author: Administrator
 """
-import numpy as np
 
-#
+import numpy as np
+    
+# In[1]:
+#graph adt
+
+
 class graph:
-        def __init__(self):
-            self.graph={}
-            self.visited={}
     
-        def append(self,vertexid,edge,weight):
-            if vertexid not in self.graph.keys():          
-                self.graph[vertexid]={}
-                self.visited[vertexid]=0
-            self.graph[vertexid][edge]=weight
-            
-        def reveal(self):
-            return self.graph
-        
-        def vertex(self):
-            return list(self.graph.keys())
+    """Graph ADT"""    
+    def __init__(self):
+        self.graph={}
+        self.visited={}
     
-        def edge(self,vertexid):
-            return list(self.graph[vertexid].keys())
+    def append(self,vertexid,edge,weight):        
+        """add/update new vertex,edge,weight"""        
+        if vertexid not in self.graph.keys():      
+            self.graph[vertexid]={}
+            self.visited[vertexid]=0
+        if edge not in self.graph.keys():      
+            self.graph[edge]={}
+            self.visited[edge]=0
+        self.graph[vertexid][edge]=weight
         
-        def weight(self,vertexid,edge):
-            return (self.graph[vertexid][edge])
-        
-        def size(self):
-            return len(self.graph)
-        
-        def visit(self,vertexid):
-            self.visited[vertexid]=1
-            
-        def go(self,vertexid):
-            return self.visited[vertexid]
-        
-        def route(self):
-            return self.visited
-        
-        def degree(self,vertexid):
-            return len(self.graph[vertexid])
+    def reveal(self):
+        """return adjacent list"""
+        return self.graph
     
-        def mat(self):            
-            self.matrix=[]            
-            for i in self.graph:    
-                self.matrix.append([0 for k in range(len(self.graph))])                
-                for j in self.graph[i].keys():        
-                    self.matrix[i-1][j-1]=1            
-            return self.matrix
+    def vertex(self):
+        """return all vertices in the graph"""
+        return list(self.graph.keys())
+    
+    def edge(self,vertexid):
+        """return edge of a particular vertex"""
+        return list(self.graph[vertexid].keys())
+    
+    def weight(self,vertexid,edge):
+        """return weight of a particular vertex"""
+        return (self.graph[vertexid][edge])
+    
+    def order(self):
+        """return number of vertices"""
+        return len(self.graph)
+    
+    def visit(self,vertexid):
+        """visit a particular vertex"""
+        self.visited[vertexid]=1
         
-        def remove(self,node):            
-            for i in self.graph[node].keys():
-                self.graph[i].pop(node)
-            self.graph.pop(node)
+    def go(self,vertexid):
+        """return the status of a particular vertex"""
+        return self.visited[vertexid]
+    
+    def route(self):
+        """return which vertices have been visited"""
+        return self.visited
+    
+    def degree(self,vertexid):
+        """return degree of a particular vertex"""
+        return len(self.graph[vertexid])
+    
+    def mat(self):
+        """return adjacent matrix"""        
+        self.matrix=[]        
+        for i in self.graph:    
+            self.matrix.append([0 for _ in range(len(self.graph))])        
+            for j in self.graph[i].keys():    
+                self.matrix[i][j]=1        
+        return self.matrix
+    
+    def remove(self,vertexid):  
+        """remove a particular vertex and its underlying edges"""
+        for i in self.graph[vertexid].keys():
+            self.graph[i].pop(vertexid)
+        self.graph.pop(vertexid)
+      
         
-#        
+# In[2]:     
+#algorithms
+        
+        
 def bfs(df,start,end):
     queue=[]
     queue.append(start)
@@ -230,7 +255,7 @@ def astar(df,start,end):
 
     for i in df.vertex():
         distance[i]=float('inf')
-        heuristic[i]=np.abs(i[0]-end[0])+np.abs(i[1]-end[1])
+        heuristic[i]=abs(i[0]-end[0])+abs(i[1]-end[1])
 
     distance[start]=0 
     c=0    
@@ -384,3 +409,56 @@ def boruvka(df):
                 mst.append([i,j])
                   
     return mst
+
+
+# In[3]:
+#random graph models
+
+
+def create_bb_model(min_degree,num_of_v,etas):
+    """create Bianconi-Barabási Model"""
+    
+    assert min_degree<=num_of_v,"minimum degree cannot be smaller than the order of a graph"
+    assert len(etas)==num_of_v,"each vertex must have fitness"
+    
+    #create model
+    bbmodel=graph()
+
+    #create a fully connected graph for first comers
+    for i in range(min_degree+1):
+        for j in range(min_degree+1):
+            if i!=j:
+                bbmodel.append(i,j,1)
+
+    #add new vertices
+    for i in range(min_degree,num_of_v):
+
+        #initialize counter and available vertices
+        counter=0
+        available=bbmodel.vertex()
+
+        #each newcomer has to suffice the minimum degree
+        while counter<min_degree: 
+
+            #get degree of each vertex
+            degree_dst=[bbmodel.degree(node) for node in available]
+
+            #degree times eta
+            #we obtain its fitness
+            fitness=np.multiply(degree_dst,[etas[node] for node in available])
+            fitness_prob=dict(zip(available,fitness/fitness.sum()))
+
+            #select vertex based upon fitness
+            selected=np.random.choice(available,p=list(fitness_prob.values()))
+
+            #remove selected
+            available.remove(selected)
+            del fitness_prob[selected]
+
+            #create an edge
+            bbmodel.append(i,selected,1)
+            bbmodel.append(selected,i,1)
+
+            counter+=1
+            
+    return bbmodel
