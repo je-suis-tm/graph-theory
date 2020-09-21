@@ -2,7 +2,7 @@
 
 &nbsp;
 
-##### Currently the directory is a lil bit messy due to the massive expansion of its content. The repository was originally set up for graph traversal algorithms (the interview stuff). Unfortunately, I fell in love with the graph theory :see_no_evil: I promise I will redesign the directory to make it easier for users to navigate. You will have to be patient with me though :snail:
+*Currently the directory is a lil bit messy due to the massive expansion of its content. The repository was originally set up for graph traversal algorithms (the interview stuff). Unfortunately, I fell in love with the graph theory :see_no_evil: I promise I will redesign the directory to make it easier for users to navigate. You have to be patient with me though :snail:*
 
 &nbsp;
 
