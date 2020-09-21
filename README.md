@@ -66,6 +66,18 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 &nbsp;
 
+### Models
+
+1. Erdős–Rényi
+
+2. Watts-Strogatz
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>3. Barabási-Albert</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bianconi%20barabasi%20model.ipynb>4. Bianconi-Barabási</a>
+
+&nbsp;
+
 ## Applications
 
 ### 1. Maze
@@ -120,7 +132,7 @@ A <a href=https://en.wikipedia.org/wiki/Clique_(graph_theory)>clique</a> is a su
 
 ### 12. Epidemic Outbreak
 
-Amid the outbreak of the novel corona virus, we have observed a bonanza of agent-based simulation in epidemiology. By leveraging the probability generating function of a random graph, whether it is <a href=https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model>Barabási-Albert model</a> following power-law distribution or <a href=https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model>Erdős–Rényi model</a> following Poisson distribution, we are able to consume the least computing power to estimate the prevalence and the duration of COVID-19.
+Amid the outbreak of the novel corona virus, we have observed a bonanza of agent-based simulation in epidemiology. By leveraging the probability generating function of a random graph, whether it is <a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>Barabási-Albert</a> following power-law distribution or <a href=https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model>Erdős–Rényi</a> following Poisson distribution, we are able to consume the least computing power to estimate the prevalence and the duration of COVID-19.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/preview/gillespie.gif)
 
