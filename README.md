@@ -114,7 +114,7 @@ Water jug is a simple and interesting problem. Assuming there are two jugs, a m-
 
 Knight's tour is a game where a knight travels all the squares on a k by k chessboard. And each square can only be travelled once. The solution can be obtained by DFS with a list that records whether each square on the chessboard has been visited. The rules of a knight's movement are very different from pawns or king. The edges of the graph should indicate the valid move from one square to another.
  
-*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/knight's%20tour.ipynb>here</a> to be redirected to the script.*
+*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/knights%20tour.ipynb>here</a> to be redirected to the script.*
 
 ### 6. Missionaries and Cannibals
 
@@ -176,7 +176,7 @@ Modern portfolio theory was introduced in 1952 by Nobel laureate Harry Markowitz
 
 In the traditional study of community ecology, metapopulation model is used to map out the patchy habitat occupancy and extinction. It only requires one ordinary differential equation to monitor a single species. However, one of the biggest malaise is its landscape connectivity. With complex network, we can incorporate spatial structure into the deterministic system to create an agent-based simulation.
 
-*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20occupancy.ipynb>here</a> to be redirected to the script. Please note this script is written in Julia*
+*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20occupancy.ipynb>here</a> to be redirected to the script. Please note this script is written in Julia.*
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/levins%20model.gif)
 
@@ -188,7 +188,7 @@ In the traditional study of community ecology, metapopulation model is used to m
 
 In the later chapter of this script, we will introduce Schelling’s model from sociology to investigate how the segregation is formed when multiple groups are presented in the system. Schelling’s model shows some unique traits such as <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>maximal clique</a> when implemented on a random geometric graph.
 
-*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>here</a> to be redirected to the script. Please note this script is written in Julia*
+*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>here</a> to be redirected to the script. Please note this script is written in Julia.*
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/schelling's%20model.gif)
 
