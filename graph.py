@@ -66,9 +66,8 @@ class graph:
     
     def mat(self):
         """return adjacent matrix"""        
-        self.matrix=[]        
+        self.matrix=[[0 for _ in range(max(self.graph.keys())+1)] for i in range(max(self.graph.keys())+1)]        
         for i in self.graph:    
-            self.matrix.append([0 for _ in range(len(self.graph))])        
             for j in self.graph[i].keys():    
                 self.matrix[i][j]=1        
         return self.matrix
@@ -78,6 +77,10 @@ class graph:
         for i in self.graph[vertexid].keys():
             self.graph[i].pop(vertexid)
         self.graph.pop(vertexid)
+        
+    def disconnect(self,vertexid,edge):
+        """remove a particular edge"""
+        del self.graph[vertexid][edge]
       
         
 # In[2]:     
@@ -507,3 +510,65 @@ def create_ba_model(min_degree,num_of_v):
             counter+=1
             
     return bamodel
+
+
+def create_er_model(num_of_v,prob):
+    """create Erdős–Rényi Model"""
+    
+    ermodel=graph()
+
+    #connect two vertices based upon probability
+    for i in range(num_of_v):
+        for j in range(i+1,num_of_v):
+            if np.random.uniform()<prob:
+                ermodel.append(i,j,1)
+                ermodel.append(j,i,1)
+
+    return ermodel
+
+
+def create_ring_lattice(num_of_v,num_of_neighbors):
+    """create ring lattice"""
+    
+    lattice=graph()
+
+    assert num_of_neighbors%2==0,"number of neighbors must be even number"
+
+    #connect neighbors
+    for i in range(num_of_v):
+        for j in range(1,num_of_neighbors//2+1):
+            lattice.append(i,i+j if i+j<num_of_v else i+j-num_of_v,1)   
+            lattice.append(i,i-j if i-j>=0 else i-j+num_of_v,1)
+            lattice.append(i+j if i+j<num_of_v else i+j-num_of_v,i,1)   
+            lattice.append(i-j if i-j>=0 else i-j+num_of_v,i,1)
+            
+    return lattice
+
+
+def create_ws_model(num_of_v,num_of_neighbors,prob):
+    """create Watts-Strogatz Model"""
+    
+    wsmodel=graph()
+
+    assert num_of_neighbors%2==0,"number of neighbors must be even number"
+
+    #first we create a regular ring lattice
+    for i in range(num_of_v):
+        for j in range(1,num_of_neighbors//2+1):
+            wsmodel.append(i,i+j if i+j<num_of_v else i+j-num_of_v,1)   
+            wsmodel.append(i,i-j if i-j>=0 else i-j+num_of_v,1)
+            wsmodel.append(i+j if i+j<num_of_v else i+j-num_of_v,i,1)   
+            wsmodel.append(i-j if i-j>=0 else i-j+num_of_v,i,1)
+
+    #rewiring
+    #remove a random edge and create a random edge
+    for i in wsmodel.vertex():
+        for j in wsmodel.edge(i):
+            if np.random.uniform()<prob:
+                wsmodel.disconnect(i,j)
+                wsmodel.disconnect(j,i)
+                rewired=np.random.choice(wsmodel.vertex())
+                wsmodel.append(i,rewired,1)
+                wsmodel.append(rewired,i,1)
+                
+    return wsmodel
