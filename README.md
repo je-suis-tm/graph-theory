@@ -2,7 +2,7 @@
 
 &nbsp;
 
-*Currently the directory is a lil bit messy due to the massive expansion of its content. The repository was originally set up for graph traversal algorithms (the interview stuff). Unfortunately, I fell in love with the graph theory :see_no_evil: I promise I will redesign the directory to make it easier for users to navigate. You have to be patient with me though :snail:*
+*Currently the directory is a lil bit messy due to the massive expansion of its content. The repository was originally set up for graph traversal algorithms (the interview stuff). Unfortunately, I fell in love with the graph theory and gradually did more and more network analysis :see_no_evil: I promise I will redesign the directory to make it easier for users to navigate. You have to be patient with me though :snail:*
 
 &nbsp;
 
@@ -74,9 +74,9 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 ### Models
 
-1. Erdős–Rényi
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>1. Erdős–Rényi</a>
 
-2. Watts-Strogatz
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>2. Watts-Strogatz</a>
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>3. Barabási-Albert</a>
 
@@ -154,11 +154,15 @@ For more details, please refer to the <a href=https://github.com/je-suis-tm/grap
 
 ### 14. Habitat Occupancy
 
+*This script is done in Julia*
+
 In the traditional study of community ecology, metapopulation model is used to map out the patchy habitat occupancy and extinction. It only requires one ordinary differential equation to monitor a single species. However, one of the biggest malaise is its landscape connectivity. With complex network, we can incorporate spatial structure into the deterministic system to create an agent-based simulation.
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/levins%20model.gif)
 
 ### 15. Habitat Competition
+
+*This script is done in Julia*
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20occupancy.ipynb>Levins model</a> has exceptional explanatory power for habitat fragmentation. Tilman model expands it to a more generalized form for multiple species. The stronger species can out-compete and displace weaker species. In this example, our agent-based simulation will illustrate the vis-à-vis among native species and invasive species. With the blessing of the spatial structure, some of the native species in remote area may be able to survive the invasion. 
 
@@ -170,5 +174,4 @@ In the later chapter of this script, we will introduce Schelling’s model from 
 
 &nbsp;
 
-*For the purpose of the visualization of graph ADT, most scripts in this repository are Jupyter Notebook. Nevertheless, rendered ipynb files take longer time to load compared to py files. That is why I also include a py version with graph ADT and all related algorithms for your reference.*
 
