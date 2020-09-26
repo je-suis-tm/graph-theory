@@ -17,7 +17,7 @@ class graph:
     def __init__(self):
         self.graph={}
         self.visited={}
-    
+            
     def append(self,vertexid,edge,weight):        
         """add/update new vertex,edge,weight"""        
         if vertexid not in self.graph.keys():      
@@ -81,168 +81,193 @@ class graph:
     def disconnect(self,vertexid,edge):
         """remove a particular edge"""
         del self.graph[vertexid][edge]
-      
+    
+    def clear(self,vertexid=None,whole=False):
+        """unvisit a particular vertex"""
+        if whole:
+            self.visited=dict(zip(self.graph.keys(),[0 for i in range(len(self.graph))]))
+        elif vertexid:
+            self.visited[vertexid]=0
+        else:
+            assert False,"arguments must satisfy whole=True or vertexid=int number"
+        
         
 # In[2]:     
 #algorithms
         
         
-def bfs(df,start,end):
+def bfs(ADT,current):
+    """Breath First Search"""
+    
+    #create a queue with rule of first-in-first-out
     queue=[]
-    queue.append(start)
-    pred={}
-    c=0
+    queue.append(current)
     
     while queue:
-        temp=queue.pop(0)
-        df.visit(temp)
-        for newpos in df.edge(temp):
-            if df.go(newpos)==0 and newpos not in queue:
+                
+        #keep track of the visited vertices
+        current=queue.pop(0)
+        ADT.visit(current)
+                
+        for newpos in ADT.edge(current):
+            
+            #visit each vertex once
+            if ADT.go(newpos)==0 and newpos not in queue:
                 queue.append(newpos)
-                pred[newpos]=temp
-                
-        
-                
-        if temp==end:
-            break
-        
-        c+=1
-        
-    k=end
-    path=[]
-    while pred:
-        path.insert(0,k)
-        if k==start:
-            break
-        k=pred[k]
-        
-    return len(path)-1,path
 
 
 #
-def dfs_itr(df,start,end):
-    queue=[]
-    queue.append(start)
-    pred={}
-    c=0
+def dfs_itr(ADT,current):
+    """Depth First Search without Recursion"""
     
+    queue=[]
+    queue.append(current)    
+    
+    #the loop is the backtracking part when it reaches cul-de-sac
     while queue:
-        temp=queue.pop(0)
-        smallq=[]
-        df.visit(temp)
-        for newpos in df.edge(temp):
-            if df.go(newpos)==0:
+        
+        #keep track of the visited vertices
+        current=queue.pop(0)
+        ADT.visit(current)
+        
+        #priority queue
+        smallq=[]        
+        
+        #find children and add to the priority
+        for newpos in ADT.edge(current):
+            if ADT.go(newpos)==0:
+                
+                #if the child vertex has already been in queue
+                #move it to the frontline of queue
                 if newpos in queue:
                     queue.remove(newpos)
                 smallq.append(newpos)
-                pred[newpos]=temp
                 
         queue=smallq+queue
-        
-        if temp==end:
-            break
-        
-        c+=1
-        
-    k=end
-    path=[]
-    while pred:
-        path.insert(0,k)
-        if k==start:
-            break
-        k=pred[k]
-        
-    return len(path)-1,path
 
 
 #
-def dfs(df,start):
-    df.visit(start)
-    print(df.route())
-    for newpos in df.edge(start):
-        if df.go(newpos)==0:
-            dfs(df,newpos)
+def dfs(ADT,current):
+    """Depth First Search"""
+    
+    #keep track of the visited vertices
+    ADT.visit(current)
+
+    #the loop is the backtracking part when it reaches cul-de-sac
+    for newpos in ADT.edge(current):
+        
+        #if the vertex hasnt been visited
+        #we call dfs recursively
+        if ADT.go(newpos)==0:
+            dfs(ADT,newpos)
 
 
 #            
-def dijkstra(df,start,end):
-    queue={}
-    distance={}
-    queue[start]=0
-    pred={}
-    c=0
-
-    for i in df.vertex():
-        distance[i]=float('inf')
-    distance[start]=0    
-        
-    while queue:
-        temp=min(queue,key=queue.get)
-        queue.pop(temp)
-        for j in df.edge(temp):
-            if distance[temp]+df.weight(temp,j)<distance[j]:
-                distance[j]=distance[temp]+df.weight(temp,j)
-                pred[j]=temp
-                
-            if df.go(j)==0 and j not in queue:
-                queue[j]=distance[j]
-            
-            
-        df.visit(temp)
-        if temp==end:
-            break
-        
-        c+=1
+def dijkstra(ADT,start,end):
+    """Dijkstra's Algorithm"""
     
-    k=end
+    #all weights in dcg must be positive 
+    #otherwise we have to use bellman ford instead
+    neg_check=[j for i in ADT.reveal() for j in ADT.reveal()[i].values()]
+    assert min(neg_check)>=0,"negative weights are not allowed, please use Bellman-Ford"
+    
+    #queue is used to check the vertex with the minimum weight
+    queue={}
+    queue[start]=0
+    
+    #distance keeps track of distance from starting vertex to any vertex
+    distance={}
+    for i in ADT.vertex():
+        distance[i]=float('inf')
+    distance[start]=0
+        
+    #pred keeps track of how we get to the current vertex
+    pred={}
+        
+    #dynamic programming
+    while queue:
+        
+        #vertex with the minimum weight in queue
+        current=min(queue,key=queue.get)
+        queue.pop(current)
+        
+        for j in ADT.edge(current):
+            
+            #check if the current vertex can construct the optimal path
+            if distance[current]+ADT.weight(current,j)<distance[j]:
+                distance[j]=distance[current]+ADT.weight(current,j)
+                pred[j]=current
+            
+            #add child vertex to the queue
+            if ADT.go(j)==0 and j not in queue:
+                queue[j]=distance[j]
+        
+        #each vertex is visited only once
+        ADT.visit(current)
+        
+        #traversal ends when the target is met
+        if current==end:
+            break
+    
+    #create the shortest path by backtracking
+    #trace the predecessor vertex from end to start
+    previous=end
     path=[]
     while pred:
-        path.insert(0,k)
-        if k==start:
+        path.insert(0, previous)
+        if previous==start:
             break
-        k=pred[k]
-     
-    print('vertice travelled:',c)
+        previous=pred[previous]
+    
+    #note that if we cant go from start to end
+    #we may get inf for distance[end]
+    #additionally, the path may not include start position
     return distance[end],path
 
 
 #
-def bellman_ford(df,start,end):
+def bellman_ford(ADT,start,end):
+    """Bellman-Ford Algorithm,
+    a modified Dijkstra's algorithm to detect negative cycle"""
     
+    #distance keeps track of distance from starting vertex to any vertex
     distance={}
-    pred={}
-
-    for i in df.vertex():
-        distance[i]=float('inf')
-            
-    distance[start]=0    
+    for i in ADT.vertex():
+        distance[i]=float('inf')            
+    distance[start]=0  
     
-    for counter in range(1,len(df.vertex())-1):
-        for i in df.vertex():
-            for j in df.edge(i):
+    #pred keeps track of how we get to the current vertex
+    pred={}
+    
+    #dynamic programming
+    for _ in range(1,ADT.order()-1):
+        for i in ADT.vertex():
+            for j in ADT.edge(i):
                 try:
-                    if distance[i]+df.weight(i,j)<distance[j]:
-                        distance[j]=distance[i]+df.weight(i,j)
+                    if distance[i]+ADT.weight(i,j)<distance[j]:
+                        distance[j]=distance[i]+ADT.weight(i,j)
                         pred[j]=i
                 
                 except KeyError:
                     pass
     
-    #
-    for k in df.vertex():
-        for l in df.edge(k):
+    #detect negative cycle
+    for k in ADT.vertex():
+        for l in ADT.edge(k):
             try:
-                assert distance[k]+df.weight(k,l)>=distance[l],'negative cycle exists!'
+                assert distance[k]+ADT.weight(k,l)>=distance[l],'negative cycle exists!'
             except KeyError:
                 pass
     
-    k=end
+    #create the shortest path by backtracking
+    #trace the predecessor vertex from end to start
+    previous=end
     path=[]
     while pred:
-        path.insert(0,k)
-        if k==start:
+        path.insert(0, previous)
+        if previous==start:
             break
-        k=pred[k]
+        previous=pred[previous]
      
     return distance[end],path
 
