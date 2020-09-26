@@ -18,7 +18,7 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 ### Algorithms
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>1. Breath First Search</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>1. Breadth First Search</a>
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>2. Depth First Search</a>
 
@@ -102,6 +102,8 @@ Consider a case where a postman is going to deliver mails to every house in the 
 
 Whenever we look at the phrase, 'shortest path', we should naturally come up with Dijkstra's algorithm in our mind. This Dutchman came up with the revolutionary algorithm named after himself while searching for the shortest path to Rotterdam without pencil and paper. The algorithm is a special case of A* algorithm without heuristic function. It is also widely used as a subroutine for other traversal algorithms. Besides Dijkstra's algorithm, the shortest path problem, which could be thought as an optimization problem, can also be solved in dynamic programming.
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/dijkstra.jpg)
+
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>here</a> to be redirected to the script.*
 
 ### 4. Water Jug
@@ -125,6 +127,8 @@ Missionaries and cannibals is a classic river problem. I actually prefer its alt
 ### 7. Forex Arbitrage
 
 Finding the shortest path on a map is not the only problem Dijkstra can apply to. Financial market is another application. As we all know, currency pairs have both bid and ask price. The market is weak-efficient. There is always opportunity for triangle arbitrage or rectangle arbitrage. We can exchange from currency A to currency B then to currency C if we can gain profit rather than directly exchanging currency A to currency C. We set each currency as the node, the rate from one currency to another as the edge. And the return from arbitrage would be the criteria for Dijkstra. However, Dijkstra cannot detect the negative return among currency pairs. There is an improved version called Bellman-Ford that can detect the negative cycle during the traversal.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/arbitrage.png)
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>here</a> to be redirected to the script.*
 
