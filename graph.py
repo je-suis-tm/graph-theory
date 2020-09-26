@@ -97,7 +97,7 @@ class graph:
         
         
 def bfs(ADT,current):
-    """Breath First Search"""
+    """Breadth First Search"""
     
     #create a queue with rule of first-in-first-out
     queue=[]
