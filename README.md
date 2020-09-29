@@ -98,13 +98,15 @@ Consider a case where a postman is going to deliver mails to every house in the 
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>here</a> to be redirected to the script.*
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/minimum%20spanning%20tree%20subset.jpg)
+
 ### 3. Shortest Path
 
 Whenever we hear the phrase 'shortest path', we should instinctively shout out Dijkstra's algorithm in our mind. This Dutchman came up with the revolutionary algorithm named after himself while searching for the shortest path to Rotterdam without pencil and paper. The algorithm is a special case of A* algorithm without heuristic function. It is also widely used as a subroutine for other traversal algorithms, such as Bellman-Ford. Apart from Dijkstra, the shortest path problem, which could be thought as an optimization problem, can also be solved in <a href=https://github.com/je-suis-tm/recursion-and-dynamic-programming>dynamic programming</a>.
 
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/dijkstra.jpg)
-
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/dijkstra.jpg)
 
 ### 4. Water Jug
 
@@ -128,9 +130,9 @@ Missionaries and cannibals is a classic river problem. I actually prefer its alt
 
 Finding the shortest path on a map is not the only problem Dijkstra can solve. Financial market is another application. As we all know, currency pairs have both bid and ask price. The market is weak-efficient. There could be an opportunity for triangle arbitrage or rectangle arbitrage. We can exchange from currency A to currency B then to currency C if we can churn out more profit rather than directly exchanging currency A to currency C. We set each currency as the vertex and the exchange rate from one currency to another as the weight of the edge. The arbitrage with some logarithm transformation would be the criteria for Dijkstra. However, Dijkstra cannot properly handle a graph structure with negative weights. We will introduce an improved version called Bellman-Ford which is able to detect the negative cycle during the traversal.
 
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/arbitrage.png)
-
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/arbitrage.png)
 
 ### 8. Word Ladder
 
