@@ -32,9 +32,13 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>7. Bellman Ford</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>8. Bron Kerbosch</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>8. Matula Beck</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>9. Gillespie</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>9. Batagelj Zaveršnik</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>10. Bron Kerbosch</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>11. Gillespie</a>
 
 &nbsp;
 
@@ -91,6 +95,8 @@ This repository intends to increase the exposure of graph theory to all my reade
 Walking out of a maze seems extremely complex in recursion algorithm. In graph theory, it is just a walk in the park. The only bit that takes some effort is building the data structure. Once we got graph ADT, we can use BFS/DFS/Dijkstra/A* to find the way out of the maze, although DFS may not be able to point out the shortest route.
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/a_star.png)
 
 ### 2. Minimum Spanning Tree
 
@@ -155,6 +161,8 @@ The whole project is designed for <a href=https://github.com/je-suis-tm/web-scra
 K core, also known as k degenerate, is a subset of the original graph in which all vertices have degree at least k. By some definition, k core is required to be a connected graph. The standard algorithm to find a k core graph is to remove all the vertices that have degree less than k. We must be careful that removing a vertex reduces the degree of all the vertices adjacent to it, hence the degree of adjacent vertices can also drop below k. And thus, we may have to remove those vertices as well.
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/kcore.png)
 
 ### 11. Maximal Clique
 
