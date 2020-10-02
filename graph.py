@@ -6,6 +6,7 @@ Created on Tue Jun  5 15:44:57 2018
 """
 
 import numpy as np
+import copy
     
 # In[1]:
 #graph adt
@@ -90,7 +91,7 @@ class graph:
             self.visited[vertexid]=0
         else:
             assert False,"arguments must satisfy whole=True or vertexid=int number"
-        
+                    
         
 # In[2]:     
 #algorithms
@@ -160,11 +161,107 @@ def dfs(ADT,current):
         #we call dfs recursively
         if ADT.go(newpos)==0:
             dfs(ADT,newpos)
+            
+
+def bfs_path(ADT,start,end):
+    """Breadth First Search to find the path from start to end"""
+    
+    #create a queue with rule of first-in-first-out
+    queue=[]
+    queue.append(start)
+    
+    #pred keeps track of how we get to the current vertex
+    pred={}
+    
+    while queue:
+                
+        #keep track of the visited vertices
+        current=queue.pop(0)
+        ADT.visit(current)
+                
+        for newpos in ADT.edge(current):
+            
+            #visit each vertex once
+            if ADT.go(newpos)==0 and newpos not in queue:
+                queue.append(newpos)
+                pred[newpos]=current
+                
+        #traversal ends when the target is met
+        if current==end:
+            break
+
+    #create the path by backtracking
+    #trace the predecessor vertex from end to start
+    previous=end
+    path=[]
+    while pred:
+        path.insert(0, previous)
+        if previous==start:
+            break
+        previous=pred[previous]
+    
+    #note that if we cant go from start to end
+    #we may get inf for distance
+    #additionally, the path may not include start position
+    return len(path)-1,path
+
+
+#
+def dfs_path(ADT,start,end):
+    """Depth First Search to find the path from start to end"""
+    
+    queue=[]
+    queue.append(start) 
+    
+    #pred keeps track of how we get to the current vertex
+    pred={}
+    
+    #the loop is the backtracking part when it reaches cul-de-sac
+    while queue:
+        
+        #keep track of the visited vertices
+        current=queue.pop(0)
+        ADT.visit(current)
+        
+        #priority queue
+        smallq=[]        
+        
+        #find children and add to the priority
+        for newpos in ADT.edge(current):
+            if ADT.go(newpos)==0:
+                
+                #if the child vertex has already been in queue
+                #move it to the frontline of queue
+                if newpos in queue:
+                    queue.remove(newpos)
+                smallq.append(newpos)
+                pred[newpos]=current
+                
+        queue=smallq+queue
+        
+        #traversal ends when the target is met
+        if current==end:
+            break
+            
+    #create the path by backtracking
+    #trace the predecessor vertex from end to start
+    previous=end
+    path=[]
+    while pred:
+        path.insert(0, previous)
+        if previous==start:
+            break
+        previous=pred[previous]
+    
+    #note that if we cant go from start to end
+    #we may get inf for distance
+    #additionally, the path may not include start position
+    return len(path)-1,path
 
 
 #            
 def dijkstra(ADT,start,end):
-    """Dijkstra's Algorithm"""
+    """Dijkstra's Algorithm to find the shortest path"""
     
     #all weights in dcg must be positive 
     #otherwise we have to use bellman ford instead
@@ -273,53 +370,89 @@ def bellman_ford(ADT,start,end):
 
 
 #
-def astar(df,start,end):
+def a_star(ADT,start,end):
+    """A* Algorithm,
+    a generalized Dijkstra's algorithm with heuristic function to reduce execution time"""
+    
+    #all weights in dcg must be positive 
+    #otherwise we have to use bellman ford instead
+    neg_check=[j for i in ADT.reveal() for j in ADT.reveal()[i].values()]
+    assert min(neg_check)>=0,"negative weights are not allowed, please use Bellman-Ford"
+    
+    #queue is used to check the vertex with the minimum summation
     queue={}
-    distance={}
-    heuristic={}
-    route={}
     queue[start]=0
-    pred={}
-
-    for i in df.vertex():
+    
+    #distance keeps track of distance from starting vertex to any vertex
+    distance={} 
+    
+    #heuristic keeps track of distance from ending vertex to any vertex
+    heuristic={}
+    
+    #route is a dict of the summation of distance and heuristic
+    route={}
+    
+    #criteria
+    for i in ADT.vertex():
+        
+        #initialize
         distance[i]=float('inf')
+        
+        #manhattan distance
         heuristic[i]=abs(i[0]-end[0])+abs(i[1]-end[1])
+        
+    #initialize
+    distance[start]=0
 
-    distance[start]=0 
-    c=0    
-
+    #pred keeps track of how we get to the current vertex
+    pred={}
+    
+    #dynamic programming
     while queue:
-        temp=min(queue,key=queue.get)
-        queue.pop(temp)
+        
+        #vertex with the minimum summation
+        current=min(queue,key=queue.get)
+        queue.pop(current)
+        
+        #find the minimum summation of both distances
         minimum=float('inf')
 
-        for j in df.edge(temp):
-            distance[j]=distance[temp]+df.weight(temp,j)
+        for j in ADT.edge(current):
+            
+            #check if the current vertex can construct the optimal path
+            #from the beginning and to the end
+            distance[j]=distance[current]+ADT.weight(current,j)
             route[j]=distance[j]+heuristic[j]
             if route[j]<minimum:
                 minimum=route[j]
 
-        for j in df.edge(temp):
-            if (route[j]==minimum) and (df.go(j)==0) and (j not in queue):
+        for j in ADT.edge(current):
+            
+            #only append unvisited and unqueued vertices
+            if (route[j]==minimum) and (ADT.go(j)==0) and (j not in queue):
                 queue[j]=route[j]
-                pred[j]=temp
-                
-        df.visit(temp)
+                pred[j]=current
         
-        if temp==end:
-                 break
+        #each vertex is visited only once
+        ADT.visit(current)
         
-        c+=1
+        #traversal ends when the target is met
+        if current==end:
+            break        
     
-    k=end
+    #create the shortest path by backtracking
+    #trace the predecessor vertex from end to start
+    previous=end
     path=[]
     while pred:
-        path.insert(0,k)
-        if k==start:
+        path.insert(0, previous)
+        if previous==start:
             break
-        k=pred[k]
-        
-    print('vertice travelled:',c)
+        previous=pred[previous]
+    
+    #note that if we cant go from start to end
+    #we may get inf for distance[end]
+    #additionally, the path may not include start position
     return distance[end],path
 
 
@@ -437,6 +570,204 @@ def boruvka(df):
                 mst.append([i,j])
                   
     return mst
+
+
+#
+def get_degree_list(ADT):
+    """create degree distribution"""
+
+    D={}
+    
+    #if the current degree hasnt been checked
+    #we create a new key under the current degree
+    #otherwise we append the new node into the list
+    for i in ADT.vertex():
+        try:
+            D[ADT.degree(i)].append(i)
+
+        except KeyError:
+            D[ADT.degree(i)]=[i]
+    
+    #dictionary is sorted by key instead of value in ascending order
+    D=dict(sorted(D.items()))
+    
+    return D
+
+
+#
+def matula_beck(ADT):
+    """An algorithm proposed by David W. Matula, and Leland L. Beck to find k core of a graph ADT.
+    The implementation is based upon their original paper called
+    "Smallest-last ordering and clustering and graph coloring algorithms".
+    """
+    
+    subset=copy.deepcopy(ADT)
+    
+    #k is the ultimate degeneracy
+    k=0
+    
+    #denote L as the checked list
+    L=[]
+    
+    #denote output as the storage of vertices in 1-core to k-core
+    output={}
+    output[1]=ADT.vertex()
+
+    D=get_degree_list(subset)
+    
+    #initialize the current degree i to 0 to keep track of 1-core to k-core
+    i=0
+
+    while D:
+        
+        #denote j as the degree in the previous loop
+        j=i
+        
+        #denote i as the minimum degree in the current graph
+        i=list(D.keys())[0]
+        
+        #k core graph is the remaining vertices in the current graph
+        #when the minimum degree in the current loop 
+        #is larger than the minimum degree in the previous loop
+        if j<i:
+            output[i]=[j for i in D.values() for j in i ]
+                
+        #k is the degeneracy
+        k=max(k,i)
+        
+        #pick a random vertex with the minimum degree
+        v=D[i].pop(0)
+        
+        #checked and removed
+        L.append(v)
+        subset.remove(v)
+        
+        #update the degree list
+        D=get_degree_list(subset)   
+    
+    #in some cases, we may not capture 2-core or 3-core
+    #if the minimum degree in the original graph is 4
+    #we need to add the missing ones
+    missing=[i for i in range(1,max(output.keys())) if i not in output.keys()]
+    for i in missing:
+        output[i]=output[i-1]
+    
+    return output
+
+
+#
+def sort_by_degree(ADT):
+    """sort vertices by degree"""
+    
+    dic={}
+    for i in ADT.vertex():
+        dic[i]=ADT.degree(i)
+    
+    #the dictionary is sorted by value and exported as a list in descending order
+    output=[i[0] for i in sorted(dic.items(), key=lambda x:x[1])]
+    
+    return output[::-1]
+
+
+#
+def batagelj_zaversnik(k,ADT):
+    """An algorithm proposed by Vladimir Batagelj and Matjaž Zaveršnik to find k core of a graph ADT.
+    The implementation is based upon their original paper called
+    "An O(m) Algorithm for Cores Decomposition of Networks".
+    """   
+
+    subset=copy.deepcopy(ADT)
+    
+    #denote D as a dictionary
+    #where the key is the vertex
+    #the value is its degree
+    D={}
+    for i in subset.vertex():
+        D[i]=subset.degree(i)
+    
+    #denote queue as a sorted list of vertices by descending degree
+    queue=sort_by_degree(subset)
+    
+    while queue:
+        
+        #each iteration, we extract the vertex with the minimum degree from the queue
+        #we mark each vertex we examine in the graph structure
+        i=queue.pop()
+        subset.visit(i)
+        
+        #if the current degree is smaller than our target k
+        #we introduce penalty to its adjacent vertices
+        if D[i]<k:
+            for j in subset.edge(i):
+                D[j]-=1
+        
+        #update the queue with the latest degree
+        #exclude all the marked vertices
+        #the queue should always be in descending order
+        queue=[]
+        for key,_ in sorted(D.items(),reverse=True,key=lambda x:x[1]):
+            if subset.go(key)==0:
+                queue.append(key)
+    
+    #after the size of the queue shrinks to zero
+    #any vertex with degree not smaller than k will go into k core
+    return [i for i in D if D[i]>=k]
+
+
+#
+def find_kcore(core,ADT):
+    """use brute force backtracking to find k core"""
+    
+    #make a subset of the original graph
+    subset=copy.deepcopy(ADT)
+    
+    #sort the queue by the degree of each vertex
+    queue=sort_by_degree(subset)
+    
+    #remove the node with the minimum degree
+    node=queue.pop()
+    
+    #initialize the priority list
+    priority=set([])
+    
+    #queue contains all the vertices pending for check
+    while queue:
+        
+        #when the number of vertices drops below k+1
+        #there is no point of going further
+        if len(subset.vertex())<core+1:
+            return {}
+        
+        #check the degree of a given node
+        #if the degree is smaller than our target core number
+        #we will remove the node
+        if subset.degree(node)<core:
+            
+            #if the neighbors of a given node exist in the priority list
+            #we will check these adjacent vertices first
+            if priority.intersection(set(subset.edge(node))):
+                priority=priority.intersection(set(subset.edge(node)))
+            else:
+                priority=priority.union(set(subset.edge(node)))
+            
+            #sort priority list by the degree of each vertex
+            priority=set([i for i in sort_by_degree(subset) if i in priority])
+            
+            subset.remove(node)
+
+        #examine vertices from priority list first
+        #theys should be removed from the queue as well
+        #otherwise get a random node with the minimum degree from the queue
+        if priority:
+            node=priority.pop()
+            try:
+                queue.remove(node)
+            except ValueError:
+                pass
+        else:
+            node=queue.pop()       
+        
+    return subset.reveal()
 
 
 # In[3]:
