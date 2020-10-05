@@ -22,7 +22,7 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>2. Depth First Search</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>3. Topological Sort</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>3. Kahn</a>
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>4. Dijkstra</a>
 
@@ -169,6 +169,8 @@ K core, also known as k degenerate, is a subset of the original graph in which a
 A <a href=https://en.wikipedia.org/wiki/Clique_(graph_theory)>clique</a> is a subset of vertices of an undirected graph such that every two distinct vertices in the clique are adjacent. A maximal clique is a clique that cannot be extended by including one more adjacent vertex, meaning it is not a subset of a larger clique. Think of maximal clique as a maximum social group where everybody knows each other. Finding a maximal clique is an <a href=https://en.wikipedia.org/wiki/NP-completeness>NP-complete</a> problem. <a href=https://en.wikipedia.org/wiki/Bron–Kerbosch_algorithm>Bron–Kerbosch algorithm</a> with degeneracy ordering is the most efficient way to find out all maximal cliques. Its time complexity can be optimized to O(3**(n/3)).
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/maximal%20clique.jpg)
 
 ### 12. Epidemic Outbreak
 
