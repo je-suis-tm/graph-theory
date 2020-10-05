@@ -104,7 +104,7 @@ Walking out of a maze seems extremely complex in recursion algorithm. In graph t
 
 ### 2. Minimum Spanning Tree
 
-Consider a case where a postman is going to deliver mails to every house in the community. The distance between each house is completely different, some are shorter, some are longer. Ideally the postman wants to deliver mails to each house with the least travel distance and visit each house only once. There are a few algorithms to solve this type of issue. In this case, we choose Borůvka, Prim and Kruskal. And the topological output of these algorithms can be interpreted as a <a href=https://en.wikipedia.org/wiki/Minimum_spanning_tree>minimum spanning tree</a>. It is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.
+Imagine a telecommunications company Orange tries to create a cable network connecting every family in Côte d’Azur. There are possibly millions of different routes to build such a network. Yet, the company only wants to satisfy every customer with the minimum cost. This creates a typical minimum spanning tree problem. Minimum spanning tree is a subset of a graph to connect all vertices without any cycle to achieve the minimum total weight. In this chapter, we will demonstrate how Borůvka’s algorithm, Kruskal’s algorithm and Prim’s algorithm obtain such a topological output. 
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>here</a> to be redirected to the script.*
 
