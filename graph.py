@@ -163,6 +163,65 @@ def dfs(ADT,current):
             dfs(ADT,newpos)
             
 
+#
+def dfs_topo_sort(ADT,current):
+    """Topological sort powered by recursive DFS to get linear ordering"""
+    
+    #keep track of the visited vertices
+    ADT.visit(current)
+    yield current
+
+    #the loop is the backtracking part when it reaches cul-de-sac
+    for newpos in ADT.edge(current):
+        
+        #if the vertex hasnt been visited
+        #we call dfs recursively
+        if ADT.go(newpos)==0:
+            yield from dfs_topo_sort(ADT,newpos)
+            
+            
+#
+def kahn(ADT):
+    """Topological sort powered by Kahn's Algorithm"""
+    
+    #find all edges
+    edges=[]
+    for i in ADT.vertex():
+        for j in ADT.edge(i):
+            edges.append((i,j))
+    
+    #find vertices with zero in-degree
+    start=[i[0] for i in edges]
+    end=[i[1] for i in edges]
+    queue=set(start).difference(set(end))
+    
+    #in-degree for every vertex
+    in_degree={}
+    for i in set(end):
+        in_degree[i]=end.count(i)
+
+    result=[]
+
+    while queue:
+        
+        #pop a random vertex with zero in-degree
+        current=queue.pop()
+        result.append(current)
+        
+        #check its neighbors
+        for i in ADT.edge(current):
+            
+            #update their in-degree
+            in_degree[i]-=1
+            
+            #add vertices with zero in-degree into the queue
+            if in_degree[i]==0:
+                queue.add(i)
+    
+    return result
+
+
+#
 def bfs_path(ADT,start,end):
     """Breadth First Search to find the path from start to end"""
     
@@ -457,31 +516,55 @@ def a_star(ADT,start,end):
 
 
 #
-def prim(df,start,end):
+def prim(ADT,start):
+    """Prim's Algorithm to find a minimum spanning tree"""
+    
+    #initialize
     queue={}
     queue[start]=0
+    
+    #route keeps track of how we travel from one vertex to another
+    route={}
+    route[start]=start
+    
+    #result is a list that keeps the order of vertices we have visited
     result=[]
     
+    #pop the edge with the smallest weight
     while queue:
-        key=min(queue,key=queue.get)
-        queue.pop(key)
-        result.append(key)
-        df.visit(key)
-        print(df.route())
-        if key==end:
-            return result
+                
+        #note that when we have two vertices with the same minimum weights
+        #the dictionary would pop the one with the smallest key
+        current=min(queue,key=queue.get)
+        queue.pop(current)
+        result.append(current)
+        ADT.visit(current)
         
-        for i in df.edge(key):
-            if i not in queue and df.go(i)==0:
-                queue[i]=df.weight(key,i)
-            if i in queue and queue[i]>df.weight(key,i):
-                queue[i]=df.weight(key,i)
-        
-    return result
+        #BFS
+        for i in ADT.edge(current):
+            if i not in queue and ADT.go(i)==0:
+                queue[i]=ADT.weight(current,i)
+                route[i]=current
+                
+            #every time we find a smaller weight
+            #we need to update the smaller weight in queue
+            if i in queue and queue[i]>ADT.weight(current,i):
+                queue[i]=ADT.weight(current,i)
+                route[i]=current               
+    
+    #create minimum spanning tree
+    subset=graph()
+    for i in result:
+        if i!=start:
+            subset.append(route[i],i,ADT.weight(route[i],i))
+            subset.append(i,route[i],ADT.weight(route[i],i))
+
+    return subset
 
 
 #
 def trace_root(disjointset,target):
+    """Use recursion to trace root in a disjoint set"""
 
     if disjointset[target]!=target:
         trace_root(disjointset,disjointset[target])
@@ -489,55 +572,79 @@ def trace_root(disjointset,target):
         return target
 
 
-def kruskal(df):
+#
+def kruskal(ADT):
+    """Kruskal's Algorithm to find the minimum spanning tree"""
     
-    d={}
-    output=[]
+    #use dictionary to sort edges by weight
+    D={}  
+    for i in ADT.vertex():
+        for j in ADT.edge(i):
+            
+            #get all edges
+            if f'{j}-{i}' not in D.keys():
+                D[f'{i}-{j}']=ADT.weight(i,j)
+                
+    sort_edge_by_weight=sorted(D.items(), key=lambda x:x[1])    
     
-    for i in df.vertex():
-        for j in df.edge(i):
-            if f'{j}-{i}' not in d.keys():
-                d[f'{i}-{j}']=df.weight(i,j)
-
-    sort=sorted(d.items(), key=lambda x: x[1])
+    result=[]
     
-    disjointset={}
-    
-    for i in df.vertex():
+    #use disjointset to detect cycle
+    disjointset={}    
+    for i in ADT.vertex():
         disjointset[i]=i
-    
-    for i in sort:
+        
+    for i in sort_edge_by_weight:
         
         parent=int(i[0].split('-')[0])
         child=int(i[0].split('-')[1])
-        
-        print(f'from {parent} to {child} at {df.weight(parent,child)}')
-        
+                
+        #first check disjoint set
+        #if it already has indicated cycle
+        #trace_root function will go to infinite loops
         if disjointset[parent]!=disjointset[child]:
+            
+            #if we trace back to the root of the tree
+            #and it indicates no cycle
+            #we update the disjoint set and add edge into result
             if trace_root(disjointset,parent)!=trace_root(disjointset,child):
                 disjointset[child]=parent
-                output.append([parent,child])                   
+                result.append([parent,child])                
                 
-    return output
+    #create minimum spanning tree
+    subset=graph()
+    for i in result:
+        subset.append(i[0],i[1],ADT.weight(i[0],i[1]))
+        subset.append(i[1],i[0],ADT.weight(i[0],i[1]))
+
+    return subset
 
 
-def boruvka(df):
+#
+def boruvka(ADT):    
+    """Borůvka's Algorithm to find the minimum spanning tree"""
     
-    output=graph()
+    subset=graph()
     
-    for i in df.vertex():
-        temp=999
+    #get the edge with minimum weight for each vertex
+    for i in ADT.vertex():
+        minimum=float('inf')
         target=None
-        for j in df.edge(i):
-            if df.weight(i,j)<temp:
-                temp=df.weight(i,j)
+        for j in ADT.edge(i):
+            if ADT.weight(i,j)<minimum:
+                minimum=ADT.weight(i,j)
                 target=[i,j]
         
-        output.append(target[0],target[1],df.weight(target[0],target[1]))
-        output.append(target[1],target[0],df.weight(target[0],target[1]))
+        #append both edges as the graph is undirected
+        subset.append(target[0],target[1],ADT.weight(target[0],target[1]))
+        subset.append(target[1],target[0],ADT.weight(target[0],target[1]))
 
+    
+    #use dfs topological sort to find connected components
     connected_components=[]
-    for i in output.vertex():
+    for i in subset.vertex():
+        
+        #avoid duplicates of connected components
         #use jump to break out of multiple loops
         jump=False
         for j in connected_components:
@@ -546,30 +653,25 @@ def boruvka(df):
                 break
         if jump:
             continue
-        connected_components.append(dfs_itr(output,i))
-        
-    print(connected_components)
-
+        connected_components.append(list(dfs_topo_sort(subset,i)))
+    
+    #connect 2 connected components with minimum weight
+    #same logic as the first iteration
     for i in range(len(connected_components)):
         for j in range(i+1,len(connected_components)):
-            temp=999
+            minimum=float('inf')
             target=None
             for k in connected_components[i]:
-                for l in df.edge(k):
+                for l in ADT.edge(k):
                     if l in connected_components[j]:
-                        if df.weight(k,l)<temp:
-                            temp=df.weight(k,l)
+                        if ADT.weight(k,l)<minimum:
+                            minimum=ADT.weight(k,l)
                             target=[k,l]
-            output.append(target[0],target[1],df.weight(k,l))
-            output.append(target[1],target[0],df.weight(k,l))
-
-    mst=[]
-    for i in output.vertex():
-        for j in output.edge(i):
-            if [j,i] not in mst:
-                mst.append([i,j])
+            
+            subset.append(target[0],target[1],minimum)
+            subset.append(target[1],target[0],minimum)
                   
-    return mst
+    return subset
 
 
 #
@@ -595,7 +697,7 @@ def get_degree_list(ADT):
 
 
 #
-def matula_beck(ADT):
+def matula_beck(ADT,ordering=False,degeneracy=False):
     """An algorithm proposed by David W. Matula, and Leland L. Beck to find k core of a graph ADT.
     The implementation is based upon their original paper called
     "Smallest-last ordering and clustering and graph coloring algorithms".
@@ -611,28 +713,24 @@ def matula_beck(ADT):
     
     #denote output as the storage of vertices in 1-core to k-core
     output={}
-    output[1]=ADT.vertex()
 
+    #degree distribution
     D=get_degree_list(subset)
     
-    #initialize the current degree i to 0 to keep track of 1-core to k-core
+    #initialize
+    for i in range(1,max(D.keys())):
+        output[i]=[]
+    
+    #we initialize the current degree i to 0
+    #because we want to keep track of 1-core to k-core
     i=0
 
     while D:
-        
-        #denote j as the degree in the previous loop
-        j=i
-        
+                
         #denote i as the minimum degree in the current graph
         i=list(D.keys())[0]
-        
-        #k core graph is the remaining vertices in the current graph
-        #when the minimum degree in the current loop 
-        #is larger than the minimum degree in the previous loop
-        if j<i:
-            output[i]=[j for i in D.values() for j in i ]
-                
-        #k is the degeneracy
+                        
+        #k denotes the degeneracy
         k=max(k,i)
         
         #pick a random vertex with the minimum degree
@@ -641,18 +739,29 @@ def matula_beck(ADT):
         #checked and removed
         L.append(v)
         subset.remove(v)
+        output[k].append(v)
         
         #update the degree list
         D=get_degree_list(subset)   
     
-    #in some cases, we may not capture 2-core or 3-core
-    #if the minimum degree in the original graph is 4
-    #we need to add the missing ones
-    missing=[i for i in range(1,max(output.keys())) if i not in output.keys()]
-    for i in missing:
-        output[i]=output[i-1]
+    #start from -2 to 0
+    for ind in sorted(output.keys(),reverse=True)[1:]:
+
+        #remove empty k-core
+        if not output[ind+1]:
+            del output[ind+1]
+
+        #add vertices from high order core to low order core
+        else:
+            output[ind]+=output[ind+1]
     
-    return output
+    #output depends on the requirement
+    if ordering:
+        return L
+    elif degeneracy:
+        return k
+    else:
+        return output
 
 
 #
@@ -715,59 +824,96 @@ def batagelj_zaversnik(k,ADT):
 
 
 #
-def find_kcore(core,ADT):
-    """use brute force backtracking to find k core"""
-    
-    #make a subset of the original graph
-    subset=copy.deepcopy(ADT)
-    
-    #sort the queue by the degree of each vertex
-    queue=sort_by_degree(subset)
-    
-    #remove the node with the minimum degree
-    node=queue.pop()
-    
-    #initialize the priority list
-    priority=set([])
-    
-    #queue contains all the vertices pending for check
-    while queue:
-        
-        #when the number of vertices drops below k+1
-        #there is no point of going further
-        if len(subset.vertex())<core+1:
-            return {}
-        
-        #check the degree of a given node
-        #if the degree is smaller than our target core number
-        #we will remove the node
-        if subset.degree(node)<core:
-            
-            #if the neighbors of a given node exist in the priority list
-            #we will check these adjacent vertices first
-            if priority.intersection(set(subset.edge(node))):
-                priority=priority.intersection(set(subset.edge(node)))
-            else:
-                priority=priority.union(set(subset.edge(node)))
-            
-            #sort priority list by the degree of each vertex
-            priority=set([i for i in sort_by_degree(subset) if i in priority])
-            
-            subset.remove(node)
+def bron_kerbosch(ADT,R=set(),P=set(),X=set()):
+    """Bron Kerbosch algorithm to find maximal cliques
+        P stands for priority queue, where pending vertices are
+        R stands for result set, X stands for checked list
+        To find maximal cliques, only P is required to be filled
+        P=set(ADT.vertex())"""
 
-        #examine vertices from priority list first
-        #theys should be removed from the queue as well
-        #otherwise get a random node with the minimum degree from the queue
-        if priority:
-            node=priority.pop()
-            try:
-                queue.remove(node)
-            except ValueError:
-                pass
-        else:
-            node=queue.pop()       
+    #when we have nothing left in the priority queue and checked list
+    #we find a maximal clique
+    if not P and not X:
+        yield R
         
-    return subset.reveal()
+    #while we still got vertices in priority queue
+    #we pick a random adjacent vertex and add into the clique
+    while P:
+        
+        v=P.pop()
+        
+        yield from bron_kerbosch(ADT,
+                                 
+                                 #add a new adjacent vertex into the result set
+                                 #trying to expand the clique to the maximal
+                                 R=R.union([v]),
+                                 
+                                 #the priority queue is bounded by the rule of adjacency
+                                 #a vertex can be added into the priority queue
+                                 #if and only if it is neighbor to everyone in the current clique
+                                 P=P.intersection(ADT.edge(v)),
+                                 
+                                 #the checked list is bounded by the rule of adjacency as well
+                                 X=X.intersection(ADT.edge(v)))
+        
+        #the vertex has been checked
+        X.add(v)
+
+
+#
+def bron_kerbosch_pivot(ADT,R=set(),P=set(),X=set()):
+    """Bron Kerbosch algorithm with pivoting to find maximal cliques
+        P stands for priority queue, where pending vertices are
+        R stands for result set, X stands for checked list
+        To find maximal cliques, only P is required to be filled
+        P=set(ADT.vertex())"""
+
+    if not P and not X:
+        yield R
+    
+    #choose a pivot vertex u from the union of pending and processed vertices
+    #delay the neighbors of pivot vertex from being added to the clique to reduce recursive calls
+    try:
+        u=list(P.union(X)).pop()
+        N=P.difference(ADT.edge(u))
+    
+    
+    #if the neighbors of pivot u are equivalent to priority queue
+    #in that case we just roll back to the function without pivoting
+    except IndexError:
+        N=P
+    
+    for v in N:
+        
+        yield from bron_kerbosch_pivot(ADT,
+                                       R=R.union([v]),
+                                       P=P.intersection(ADT.edge(v)),
+                                       X=X.intersection(ADT.edge(v)))
+        P.remove(v)
+        X.add(v)
+        
+
+#
+def bron_kerbosch_order(ADT,R=set(),P=set(),X=set()):
+    """Bron Kerbosch algorithm with vertex ordering to find maximal cliques
+        P stands for priority queue, where pending vertices are
+        R stands for result set, X stands for checked list
+        To find maximal cliques, only P is required to be filled
+        P=set(ADT.vertex())"""
+    
+    #degeneracy ordering from k core
+    deg_order=matula_beck(ADT)[1]
+    
+    if not P and not X:
+        yield R
+    
+    for v in deg_order:
+        yield from bron_kerbosch_pivot(ADT,
+                                       R=R.union([v]),
+                                       P=P.intersection(ADT.edge(v)),
+                                       X=X.intersection(ADT.edge(v)))
+        P.remove(v)
+        X.add(v)
 
 
 # In[3]:
