@@ -26,19 +26,23 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 <a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>4. Dijkstra</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>5. Prim/Kruskal/Borůvka</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>5. Prim</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>6. A* Search</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>6. Kruskal</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>7. Bellman Ford</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>7. Borůvka</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>8. Matula Beck</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>8. A* Search</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>9. Batagelj Zaveršnik</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>9. Bellman Ford</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>10. Bron Kerbosch</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>10 Matula Beck</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>11. Gillespie</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>11. Batagelj Zaveršnik</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>12. Bron Kerbosch</a>
+
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>13. Gillespie</a>
 
 &nbsp;
 
