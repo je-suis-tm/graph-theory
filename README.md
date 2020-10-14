@@ -124,11 +124,15 @@ Water jug is a simple and interesting problem. Assuming there are two jugs, a m-
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/water%20jug%20problem.ipynb>here</a> to be redirected to the script.*
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/water%20jug.gif)
+
 ### 5. Knight's Tour
 
 Knight's tour is a game where a knight travels all the squares on a k by k chessboard. And each square can only be travelled once. The solution can be obtained by DFS with a list that records whether each square on the chessboard has been visited. The rules of a knight's movement are very different from pawns or king. The edges of the graph should indicate the valid move from one square to another.
  
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/knights%20tour.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/knights%20tour.gif)
 
 ### 6. Missionaries and Cannibals
 
