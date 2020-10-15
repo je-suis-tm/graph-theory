@@ -140,6 +140,8 @@ Missionaries and cannibals is a classic river problem. I actually prefer its alt
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/missionaries%20and%20cannibals%20problems.ipynb>here</a> to be redirected to the script.*
 
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/missionaries%20and%20cannibals.gif)
+
 ### 7. Forex Arbitrage
 
 Finding the shortest path on a map is not the only problem Dijkstra can solve. Financial market is another application. As we all know, currency pairs have both bid and ask price. The market is weak-efficient. There could be an opportunity for triangle arbitrage or rectangle arbitrage. We can exchange from currency A to currency B then to currency C if we can churn out more profit rather than directly exchanging currency A to currency C. We set each currency as the vertex and the exchange rate from one currency to another as the weight of the edge. The arbitrage with some logarithm transformation would be the criteria for Dijkstra. However, Dijkstra cannot properly handle a graph structure with negative weights. We will introduce an improved version called Bellman-Ford which is able to detect the negative cycle during the traversal.
@@ -153,6 +155,8 @@ Finding the shortest path on a map is not the only problem Dijkstra can solve. F
 Word ladder problem is a game developed by the author of Alice in Wonderland. Given one word, we try to change it into another word. Each time we can only change one letter and it should also be a valid word. This is a great test for vocabulary. The difficult part of building a graph structure is to build edges. Connect one word to another with only one letter changed takes a bit of work. BFS is the perfect solution for this.
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/word%20ladder.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/word%20ladder.png)
 
 ### 9. Text Mining
 
