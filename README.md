@@ -78,13 +78,13 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 ### Models
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>* Erdős–Rényi</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>Erdős–Rényi</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>* Watts-Strogatz</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>Watts-Strogatz</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>* Barabási-Albert</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>Barabási-Albert</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bianconi%20barabasi%20model.ipynb>* Bianconi-Barabási</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/bianconi%20barabasi%20model.ipynb>Bianconi-Barabási</a>
 
 &nbsp;
 
