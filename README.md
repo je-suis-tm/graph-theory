@@ -2,10 +2,6 @@
 
 &nbsp;
 
-*Currently the directory is a lil bit messy due to the massive expansion of its content. The repository was originally set up for graph traversal algorithms (the interview stuff). Unfortunately, I fell in love with the graph theory and gradually did more and more network analysis :see_no_evil: I promise I will redesign the directory to make it easier for users to navigate. You have to be patient with me though :snail:*
-
-&nbsp;
-
 ## Intro
 
 Graph theory, sometimes we call it complex network or network science or network analysis, is one of the most avant-garde research areas in discrete mathematics, also one of my favorite subjects. Here, “graph” is the preferred name, because too many people associate the word “network” with internet. Given the bonanza of data science, graph theory is constantly overshadowed by the hype of machine learning. Yet some of the top-notch technology companies such as Google and Facebook heavily rely on the research of graph theory. 
@@ -82,13 +78,13 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 ### Models
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>1. Erdős–Rényi</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>* Erdős–Rényi</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>2. Watts-Strogatz</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>* Watts-Strogatz</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>3. Barabási-Albert</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>* Barabási-Albert</a>
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bianconi%20barabasi%20model.ipynb>4. Bianconi-Barabási</a>
+<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bianconi%20barabasi%20model.ipynb>* Bianconi-Barabási</a>
 
 &nbsp;
 
