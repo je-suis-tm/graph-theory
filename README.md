@@ -18,65 +18,65 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 ### Algorithms
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>1. Breadth First Search</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>A* Search</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>2. Depth First Search</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>Batagelj Zaveršnik</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>3. Kahn</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>Bellman Ford</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>4. Dijkstra</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>Borůvka</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>5. Prim</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>Breadth First Search</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>6. Kruskal</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>Bron Kerbosch</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>7. Borůvka</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/BFS%20DFS%20on%20DCG.ipynb>Depth First Search</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/a_star%20maze.ipynb>8. A* Search</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>Dijkstra</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/bellman_ford%20forex%20arbitrage.ipynb>9. Bellman Ford</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>Gillespie</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>10 Matula Beck</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>Kahn</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>11. Batagelj Zaveršnik</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>Kruskal</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>12. Bron Kerbosch</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>Matula Beck</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>13. Gillespie</a>
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>Prim</a> 
 
 &nbsp;
 
 ### Applications
 
-<a href=https://github.com/je-suis-tm/graph-theory#1-maze>1. Maze</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#12-epidemic-outbreak>Epidemic Outbreak</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#2-minimum-spanning-tree>2. Minimum Spanning Tree</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#7-forex-arbitrage>Forex Arbitrage</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#3-shortest-path>3. Shortest Path</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#15-habitat-competition>Habitat Competition</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#4-water-jug>4. Water Jug</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#14-habitat-occupancy>Habitat Occupancy</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#5-knights-tour>5. Knight's Tour</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#10-k-core>K Core</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#6-missionaries-and-cannibals>6. Missionaries and Cannibals</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#5-knights-tour>Knight's Tour</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#7-forex-arbitrage>7. Forex Arbitrage</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#11-maximal-clique>Maximal Clique</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#8-word-ladder>8. Word Ladder</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#1-maze>Maze</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#9-text-mining>9. Text Mining</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#2-minimum-spanning-tree>Minimum Spanning Tree</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#10-k-core>10. K Core</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#6-missionaries-and-cannibals>Missionaries and Cannibals</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#11-maximal-clique>11. Maximal Clique</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#13-portfolio-optimization>Portfolio Optimization</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#12-epidemic-outbreak>12. Epidemic Outbreak</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#3-shortest-path>Shortest Path</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#13-portfolio-optimization>13. Portfolio Optimization</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#9-text-mining>Text Mining</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#14-habitat-occupancy>14. Habitat Occupancy</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#4-water-jug>Water Jug</a> 
 
-<a href=https://github.com/je-suis-tm/graph-theory#15-habitat-competition>15. Habitat Competition</a>
+* <a href=https://github.com/je-suis-tm/graph-theory#8-word-ladder>Word Ladder</a> 
 
 &nbsp;
 
