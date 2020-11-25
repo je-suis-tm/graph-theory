@@ -41,6 +41,10 @@ class graph:
         """return edge of a particular vertex"""
         return list(self.graph[vertexid].keys())
     
+    def edge_reverse(self,vertexid):
+        """return vertices directing to a particular vertex"""                
+        return [i for i in self.graph if vertexid in self.graph[i]]
+    
     def weight(self,vertexid,edge):
         """return weight of a particular vertex"""
         return (self.graph[vertexid][edge])
@@ -115,8 +119,8 @@ def bfs(ADT,current):
             #visit each vertex once
             if ADT.go(newpos)==0 and newpos not in queue:
                 queue.append(newpos)
-
-
+                
+                
 #
 def dfs_itr(ADT,current):
     """Depth First Search without Recursion"""
