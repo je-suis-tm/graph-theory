@@ -100,7 +100,8 @@ class graph:
 # In[2]:     
 #algorithms
         
-        
+
+#
 def bfs(ADT,current):
     """Breadth First Search"""
     
@@ -119,6 +120,50 @@ def bfs(ADT,current):
             #visit each vertex once
             if ADT.go(newpos)==0 and newpos not in queue:
                 queue.append(newpos)
+                
+                
+#
+def bidir_bfs(ADT,start,end):
+    """Bidirectional Breadth First Search"""
+    
+    #create queues with rule of first-in-first-out
+    #queue1 for bfs from start
+    #queue2 for bfs from end
+    queue1=[]
+    queue1.append(start)
+    queue2=[]
+    queue2.append(end)
+    visited1=[]
+    visited2=[]
+    
+    while queue1 or queue2:
+            
+        #keep track of the visited vertices
+        if queue1:
+            current1=queue1.pop(0) 
+            visited1.append(current1)
+            ADT.visit(current1)
+        if queue2:
+            current2=queue2.pop(0)
+            visited2.append(current2)  
+            ADT.visit(current2)      
+                
+        #intersection of two trees
+        stop=False
+        for i in ADT.vertex():
+            if i in visited1 and i in visited2:
+                stop=True
+                break
+        if stop:
+            break
+        
+        #do not revisit a vertex
+        for newpos in ADT.edge(current1):            
+            if newpos not in visited1 and newpos not in queue1:
+                queue1.append(newpos)
+        for newpos in ADT.edge(current2):            
+            if newpos not in visited2 and newpos not in queue2:
+                queue2.append(newpos)
                 
                 
 #
@@ -253,6 +298,74 @@ def bfs_path(ADT,start,end):
         if current==end:
             break
 
+    #create the path by backtracking
+    #trace the predecessor vertex from end to start
+    previous=end
+    path=[]
+    while pred:
+        path.insert(0, previous)
+        if previous==start:
+            break
+        previous=pred[previous]
+    
+    #note that if we cant go from start to end
+    #we may get inf for distance
+    #additionally, the path may not include start position
+    return len(path)-1,path
+
+
+#
+def bidir_bfs_path(ADT,start,end):
+    """Bidirectional Breadth First Search to find the path from start to end"""
+    
+    #create queues with rule of first-in-first-out
+    #queue1 for bfs from start
+    #queue2 for bfs from end
+    queue1=[]
+    queue1.append(start)
+    queue2=[]
+    queue2.append(end)
+    visited1=[]
+    visited2=[]
+    
+    #pred keeps track of how we get to the current vertex
+    pred={}
+    
+    while queue1 or queue2:
+            
+        #keep track of the visited vertices
+        if queue1:
+            current1=queue1.pop(0) 
+            visited1.append(current1)        
+        if queue2:
+            current2=queue2.pop(0)
+            visited2.append(current2)  
+            
+        #intersection of two trees
+        stop=False
+        for i in ADT.vertex():
+            if i in visited1 and i in visited2:
+                stop=True
+                break
+        if stop:
+            break
+        
+        #do not revisit a vertex
+        for newpos1 in ADT.edge(current1):            
+            if newpos1 not in visited1 and newpos1 not in queue1:
+                queue1.append(newpos1)
+                if newpos1 in pred:
+                    pred[current1]=newpos1
+                else:
+                    pred[newpos1]=current1
+        for newpos2 in ADT.edge(current2):            
+            if newpos2 not in visited2 and newpos2 not in queue2:
+                queue2.append(newpos2)
+                if newpos2 in pred:
+                    pred[current2]=newpos2
+                else:
+                    pred[newpos2]=current2
+                
     #create the path by backtracking
     #trace the predecessor vertex from end to start
     previous=end
