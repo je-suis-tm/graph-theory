@@ -188,7 +188,7 @@ A <a href=https://en.wikipedia.org/wiki/Clique_(graph_theory)>clique</a> is a su
 
 ### 12. Epidemic Outbreak
 
-Amid the outbreak of the novel corona virus, we have observed a bonanza of agent-based simulation in epidemiology. By leveraging the probability generating function of a random graph, whether it is <a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>Barabási-Albert</a> following power-law distribution or <a href=https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model>Erdős–Rényi</a> following Poisson distribution, we are able to consume the least computing power to estimate the prevalence and the duration of COVID-19.
+Amid the outbreak of the novel corona virus, we have observed a bonanza of agent-based simulation in epidemiology. By leveraging the probability generating function of a random graph, whether it is <a href=https://github.com/je-suis-tm/graph-theory/blob/master/barabasi%20albert%20model.ipynb>Barabási-Albert</a> following power-law distribution or <a href=https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb>Erdős–Rényi</a> following Poisson distribution, we are able to consume the least computing power to estimate the prevalence and the duration of COVID-19.
 
 *For more details, please refer to the <a href=https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/README.md>read me</a> page of a separate directory or <a href=https://je-suis-tm.github.io/graph-theory/epidemic-outbreak>graph theory</a> section on my personal blog.*
 
