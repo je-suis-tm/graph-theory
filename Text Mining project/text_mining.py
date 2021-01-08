@@ -118,23 +118,39 @@ stopword=stopwords.words('english')+['algeria',
 # In[3]:
 
 
-#tokenization, stemming and lemmatization
-def text2list(text,stopword,lower=True):
+#convert text into a list of words
+#we can use stemming and lemmatization to improve efficiency
+#for instance, we have words walked,walking,walks
+#with nltk package, we can revert all of them to walk
+def text2list(text,stopword,lower=True,
+              lemma=True,stemma=False):
 
-    temp=text if lower==False else text.lower()
-    tokenizer=RegexpTokenizer(r'\w+')
-    temp2=[WordNetLemmatizer().lemmatize(i) for i in tokenizer.tokenize(temp)]
-    output=[PorterStemmer().stem(i) for i in temp2 if i not in stopword]
+    text_clean=text if lower==False else text.lower()
+    
+    #tokenize and remove stop words
+    token=[i for i in nltk.tokenize.RegexpTokenizer(r'\w+').tokenize(text_clean) if i not in stopword]
+    
+    #lemmatization
+    if lemma:
+        text_processed=[nltk.stem.wordnet.WordNetLemmatizer().lemmatize(i) for i in token]
+    else:
+        text_processed=token
+        
+    #stemming
+    if stemma:
+        output=[nltk.stem.PorterStemmer().stem(i) for i in text_processed]
+    else:
+        output=text_processed
     
     #remove numbers as they are stopword as well
-    for i in output:
+    for i in [ii for ii in output]:
         try:
             float(i)
             output.remove(i)
         except:
             pass
     
-    return output
+    return [i for i in output if i not in stopword]
 
 
 # In[4]:
