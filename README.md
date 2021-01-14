@@ -90,6 +90,8 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 * <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20occupancy.ipynb>Levins</a>
 
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>Schelling’s</a>
+
 * <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>Tilman</a>
 
 &nbsp;
