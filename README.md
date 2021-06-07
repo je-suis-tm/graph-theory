@@ -230,8 +230,6 @@ In the later chapter of this script, we will introduce Schelling’s model from 
 
 ### 16. Diversity Trumps Ability
 
-&nbsp;
-
 In 2004, Lu Hong and Scott E. Page published a game-changing paper on diversity. They used agent-based model to prove that a diverse group of people is better than a group of best-performing individuals. Despite the high citations of this paper, plenty of scholars dispute the idea which makes the theory rather controversial. The caveat is the experiment of solving problems on lattice is too simple and straight forward whereas in real life the situation is more dynamic. Hence, the objective of this experiment is to convert lattice problem into the context of avant-garde random graphs. With the agent-based simulation on Waxman model, we are able to retain as many of the properties of a real life problem as possible and simplify the situation with respect to our ability to analyze the performance of different agents.
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/diversity%20trumps%20ability.ipynb>here</a> to be redirected to the script. Please note this script is written in Julia.*
