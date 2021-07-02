@@ -32,6 +32,8 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 * <a href=https://github.com/je-suis-tm/graph-theory/blob/master/dijkstra%20shortest%20path.ipynb>Dijkstra</a> 
 
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/graph%20coloring.ipynb>DSatur</a>
+
 * <a href=https://github.com/je-suis-tm/graph-theory/blob/master/habitat%20competition.ipynb>Gillespie</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory/blob/master/topological%20sort.ipynb>Kahn</a> 
@@ -51,6 +53,8 @@ This repository intends to increase the exposure of graph theory to all my reade
 * <a href=https://github.com/je-suis-tm/graph-theory#12-epidemic-outbreak>Epidemic Outbreak</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#7-forex-arbitrage>Forex Arbitrage</a> 
+
+* <a href=https://github.com/je-suis-tm/graph-theory#17-graph-coloring>Graph Coloring</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#15-habitat-competition>Habitat Competition</a> 
 
@@ -235,3 +239,12 @@ In 2004, Lu Hong and Scott E. Page published a game-changing paper on diversity.
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/diversity%20trumps%20ability.ipynb>here</a> to be redirected to the script. Please note this script is written in Julia.*
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/waxman%20model.gif)
+
+### 17. Graph Coloring
+
+Graph coloring is a color assignment problem on graph structures. The color could be assigned to the vertex or the edge. No adjacent vertex or edge (depends on the problem) should have the same color. Certainly there are many vertex coloring algorithms. One of the most popular algorithms is DSatur Algorithm by Daniel Brélaz. It beats greedy algorithm (brute force color assignment to each vertex) in random graph.
+
+*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/graph%20coloring.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/vertex%20coloring.png)
+
