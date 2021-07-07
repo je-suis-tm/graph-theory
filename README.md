@@ -44,6 +44,10 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 * <a href=https://github.com/je-suis-tm/graph-theory/blob/master/minimum%20spanning%20tree.ipynb>Prim</a> 
 
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20independent%20set.ipynb>Ramsey</a> 
+
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20independent%20set.ipynb>Randomized Distributed</a> 
+
 &nbsp;
 
 ### Applications
@@ -66,6 +70,8 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 * <a href=https://github.com/je-suis-tm/graph-theory#11-maximal-clique>Maximal Clique</a> 
 
+* <a href=https://github.com/je-suis-tm/graph-theory#18-maximal-independent-set>Maximal Independent Set</a> 
+
 * <a href=https://github.com/je-suis-tm/graph-theory#1-maze>Maze</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#2-minimum-spanning-tree>Minimum Spanning Tree</a> 
@@ -74,7 +80,9 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 * <a href=https://github.com/je-suis-tm/graph-theory#13-portfolio-optimization>Portfolio Optimization</a> 
 
-* <a href=https://github.com/je-suis-tm/graph-theory#3-shortest-path>Shortest Path</a> 
+* <a href=https://github.com/je-suis-tm/graph-theory#3-shortest-path>Shortest Path</a>  
+
+* <a href=https://github.com/je-suis-tm/graph-theory#19-sudoku>Sudoku</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#9-text-mining>Text Mining</a> 
 
@@ -248,3 +256,26 @@ Graph coloring is a color assignment problem on graph structures. The color coul
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/vertex%20coloring.png)
 
+### 18. Maximal Independent Set
+
+An independent set is a subset of a graph such that no two vertices inside are connected. A maximal independent set is an independent set that cannot include any extra vertices without violating the definition. A maximum independent set is one of the maximal independent sets with maximum cardinality. 
+
+There are tons of algorithms to find maximal independent set. Maximal independent set is an NP-complete problem for computer scientists. Currently the most popular one is randomized distributed algorithm.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/maximal%20independent%20set.png)
+
+Finding maximal independent set is NP-complete but finding maximum independent set is NP-hard. Intuitively, the easiest way to find a maximum independent set is a brute force algorithm to select maximum independent set from all the maximal independent sets. `NetworkX` prefers Ramsey algorithm to approximate maximum independent set. Thus, it is worth the effort to make a little introduction of Ramsey algorithm.
+
+*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20independent%20set.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/maximum%20independent%20set.png)
+
+### 19. Sudoku
+
+Sudoku is a combinatorial number-placement puzzle. Despite its Japanese name, the game was actually invented by an American and later gained popularity in Japan. There are many ways for computer algorithms to solve Sudoku. Here we use <a href=https://github.com/je-suis-tm/graph-theory/blob/master/graph%20coloring.ipynb>vertex coloring</a> to solve the puzzle via <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20independent%20set.ipynb>maximum independent set</a>. Vertex coloring guarantees no adjacent vertex should have the same color. As long as we can create a proper data structure for Sudoku puzzle, we are able to find the optimal vertex coloring scheme. 
+
+However, the optimal graph coloring is in fact an NP-hard problem. There are plenty of greedy algorithms but none really work very well on Sudoku. To avoid brute force, we tackle the optimal vertex coloring via maximum independent set. The maximum independent set is also an NP-hard problem with plenty of approximation algorithms not working well on Sudoku. So we apply a trick. The maximum independent set in a graph ADT is a <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>maximum clique</a> in a complement graph. It is much easier to search all the maximal cliques via <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20clique.ipynb>Bron Kerbosch algorithm</a>. We merely need to discover the maximal clique with maximum cardinality. 
+
+*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/sudoku.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/sudoku.png)
