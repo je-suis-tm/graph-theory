@@ -6,6 +6,7 @@ Created on Tue Jun  5 15:44:57 2018
 """
 
 import numpy as np
+import random as rd
 import copy
     
 # In[1]:
@@ -1031,6 +1032,141 @@ def bron_kerbosch_order(ADT,R=set(),P=set(),X=set()):
                                        X=X.intersection(ADT.edge(v)))
         P.remove(v)
         X.add(v)
+
+
+#
+def dsatur(ADT,color_assignments=None,chromatic_number_upper_bound=None):
+    """graph coloring with dsatur algorithm"""
+
+    #step 1
+    #sort vertices by their degrees
+    #check matula beck section in the below link for more details
+    # https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb
+    #pick the vertex with the largest degree
+    selected_vertex=sort_by_degree(ADT)[0]
+
+    #initialize saturation degree
+    saturation_degrees=dict(zip(ADT.vertex(),
+                              [0]*ADT.order()))
+
+    #according to brooks theorem
+    #upper bound of chromatic number equals to maximum vertex degree plus one
+    if not chromatic_number_upper_bound:
+        chromatic_number_upper_bound=range(ADT.degree(selected_vertex)+1)
+
+    #step 2
+    #if no colors have been assigned
+    #assign the first color to the vertex with the maximum degree
+    if not color_assignments:
+        color_assignments={}
+        color_assignments[selected_vertex]=0
+
+    #fill each vertex with color
+    while len(color_assignments)<ADT.order():
+
+        #saturation degrees also serve as a queue
+        #remove colored vertex from the queue
+        saturation_degrees.pop(selected_vertex)
+
+        #update saturation degrees after color assignment
+        for node in ADT.edge(selected_vertex):
+            if node in saturation_degrees:
+                saturation_degrees[node]+=1
+
+        #step 3
+        #among uncolored vertices
+        #pick a vertex with the largest saturation degree
+        check_vertices_degree=[node for node in saturation_degrees if saturation_degrees[node]==max(saturation_degrees.values())]
+
+        #if there is an equality, choose one with the largest degree
+        if len(check_vertices_degree)>1:
+            degree_distribution=[ADT.degree(node) for node in check_vertices_degree]
+            selected_vertex=check_vertices_degree[degree_distribution.index(max(degree_distribution))]
+        else:
+            selected_vertex=check_vertices_degree[0]
+
+        #step 4
+        #exclude colors used by neighbors
+        #assign the least possible color to the selected vertex
+        excluded_colors=[color_assignments[node] for node in ADT.edge(selected_vertex) if node in color_assignments]
+        selected_color=[color for color in chromatic_number_upper_bound if color not in excluded_colors][0]
+        color_assignments[selected_vertex]=selected_color
+
+    return color_assignments
+
+
+#
+def get_maximal_independent_set(ADT):
+    """fast randomized algorithm to fetch one of the maximal independent sets"""
+
+    #assign random value from uniform distribution to every vertex
+    random_val=dict(zip(ADT.vertex(),
+        [rd.random() for _ in range(ADT.order())]))
+
+    #initialize
+    maximal_independent_set=[]
+    queue=[i for i in random_val]
+    
+    while len(queue)>0:
+        for node in queue:
+            
+            #select the vertex which has larger value than all of its neighbors
+            neighbor_vals=[random_val[neighbor] for neighbor in ADT.edge(node) if neighbor in random_val]
+            if len(neighbor_vals)==0 or random_val[node]<min(neighbor_vals):
+                
+                #add to mis
+                maximal_independent_set.append(node)
+                
+                #remove the vertex and its neighbors
+                queue.remove(node)
+                for neighbor in ADT.edge(node):
+                    if neighbor in queue:
+                        queue.remove(neighbor)
+        
+        #reassign random values to existing vertices
+        random_val=dict(zip(queue,
+                            [rd.random() for _ in range(len(random_val))]))
+        
+    return maximal_independent_set
+
+
+#c
+def ramsey(graph_adt):
+    """Ramsey algorithm to approximate the maximum independent set"""
+
+    #base case of the recursion
+    if graph_adt.order()==0:
+        return []
+    
+    #select a random vertex
+    #this can be optimized by selecting the vertex with the smallest degree
+    selected=graph_adt.vertex()[0]
+
+    #find its neighbors and non neighbors
+    neighbors=graph_adt.edge(selected)
+    non_neighbors=[i for i in graph_adt.vertex() if i not in neighbors and i!=selected]
+
+    #create a subset which only contains its neighbors
+    subset_neighbors=copy.deepcopy(graph_adt)
+    for vertex in non_neighbors:
+        subset_neighbors.remove(vertex)
+    subset_neighbors.remove(selected)
+
+    #create a subset which only contains its non neighbors
+    subset_non_neighbors=copy.deepcopy(graph_adt)
+    for vertex in neighbors:
+        subset_non_neighbors.remove(vertex)
+    subset_non_neighbors.remove(selected)
+        
+    #recursively check other vertices
+    neighbors_mis=ramsey(subset_neighbors)
+    non_neighbors_mis=ramsey(subset_non_neighbors)
+    
+    #add to approximated maximum independent set
+    non_neighbors_mis.append(selected)
+
+    #only export the larger set between the two
+    return max(neighbors_mis,non_neighbors_mis,key=len)
 
 
 # In[3]:
