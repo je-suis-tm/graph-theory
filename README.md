@@ -48,17 +48,19 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 * <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20independent%20set.ipynb>Randomized Distributed</a> 
 
+* <a href=https://github.com/je-suis-tm/graph-theory/blob/master/graph%20coloring.ipynb>Vizing</a>
+
 &nbsp;
 
 ### Applications
 
 * <a href=https://github.com/je-suis-tm/graph-theory#16-diversity-trumps-ability>Diversity Trumps Ability</a>
 
+* <a href=https://github.com/je-suis-tm/graph-theory#17-graph-coloring>Edge Coloring</a> 
+* 
 * <a href=https://github.com/je-suis-tm/graph-theory#12-epidemic-outbreak>Epidemic Outbreak</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#7-forex-arbitrage>Forex Arbitrage</a> 
-
-* <a href=https://github.com/je-suis-tm/graph-theory#17-graph-coloring>Graph Coloring</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#15-habitat-competition>Habitat Competition</a> 
 
@@ -85,6 +87,8 @@ This repository intends to increase the exposure of graph theory to all my reade
 * <a href=https://github.com/je-suis-tm/graph-theory#19-sudoku>Sudoku</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#9-text-mining>Text Mining</a> 
+
+* <a href=https://github.com/je-suis-tm/graph-theory#17-graph-coloring>Vertex Coloring</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#4-water-jug>Water Jug</a> 
 
@@ -250,11 +254,18 @@ In 2004, Lu Hong and Scott E. Page published a game-changing paper on diversity.
 
 ### 17. Graph Coloring
 
-Graph coloring is a color assignment problem on graph structures. The color could be assigned to the vertex or the edge. No adjacent vertex or edge (depends on the problem) should have the same color. Certainly there are many vertex coloring algorithms. One of the most popular algorithms is DSatur Algorithm by Daniel Brélaz. It beats greedy algorithm (brute force color assignment to each vertex) in random graph.
+Graph coloring is a color assignment problem on graph structures. The color could be assigned to the vertex or the edge. No adjacent vertex or edge should have the same color. The coloring may sound like an easy problem. To find an optimal coloring for vertices or edges is in fact NP-hard.
+
+
+One of the most popular algorithms for vertex coloring is DSatur Algorithm by Daniel Brélaz. It beats greedy algorithm in random graph. The faux pas of DSatur is its inability to capture the optimal vertex coloring for all types of graph structures.
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/vertex%20coloring.png)
+
+One of the most common and the easiest algorithms for edge coloring is Vizing's algorithm. It is a simple greedy algorithm to prove Vizing's theorem where the upper bound of the chromatic index equals to the maximum degree of the graph structure plus one. The malaise of Vizing is its inability to capture the optimal edge coloring for all types of graph structures.
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/graph%20coloring.ipynb>here</a> to be redirected to the script.*
 
-![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/vertex%20coloring.png)
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/edge%20coloring.png)
 
 ### 18. Maximal Independent Set
 
