@@ -57,7 +57,7 @@ This repository intends to increase the exposure of graph theory to all my reade
 * <a href=https://github.com/je-suis-tm/graph-theory#16-diversity-trumps-ability>Diversity Trumps Ability</a>
 
 * <a href=https://github.com/je-suis-tm/graph-theory#17-graph-coloring>Edge Coloring</a> 
-* 
+
 * <a href=https://github.com/je-suis-tm/graph-theory#12-epidemic-outbreak>Epidemic Outbreak</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#7-forex-arbitrage>Forex Arbitrage</a> 
