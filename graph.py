@@ -1035,7 +1035,7 @@ def bron_kerbosch_order(ADT,R=set(),P=set(),X=set()):
 
 
 #
-def dsatur(ADT,color_assignments=None,chromatic_number_upper_bound=None):
+def dsatur(ADT):
     """graph coloring with dsatur algorithm"""
 
     #step 1
@@ -1051,15 +1051,12 @@ def dsatur(ADT,color_assignments=None,chromatic_number_upper_bound=None):
 
     #according to brooks theorem
     #upper bound of chromatic number equals to maximum vertex degree plus one
-    if not chromatic_number_upper_bound:
-        chromatic_number_upper_bound=range(ADT.degree(selected_vertex)+1)
+    chromatic_number_upper_bound=range(ADT.degree(selected_vertex)+1)
 
     #step 2
-    #if no colors have been assigned
     #assign the first color to the vertex with the maximum degree
-    if not color_assignments:
-        color_assignments={}
-        color_assignments[selected_vertex]=0
+    color_assignments={}
+    color_assignments[selected_vertex]=0
 
     #fill each vertex with color
     while len(color_assignments)<ADT.order():
@@ -1096,6 +1093,47 @@ def dsatur(ADT,color_assignments=None,chromatic_number_upper_bound=None):
 
 
 #
+def vizing(ADT):
+    """greedy algorithm to prove Vizing's theorem"""
+    
+    #sort vertices by their degrees
+    #check matula beck section in the below link for more details
+    # https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb
+    #pick the vertex with the largest degree
+    selected_vertex=sort_by_degree(ADT)[0]
+
+    #according to vizings theorem
+    #upper bound of chromatic index equals to maximum vertex degree plus one
+    chromatic_index_upper_bound=set(range(ADT.degree(selected_vertex)+1))
+
+    #initialize
+    color_assignments=copy.deepcopy(ADT.reveal())
+    for i in color_assignments:
+        for j in color_assignments[i]:
+            color_assignments[i][j]=-1
+
+    #greedy algorithm
+    for node in color_assignments:
+        for link in color_assignments[node]:
+
+            #if the edge is uncolored
+            if color_assignments[node][link]<0:
+                
+                #find the intersection of missing colors from both vertices
+                existing_colors_node=set(color_assignments[node].values())
+                existing_colors_link=set(color_assignments[link].values())
+                existing_colors=existing_colors_node.union(existing_colors_link)
+                
+                #assign the first missing color
+                missing_colors=chromatic_index_upper_bound.difference(existing_colors)
+                selected_color=list(missing_colors)[0]
+                color_assignments[node][link]=selected_color
+                color_assignments[link][node]=selected_color
+                
+    return color_assignments
+    
+
+#
 def get_maximal_independent_set(ADT):
     """fast randomized algorithm to fetch one of the maximal independent sets"""
 
@@ -1130,7 +1168,7 @@ def get_maximal_independent_set(ADT):
     return maximal_independent_set
 
 
-#c
+#
 def ramsey(graph_adt):
     """Ramsey algorithm to approximate the maximum independent set"""
 
