@@ -33,7 +33,7 @@ These outliers are listed below.
 * Nokia Oyj
 * Vivendi SA
 
-Apart from the outliers in the graph ADT, there is another important part. Even inside strongly connected components, we can still select assets that are not highly correlated with each other. In graph theory, we call these vertices, <a href=https://en.wikipedia.org/wiki/Independent_set_(graph_theory)>independent vertex set</a>. An independent vertex set is a subset that no two vertices of which are adjacent. Usually, there are more than one maximum independent vertex set, what are our selection criteria?
+Apart from the outliers in the graph ADT, there is another important part. Even inside strongly connected components, we can still select assets that are not highly correlated with each other. In graph theory, we call these vertices, <a href=https://github.com/je-suis-tm/graph-theory/blob/master/maximal%20independent%20set.ipynb>independent vertex set</a>. An independent vertex set is a subset that no two vertices of which are adjacent. Usually, there are more than one maximal independent vertex set, what are our selection criteria?
 
 Here, we borrow a concept from <a href=https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb>K-core</a>, degeneracy ordering. Degeneracy ordering is to repeatedly find and remove the vertex of smallest degree from the graph ADT. The degeneracy is then the highest degree of any vertex at the moment it is removed. To find our optimal independent vertex set, the process is illustrated below.
 
