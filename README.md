@@ -84,6 +84,8 @@ This repository intends to increase the exposure of graph theory to all my reade
 
 * <a href=https://github.com/je-suis-tm/graph-theory#3-shortest-path>Shortest Path</a>  
 
+* <a href=https://github.com/je-suis-tm/graph-theory#20-sliding-puzzle>Sliding Puzzle</a> 
+
 * <a href=https://github.com/je-suis-tm/graph-theory#19-sudoku>Sudoku</a> 
 
 * <a href=https://github.com/je-suis-tm/graph-theory#9-text-mining>Text Mining</a> 
@@ -290,3 +292,9 @@ However, the optimal graph coloring is in fact an NP-hard problem. There are ple
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/sudoku.ipynb>here</a> to be redirected to the script.*
 
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/sudoku.png)
+
+### 20. Sliding Puzzle
+
+*Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/sliding%20puzzle.ipynb>here</a> to be redirected to the script.*
+
+![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/sliding%20puzzle.gif)
