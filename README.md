@@ -4,7 +4,7 @@
 
 ## Intro
 
-Graph theory, sometimes we call it complex network or network science or network analysis, is one of the most avant-garde research areas in discrete mathematics, also one of my favorite subjects. Here, “graph” is the preferred name, because too many people associate the word “network” with internet. Given the bonanza of data science, graph theory is constantly overshadowed by the hype of machine learning. Yet some of the top-notch technology companies such as Google and Facebook heavily rely on the research of graph theory. 
+Graph theory, sometimes we call it complex network, complex system or network science or network analysis, is one of the most avant-garde research areas in discrete mathematics, also one of my favorite subjects. Here, “graph” is the preferred name, because too many people associate the word “network” with internet. Given the bonanza of data science, graph theory is constantly overshadowed by the hype of machine learning. Yet some of the top-notch technology companies such as Google and Facebook heavily rely on the research of graph theory. 
 
 This repository intends to increase the exposure of graph theory to all my readers. It contains common graph algorithms, popular network models, interesting agent-based simulations and amazing complex systems. The codes range from the level of elementary to sophisticated with wide applications in ecology, epidemiology, sociology, economics, finance, etc. Both Julia and Python are used to construct different scripts. As I am slowly climbing up the learning curve, more and more fascinating content will emerge en masse. Stay tuned!
 
@@ -294,6 +294,8 @@ However, the optimal graph coloring is in fact an NP-hard problem. There are ple
 ![alt text](https://github.com/je-suis-tm/graph-theory/blob/master/preview/sudoku.png)
 
 ### 20. Sliding Puzzle
+
+Sliding puzzle is a fun game. Let's be a bit nostalgic. In windows 7, you can pin a picture puzzle to the desktop from the gadgets. That can be considered as a sliding puzzle. To make our life easier, we merely intent to seek solutions to number puzzle. The objective is the same. Move the tiles to ensure the entire puzzle is sorted in numerical orders. In translation, the puzzle needs to go from one status to another. Your instinct should immediately tell that we are going to tackle this problem via graph theory. 
 
 *Click <a href=https://github.com/je-suis-tm/graph-theory/blob/master/sliding%20puzzle.ipynb>here</a> to be redirected to the script.*
 
